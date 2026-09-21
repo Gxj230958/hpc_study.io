@@ -1,0 +1,5 @@
+make: Entering directory '/inspire/hdd/global_user/s26045/hpc_study.io/examples'
+mkdir -p ../build
+gcc -O2 -Wall -Wextra -Werror -fopenmp cpu/sum.c -o ../build/sum
+gcc -O2 -Wall -Wextra -Werror -fopenmp cpu/memory.c -o ../build/memory
+make: Leaving directory '/inspire/hdd/global_user/s26045/hpc_study.io/examples'

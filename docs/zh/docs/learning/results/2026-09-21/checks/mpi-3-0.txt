@@ -1,0 +1,1 @@
+ranks=3 n=0 sum=0 max_seconds=0.000122707 PASS

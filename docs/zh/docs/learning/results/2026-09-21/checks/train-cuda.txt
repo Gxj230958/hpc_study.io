@@ -1,0 +1,1 @@
+device=cuda initial_loss=3.056853 final_loss=0.000000000 PASS synthetic_regression

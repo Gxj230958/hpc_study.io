@@ -1,0 +1,44 @@
+{
+  "recorded_utc": "2026-09-21T13:50:31.761832+00:00",
+  "scope": "single-node teaching correctness checks; HPL/HPCG short runs are not official submissions",
+  "packages": {
+    "torch": "2.6.0",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "mpi4py-mpich": "3.1.5"
+  },
+  "cuda_toolkit": "12.4.1",
+  "profiler_note": "Nsight Systems capture is separate from the unprofiled correctness/timing run.",
+  "cgroup_cpu_max": "1000000 100000",
+  "cgroup_memory_max": "107374182400",
+  "source_sha256": {
+    "examples/Makefile": "6056148870659f2f696480c2e57f2faf989568a55880be767dbe63871933aa67",
+    "examples/benchmark/HPL.dat": "ae8010da21998ba269242d02eeaf2847e590df25b78e459d1133951855741503",
+    "examples/benchmark/hpcg.dat": "0b2d5a7483407f77ba5a454ca72256838a51c1a160f97cdffd755968dfe4cc43",
+    "examples/cpu/acc.c": "d4ade072aa519b4c38fa06f35fbdbc9c8a3551295531f6afe82f9bbe77571040",
+    "examples/cpu/memory.c": "3a2163d694691744c8d936f6d60362b1bca568636bf4a14dc18746d482d0ddc3",
+    "examples/cpu/sum.c": "3be78202417b427d23819d5fdd5e9723264cd9345067c0d80b14773c5f83e874",
+    "examples/cuda/labs.cu": "708899d4a514848c2e84d90c0605fe547d454e88282889640c04b1b85519b7bb",
+    "examples/ml/precision.py": "83a7da2117b41acf8f87e1de23925f95de6ede093df4b6784f4673d9dcc073c8",
+    "examples/ml/quantize.py": "43974deeafb11e86b25a449da717e2cef25fafbba01bec2746dafa145cfe46b2",
+    "examples/ml/train.py": "f0ab82e96b737b7a6d0da094555b069c5aae336389dae72ad0e4d676d7b0dbbe",
+    "examples/ml/witness.py": "653aa2098f54482c6ef7c9c16eae33f04ceba56ff28630100d058d79b049d4b7",
+    "examples/mpi/hello.c": "4290e3ae56f826576b19d5c737026f46f59907c2bf8f35d12a3ebd7a7c2aeeef",
+    "examples/mpi/pingpong.py": "94c173ad6e4c1f6c5d244b2c4bc2b09646b8e990cb3ee86ff409ac6220275c33",
+    "examples/mpi/sum.py": "bd052d5566bce81aabbf895375d2355d91d33382b2e54061ab75bef1fa2b4bcc",
+    "examples/science/solve.py": "1b789273a9ec23ad883e99464e1b0135ff86679e45431cb74a37e995646f9518",
+    "scripts/validate.py": "c5d4de72e954cd3c3c119e2807e0ab00177f2331f53c225e616af6abaa767837",
+    "scripts/install-cuda.py": "9e401310d5697131d275af97da8847c0dbfd57eb7424d0370440ca8ebc4d6c18",
+    "scripts/run-reference-benchmarks.sh": "759a027d552d3f206e31006841ae71ddc7335ae774e5d35741a0045313fe886a",
+    "scripts/archive-validation.py": "7ba64727d4de776051fe3a4cd3a5bf40ad9966def07fdbf23ca770f66dace4af",
+    "env-spec.json": "fe2f163aab6716db9093b2eb108191aec496b37015c134ba9f34e5e591bd8f2b",
+    "requirements-study.txt": "d3a4a6016b84361de825fdbefb59075f2210a8d9f291d5728f6dc9b0835181e9"
+  },
+  "not_tested": [
+    "multi-GPU NCCL",
+    "multi-node network",
+    "AMD HIP",
+    "OpenCL device path",
+    "NVIDIA OpenACC offload"
+  ]
+}

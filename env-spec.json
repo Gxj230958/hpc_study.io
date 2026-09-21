@@ -1,0 +1,14 @@
+{
+  "python": "3.10",
+  "cuda_toolkit": "12.4.1",
+  "pip_phases": [
+    ["torch==2.6.0"],
+    ["-r", "requirements-study.txt"]
+  ],
+  "expected_torch_cuda": "12.4",
+  "cpu_workers": 8,
+  "gpu_count": 1,
+  "env": {"OMP_NUM_THREADS": "4", "OPENBLAS_NUM_THREADS": "4"},
+  "smoke": "python examples/ml/witness.py",
+  "expect": "WITNESS PASS"
+}

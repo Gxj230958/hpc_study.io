@@ -1,5 +1,22 @@
 # CUDA 编程入门
 
+## 新读者先做一个小实验
+
+先读[GPU 架构](arch.md)和[环境准备](../learning/setup.md)。下面的完整源码保存在仓库 `examples/cuda/labs.cu`，从向量加法开始，再到归约和矩阵乘法：
+
+```bash
+make -C examples cuda
+./build/cuda_labs
+```
+
+向量 kernel 中，每个线程处理 `blockIdx.x * blockDim.x + threadIdx.x` 对应的元素。必须判断下标小于 n，因为启动的线程数可能多于元素数。程序检查 n=1、255、256、257、100003，以及矩阵边长 1、15、16、17、65。
+
+先找到输出中的 `PASS`，再阅读时间。`kernel_median_ms` 是预热后的设备事件计时；另一列包括首次主机到设备传输、kernel 和结果回传，不包括显存分配。两列测量范围不同。
+
+练习：把长度设为 257、block 大小为 256，第二个 block 有多少线程应该写结果？答案是一个，其余线程必须跳过越界位置。
+
+后面的原教程保留了矩阵乘法的详细推导及原作者署名，适合作为进一步阅读。GPU 是否更快取决于任务、输入规模、精度和数据传输，不预设固定加速倍数。
+
 Introduction to CUDA Programming: From Correctness to Performance
 
 本文改编自北京大学超算队CUDA教程讲义，原作者为interestingLSY。
@@ -8,7 +25,7 @@ Introduction to CUDA Programming: From Correctness to Performance
 
 本文将从 GPU 的结构与 CUDA 的基本概念出发，带领大家写出自己的第一个正确的 CUDA 程序，并展示一些基本的优化技巧，带领大家优化自己的 CUDA 程序（正如标题所示，From Correctness to Performamce）。
 
-本文分为三部分：Part 0 简要介绍了为什么 GPU 能在许多任务上取得千倍的加速比；Part 1 介绍了 GPU 编程的基本概念，以及如何写出第一个 CUDA 程序；Part 2 则是一些基本的优化技巧。示例代码、课后作业所在的 git 仓库位于 https://github.com/interestingLSY/CUDA-From-Correctness-To-Performance-Code
+本文分为三部分：Part 0 介绍 GPU 适合的计算类型；Part 1 介绍基本概念与正确的 CUDA 程序；Part 2 介绍一些优化技巧。实际加速比需要在同等任务和精度下测量。原教程的示例代码和课后作业位于 https://github.com/interestingLSY/CUDA-From-Correctness-To-Performance-Code
 
 > Aside | 拓展内容：本文中标注了 "Aside" 的内容为拓展内容，我们认为他们比较有趣，但与本文主线关联不大。
 
@@ -32,7 +49,7 @@ GPU 能在此类任务上取得如此高的性能提升，主要是在设计哲�
 
 但如果我们现在想要计算 10000 道 100 以内的乘除法呢？那么大概率是 100 名大一学生算得快。因为，虽然一名大一学生计算一道 100 以内的乘除法的速度比不上陈景润先生计算一道 100 以内的乘除法的速度，但100 名大一学生一起工作，速度一定会比一位陈景润先生要快。
 
-CPU 与 GPU 的区别就好像上文中的一位陈景润先生与 100 名大一学生的区别。CPU 适合执行逻辑复杂、并行度低的任务，GPU 适合执行逻辑简单、并行度高的任务。以向量加法为例，它逻辑很简单（只需要把两个向量的对应位置加起来即可），且并行度极高（可以同时计算输出向量每个位置上的结果）。如果使用 CPU，那么我需要依次计算输出向量每个位置的结果；但如果使用 GPU，我可以同时计算输出向量每个位置的结果，进而大大提高了速度。
+这个类比强调的是单个任务的响应速度与大量任务的吞吐量。向量加法中，各个输出元素可以独立计算。CPU 可以用 SIMD 与多个核心并行处理，GPU 则可以启动更多线程。哪种方法整体更快，还需要考虑数组大小、实现质量和传输开销。
 
 ![CPU 与 GPU 的结构区别](images/cuda/cpu-gpu-arch-diff.png)
 
@@ -59,7 +76,7 @@ CPU 与 GPU 的区别就好像上文中的一位陈景润先生与 100 名大一
 ## Takeaway
 
 - CPU 的每个核心都很“大”，但核心数较少；GPU 每个核心都很“小”，但是核心数非常多。
-- CPU 和 GPU 的结构决定了：CPU 适合执行串行程序，GPU 适合执行并行度极高的程序。
+- CPU 也能通过多核与 SIMD 并行计算；GPU 通常需要大量可并行工作才能充分利用硬件。
 - GPU 之所以这样设计，与 GPU 的发展历史息息相关
 
 # Part 1. Correctness
@@ -490,4 +507,4 @@ CUDA 中大致有这几种内存：
 - 使用 `__restrict__` 让编译器放心地优化指针访存
 - 想办法让同一个 Warp 中的线程的访存 Pattern 尽可能连续，以利用 Memory coalescing
 - 使用 Shared memory
-- 使用专业的 Profiling Tool 
+- 使用专业的 Profiling Tool

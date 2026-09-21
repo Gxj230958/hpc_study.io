@@ -1,4 +1,3 @@
 # GPU
 
-Redirect to hardware/gpu
-Spaceholder for directory generations
+GPU 的硬件结构与线程组织统一介绍在 [GPU 架构](../gpu/arch.md)。本站保留这个地址，并自动跳转，兼容原有硬件章节的链接。

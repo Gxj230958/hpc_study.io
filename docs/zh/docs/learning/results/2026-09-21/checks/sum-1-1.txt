@@ -1,0 +1,1 @@
+threads_max=1 n=1 sum=0 seconds=0.000022693 PASS

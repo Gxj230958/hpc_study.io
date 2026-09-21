@@ -1,0 +1,4 @@
+make: Entering directory '/inspire/hdd/global_user/s26045/hpc_study.io/examples'
+mkdir -p ../build
+nvcc -O2 -std=c++17 -arch=native cuda/labs.cu -o ../build/cuda_labs
+make: Leaving directory '/inspire/hdd/global_user/s26045/hpc_study.io/examples'

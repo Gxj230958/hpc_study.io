@@ -1,0 +1,1 @@
+ranks=4 n=100003 sum=5000250003 max_seconds=0.000445895 PASS

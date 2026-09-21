@@ -1,0 +1,3 @@
+bytes=1 round_trip_us=3.231 PASS
+bytes=1024 round_trip_us=5.047 PASS
+bytes=1048576 round_trip_us=186.809 PASS

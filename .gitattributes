@@ -15,3 +15,6 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+# Keep upstream benchmark and profiler output byte-for-byte.
+docs/zh/docs/learning/results/** -text -whitespace

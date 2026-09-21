@@ -1,0 +1,611 @@
+{
+  "started_utc": "2026-09-21T13:48:28.207585+00:00",
+  "timestamp_utc": "2026-09-21T13:49:15.003744+00:00",
+  "source_sha256_at_start": {
+    "examples/Makefile": "6056148870659f2f696480c2e57f2faf989568a55880be767dbe63871933aa67",
+    "examples/benchmark/HPL.dat": "ae8010da21998ba269242d02eeaf2847e590df25b78e459d1133951855741503",
+    "examples/benchmark/hpcg.dat": "0b2d5a7483407f77ba5a454ca72256838a51c1a160f97cdffd755968dfe4cc43",
+    "examples/cpu/acc.c": "d4ade072aa519b4c38fa06f35fbdbc9c8a3551295531f6afe82f9bbe77571040",
+    "examples/cpu/memory.c": "3a2163d694691744c8d936f6d60362b1bca568636bf4a14dc18746d482d0ddc3",
+    "examples/cpu/sum.c": "3be78202417b427d23819d5fdd5e9723264cd9345067c0d80b14773c5f83e874",
+    "examples/cuda/labs.cu": "708899d4a514848c2e84d90c0605fe547d454e88282889640c04b1b85519b7bb",
+    "examples/ml/precision.py": "83a7da2117b41acf8f87e1de23925f95de6ede093df4b6784f4673d9dcc073c8",
+    "examples/ml/quantize.py": "43974deeafb11e86b25a449da717e2cef25fafbba01bec2746dafa145cfe46b2",
+    "examples/ml/train.py": "f0ab82e96b737b7a6d0da094555b069c5aae336389dae72ad0e4d676d7b0dbbe",
+    "examples/ml/witness.py": "653aa2098f54482c6ef7c9c16eae33f04ceba56ff28630100d058d79b049d4b7",
+    "examples/mpi/hello.c": "4290e3ae56f826576b19d5c737026f46f59907c2bf8f35d12a3ebd7a7c2aeeef",
+    "examples/mpi/pingpong.py": "94c173ad6e4c1f6c5d244b2c4bc2b09646b8e990cb3ee86ff409ac6220275c33",
+    "examples/mpi/sum.py": "bd052d5566bce81aabbf895375d2355d91d33382b2e54061ab75bef1fa2b4bcc",
+    "examples/science/solve.py": "1b789273a9ec23ad883e99464e1b0135ff86679e45431cb74a37e995646f9518",
+    "scripts/validate.py": "c5d4de72e954cd3c3c119e2807e0ab00177f2331f53c225e616af6abaa767837",
+    "env-spec.json": "fe2f163aab6716db9093b2eb108191aec496b37015c134ba9f34e5e591bd8f2b",
+    "requirements-study.txt": "d3a4a6016b84361de825fdbefb59075f2210a8d9f291d5728f6dc9b0835181e9"
+  },
+  "records": [
+    {
+      "name": "compile-cpu",
+      "command": [
+        "make",
+        "-B",
+        "-C",
+        "examples",
+        "cpu"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-1-1",
+      "command": [
+        "./build/sum",
+        "1"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-1-17",
+      "command": [
+        "./build/sum",
+        "17"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-1-100003",
+      "command": [
+        "./build/sum",
+        "100003"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-2-1",
+      "command": [
+        "./build/sum",
+        "1"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "2"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-2-17",
+      "command": [
+        "./build/sum",
+        "17"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "2"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-2-100003",
+      "command": [
+        "./build/sum",
+        "100003"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "2"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-4-1",
+      "command": [
+        "./build/sum",
+        "1"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "4"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-4-17",
+      "command": [
+        "./build/sum",
+        "17"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "4"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-4-100003",
+      "command": [
+        "./build/sum",
+        "100003"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "4"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-8-1",
+      "command": [
+        "./build/sum",
+        "1"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "8"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-8-17",
+      "command": [
+        "./build/sum",
+        "17"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "8"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-8-100003",
+      "command": [
+        "./build/sum",
+        "100003"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "8"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "sum-invalid",
+      "command": [
+        "./build/sum",
+        "-1"
+      ],
+      "env": {},
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true
+    },
+    {
+      "name": "memory",
+      "command": [
+        "./build/memory"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-1-0",
+      "command": [
+        "mpiexec",
+        "-n",
+        "1",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "0"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-1-2",
+      "command": [
+        "mpiexec",
+        "-n",
+        "1",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "2"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-1-100003",
+      "command": [
+        "mpiexec",
+        "-n",
+        "1",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "100003"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-2-0",
+      "command": [
+        "mpiexec",
+        "-n",
+        "2",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "0"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-2-2",
+      "command": [
+        "mpiexec",
+        "-n",
+        "2",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "2"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-2-100003",
+      "command": [
+        "mpiexec",
+        "-n",
+        "2",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "100003"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-3-0",
+      "command": [
+        "mpiexec",
+        "-n",
+        "3",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "0"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-3-2",
+      "command": [
+        "mpiexec",
+        "-n",
+        "3",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "2"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-3-100003",
+      "command": [
+        "mpiexec",
+        "-n",
+        "3",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "100003"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-4-0",
+      "command": [
+        "mpiexec",
+        "-n",
+        "4",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "0"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-4-2",
+      "command": [
+        "mpiexec",
+        "-n",
+        "4",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "2"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "mpi-4-100003",
+      "command": [
+        "mpiexec",
+        "-n",
+        "4",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/sum.py",
+        "--n",
+        "100003"
+      ],
+      "env": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      },
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "pingpong",
+      "command": [
+        "mpiexec",
+        "-n",
+        "2",
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/mpi/pingpong.py"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "solve",
+      "command": [
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/science/solve.py"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "quantize",
+      "command": [
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/ml/quantize.py"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "train-cpu",
+      "command": [
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/ml/train.py",
+        "--device",
+        "cpu"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "gpu-info",
+      "command": [
+        "nvidia-smi",
+        "--query-gpu=name,memory.total,driver_version",
+        "--format=csv"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "witness",
+      "command": [
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/ml/witness.py"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "compile-cuda",
+      "command": [
+        "make",
+        "-B",
+        "-C",
+        "examples",
+        "cuda"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "cuda",
+      "command": [
+        "./build/cuda_labs"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "cuda-memcheck",
+      "command": [
+        "compute-sanitizer",
+        "--error-exitcode",
+        "1",
+        "--tool",
+        "memcheck",
+        "./build/cuda_labs"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "cuda-synccheck",
+      "command": [
+        "compute-sanitizer",
+        "--error-exitcode",
+        "1",
+        "--tool",
+        "synccheck",
+        "./build/cuda_labs"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "cuda-racecheck",
+      "command": [
+        "compute-sanitizer",
+        "--error-exitcode",
+        "1",
+        "--tool",
+        "racecheck",
+        "./build/cuda_labs"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "train-cuda",
+      "command": [
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/ml/train.py",
+        "--device",
+        "cuda"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    },
+    {
+      "name": "precision",
+      "command": [
+        "/tmp/hpc-study-venv/bin/python",
+        "examples/ml/precision.py"
+      ],
+      "env": {},
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}

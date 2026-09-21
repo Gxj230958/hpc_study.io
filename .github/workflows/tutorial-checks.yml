@@ -1,0 +1,24 @@
+name: Tutorial Checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  docs-and-cpu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: pip
+      - run: pip install -r requirements-study.txt
+      - run: pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: python scripts/validate.py
+      - run: mkdocs build --strict -f docs/zh/mkdocs.yml -d ../../build/upstream-site
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tutorial-validation
+          path: build/validation

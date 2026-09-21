@@ -1,0 +1,1 @@
+ranks=1 n=2 sum=1 max_seconds=0.000135053 PASS

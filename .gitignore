@@ -4,3 +4,9 @@ site/
 .vscode/
 **/.DS_Store
 .env
+.venv
+.tools/
+.aris/
+build/
+__pycache__/
+node_modules/

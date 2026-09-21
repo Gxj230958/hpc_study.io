@@ -1,0 +1,3 @@
+stride=1 visits=134217728 ns_per_element=0.910 useful_GBps=8.787 PASS
+stride=8 visits=16777216 ns_per_element=2.326 useful_GBps=3.440 PASS
+stride=64 visits=2097152 ns_per_element=4.783 useful_GBps=1.673 PASS

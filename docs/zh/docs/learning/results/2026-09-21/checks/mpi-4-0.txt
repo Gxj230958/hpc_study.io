@@ -1,0 +1,1 @@
+ranks=4 n=0 sum=0 max_seconds=0.000144138 PASS

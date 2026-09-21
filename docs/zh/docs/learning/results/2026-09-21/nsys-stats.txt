@@ -1,0 +1,20 @@
+Generating SQLite file build/cuda-trace.sqlite from build/cuda-trace.nsys-rep
+Processing [build/cuda-trace.sqlite] with [/inspire/hdd/global_user/s26045/hpc_study.io/.tools/nsys/nsight-systems/2023.4.4/host-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)                         Name                       
+ --------  ---------------  ---------  --------  --------  --------  --------  -----------  --------------------------------------------------
+     99.8         10475099      10030    1044.4     992.0       959      1568         98.8  add(const float *, const float *, float *, int)   
+      0.1             8417          5    1683.4    1408.0      1280      2720        602.3  matmul(const float *, const float *, float *, int)
+      0.1             7328          5    1465.6    1376.0      1344      1888        236.7  reduce(const float *, float *, int)               
+
+Processing [build/cuda-trace.sqlite] with [/inspire/hdd/global_user/s26045/hpc_study.io/.tools/nsys/nsight-systems/2023.4.4/host-linux-x64/reports/cuda_gpu_mem_time_sum.py]... 
+
+ ** CUDA GPU MemOps Summary (by Time) (cuda_gpu_mem_time_sum):
+
+ Time (%)  Total Time (ns)  Count  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)           Operation          
+ --------  ---------------  -----  --------  --------  --------  --------  -----------  ----------------------------
+     59.0            45857     20    2292.9     528.5       352     17472       5190.4  [CUDA memcpy Host-to-Device]
+     41.0            31874     15    2124.9     960.0       895     16961       4109.0  [CUDA memcpy Device-to-Host]
+

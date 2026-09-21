@@ -1,0 +1,1 @@
+scale=0.03198115 max_abs_error=0.01598990 weight_bytes=65536 quantized_bytes=16384 PASS

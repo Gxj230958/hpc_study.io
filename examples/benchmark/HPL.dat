@@ -1,0 +1,31 @@
+HPLinpack benchmark input file
+HPC Study small correctness run
+HPL.out
+6
+1
+256
+1
+64
+0
+1
+1
+1
+16.0
+1
+2
+1
+2
+1
+2
+1
+2
+1
+1
+1
+1
+2
+64
+0
+0
+1
+8

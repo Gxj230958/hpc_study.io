@@ -1,0 +1,18 @@
+========= COMPUTE-SANITIZER
+device=NVIDIA GeForce RTX 4090 compute=8.9
+vector n=1 kernel_samples_ms=[0.067441,0.066816,0.068169,0.068321,0.068127,0.068465,0.068588,0.068103,0.071586,0.069857,0.068595,0.068987,0.068566,0.068762,0.068782,0.069550,0.068825,0.068618,0.069038,0.069143]
+vector n=1 kernel_median_ms=0.068606 first_transfer_and_kernel_ms=1.063293 reduction_error=0 PASS
+vector n=255 kernel_samples_ms=[0.064245,0.063795,0.063989,0.064633,0.064932,0.064719,0.065997,0.064994,0.065290,0.065565,0.065437,0.065710,0.066163,0.066215,0.065855,0.065659,0.065823,0.066212,0.065564,0.065413]
+vector n=255 kernel_median_ms=0.065500 first_transfer_and_kernel_ms=0.161459 reduction_error=0 PASS
+vector n=256 kernel_samples_ms=[0.070820,0.070185,0.070902,0.070551,0.069980,0.070573,0.070748,0.070901,0.070484,0.071590,0.071222,0.071383,0.071361,0.071373,0.071557,0.071946,0.071447,0.071320,0.070687,0.070727]
+vector n=256 kernel_median_ms=0.070901 first_transfer_and_kernel_ms=0.240103 reduction_error=0 PASS
+vector n=257 kernel_samples_ms=[0.068639,0.069417,0.069345,0.069919,0.069190,0.069814,0.070707,0.070707,0.070779,0.070103,0.070543,0.085258,0.086242,0.070798,0.070769,0.071148,0.070757,0.071485,0.071434,0.071076]
+vector n=257 kernel_median_ms=0.070732 first_transfer_and_kernel_ms=0.169803 reduction_error=0 PASS
+vector n=100003 kernel_samples_ms=[0.069714,0.070236,0.070073,0.070175,0.070349,0.070143,0.070594,0.070479,0.070326,0.089836,0.075200,0.074740,0.074424,0.074086,0.074732,0.074514,0.078479,0.074136,0.073431,0.077271]
+vector n=100003 kernel_median_ms=0.073759 first_transfer_and_kernel_ms=0.425380 reduction_error=0 PASS
+matmul n=1 max_abs_error=0 PASS
+matmul n=15 max_abs_error=0 PASS
+matmul n=16 max_abs_error=0 PASS
+matmul n=17 max_abs_error=0 PASS
+matmul n=65 max_abs_error=0 PASS
+========= ERROR SUMMARY: 0 errors

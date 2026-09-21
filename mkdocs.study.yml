@@ -1,0 +1,118 @@
+INHERIT: docs/zh/mkdocs.yml
+site_name: HPC Study
+site_description: 从普通电脑出发的中文高性能计算入门课程
+site_url: https://gxj230958.github.io/hpc_study.io/
+repo_name: Gxj230958/hpc_study.io
+repo_url: https://github.com/Gxj230958/hpc_study.io
+edit_uri: edit/main/docs/zh/docs/
+docs_dir: docs/zh/docs
+site_dir: site
+copyright: 基于 HPC Wiki · 教程与示例遵循 CC BY-NC-SA 4.0
+theme:
+  name: material
+  language: zh
+  font: false
+  logo: null
+  icon:
+    logo: material/chip
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      primary: white
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: 深色模式
+    - scheme: slate
+      primary: black
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: 浅色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+extra:
+  generator: false
+  alternate: []
+extra_css:
+  - static/css/study.css
+extra_javascript:
+  - static/vendor/mathjax/tex-mml-chtml.js
+  - static/vendor/mermaid.min.js
+  - static/js/study.js
+hooks:
+  - scripts/study-hooks.py
+exclude_docs: |
+  static/vendor/README.md
+  hpc-intro/
+  competition/
+  platform/
+  power-management/
+  misc/
+  contribute/
+nav:
+  - 开始学习:
+      - 学习路线: index.md
+      - 课程地图: learning/path.md
+      - 环境准备: learning/setup.md
+      - 实验索引: learning/labs.md
+      - 术语表: learning/glossary.md
+      - 验证记录: learning/validation.md
+  - 硬件:
+      - hardware/hardware-intro.md
+      - hardware/processor.md
+      - hardware/memory.md
+      - hardware/gpu.md
+      - hardware/fpga-and-asics.md
+      - hardware/interconnect.md
+      - hardware/storage.md
+  - 并行编程:
+      - parallel-programming/parallel-programming-intro.md
+      - 进程与线程:
+          - thread-process/intro.md
+          - thread-process/process.md
+          - thread-process/thread.md
+          - thread-process/more.md
+      - 内存模型:
+          - memory-model/intro.md
+          - memory-model/consistency.md
+          - memory-model/cache.md
+          - memory-model/numa.md
+      - 通信:
+          - communication/intro.md
+          - communication/model.md
+          - communication/cost.md
+          - communication/deadlock.md
+      - 编程工具:
+          - parallel-programming/openmp.md
+          - parallel-programming/mpi.md
+          - parallel-programming/mpi4py.md
+      - 性能分析:
+          - performance-analysis/intro.md
+          - performance-analysis/tools.md
+  - GPU 编程:
+      - gpu/intro.md
+      - gpu/arch.md
+      - gpu/cuda.md
+      - gpu/cuda-advanced.md
+      - gpu/nsys.md
+      - gpu/nccl.md
+      - gpu/openacc.md
+      - gpu/opencl.md
+      - gpu/hip.md
+  - Benchmark:
+      - benchmark/intro.md
+      - benchmark/hpl.md
+      - benchmark/hpcg.md
+      - benchmark/mlperf.md
+  - 科学计算与机器学习:
+      - sci-mlsys/intro.md
+      - sci-mlsys/parallelism.md
+      - sci-mlsys/sparsity.md
+      - sci-mlsys/quantization.md

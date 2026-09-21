@@ -1,0 +1,693 @@
+{
+  "audit_skill": "experiment-audit",
+  "verdict": "PASS",
+  "reason_code": "bounded_teaching_claims_supported_after_corrections",
+  "summary": "Final corrected teaching claims are supported by the retained limited-scope artifacts; all deterministic consistency checks pass. Same-family review, provisional acceptance.",
+  "audited_input_hashes": {
+    ".aris/compute/local.md": "sha256:c46509a4a7b29aeefe902a96b631537ef761beaeb509b68a57c715c706d65f72",
+    ".aris/documented-invocation.md": "sha256:2e800c65b02861072db6eb25dbf77f884a755d0450af7de267bd887ac29484f8",
+    "docs/zh/docs/benchmark/hpcg.md": "sha256:b7b7b449fedf61dbe6bde287a05eb58b3ceb2d8cd7a112d3e7dc4d55f5995e08",
+    "docs/zh/docs/benchmark/hpl.md": "sha256:185c2eb68a7db019678e83f657168942a98f2df38c94c34056dff62767ef8289",
+    "docs/zh/docs/benchmark/intro.md": "sha256:0a8a5491de3c75ffa25e2a9f2c57bed4aefab9d1ff232fe4f4906164ab23c5fa",
+    "docs/zh/docs/benchmark/mlperf.md": "sha256:6a1b40f63161a39bb75e1f090cb58cdf98cab48d24a34657807a5a29956d5523",
+    "docs/zh/docs/learning/labs.md": "sha256:c0007c27c3fa951130e54d1c7b1f2f1d5eb10a4b411fe93fa218612d0db0735d",
+    "docs/zh/docs/learning/results/2026-09-21/browser-summary.json": "sha256:f5c96f119b65180f4bd701f790e5c0be91656849fbe033cef423693eb9327416",
+    "docs/zh/docs/learning/results/2026-09-21/checks/compile-cpu.txt": "sha256:d882594ac59a601bce389eec3718b89eb656b7f9fcdfa16d516e924fef2d8af1",
+    "docs/zh/docs/learning/results/2026-09-21/checks/compile-cuda.txt": "sha256:4cb693f734f478cacc08c99073a2a1843b52aa38e3737a39ec113fb21816fffc",
+    "docs/zh/docs/learning/results/2026-09-21/checks/cuda-memcheck.txt": "sha256:1754b012e63017a2be9911aa1ed35aa579d1ee4683cecf01a35c89e8b77abc4e",
+    "docs/zh/docs/learning/results/2026-09-21/checks/cuda-racecheck.txt": "sha256:ae66fab8e1a22a83f62cc2656c4a44ebc2436476b0c1240315b9900958ba56a9",
+    "docs/zh/docs/learning/results/2026-09-21/checks/cuda-synccheck.txt": "sha256:0027451e62dad9752dfa4e8dcf0f6b543492c34fb0a6a19a84196b12fd63cd60",
+    "docs/zh/docs/learning/results/2026-09-21/checks/cuda.txt": "sha256:ab71d9cff2bb87f24a7a3821014bf1d3fb132a5401804140b0d80aefe8335435",
+    "docs/zh/docs/learning/results/2026-09-21/checks/gpu-info.txt": "sha256:186a824e478a63f55b6122e5f0b5d5f9891a0716cde66bc3e4e70cf6399a0221",
+    "docs/zh/docs/learning/results/2026-09-21/checks/memory.txt": "sha256:caddf7d9be79fc60d2738c0e4813a9c58083ea75aaaa7bb445048001803e8498",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-1-0.txt": "sha256:2bf24fd61ed6dc6b7470f1e4940ec5cdb67741931629f48e2ff851cb8a08fc38",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-1-100003.txt": "sha256:735b87139523f99ca28c97d36b80c82f7707acc0a97212e91640de8798039444",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-1-2.txt": "sha256:6dbff89a632ff59798f4ac27b043064c3c986bb9c45dfcaeda8129c69d7bfd63",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-2-0.txt": "sha256:9d53c25d8323e17acd461c8622ae5e6ffaf8669f99ce8a8cbebcaeb5f6d57750",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-2-100003.txt": "sha256:796cc2bb76b9a5c3bb48364c3f3974436cffdc9b870083cc9ba838e28b86484c",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-2-2.txt": "sha256:cacefa12afcce7241361154ead98d35991620086e8926a8952b6e23ffaa5fb10",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-3-0.txt": "sha256:3b8cebd6932630d431246cf16a993303140a95e2b78a9366847a616e20ca28a7",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-3-100003.txt": "sha256:8e63d9f5fdb5f6bbc8e56dbdf4e3ba2d19fd9a369eda1b98992c7e6036183867",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-3-2.txt": "sha256:ac6c67d27174d2069201ddfc2ed88c5eb22b49b123c6a8183571746874a2d3d9",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-4-0.txt": "sha256:1a8da8027f07c492e731db2d8a3764456fba4db82ccaac23ba13ac726ba105ee",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-4-100003.txt": "sha256:677bec84cd713b8d536fc4cfdfc94595c79aeac7476214ebafa9c30638fe5d9f",
+    "docs/zh/docs/learning/results/2026-09-21/checks/mpi-4-2.txt": "sha256:e24d0c8e554c28e964946cb3d3ccd02a12e37b5a88637e44ccfab3ae3ec1c880",
+    "docs/zh/docs/learning/results/2026-09-21/checks/pingpong.txt": "sha256:546dff6c2beb0792b1ec5e618abfa85ba0fdb170343923f969ee28bb9482c6c0",
+    "docs/zh/docs/learning/results/2026-09-21/checks/precision.txt": "sha256:4a58e3538d66cf040c4ff76d352ed721f4a98e6835257a3ebb87fb141e722f9f",
+    "docs/zh/docs/learning/results/2026-09-21/checks/quantize.txt": "sha256:fab9dc072a90d841a62e4a72a2542516a0cec48e7863a32305f48109c107a868",
+    "docs/zh/docs/learning/results/2026-09-21/checks/solve.txt": "sha256:f89f46044c58b8191164a0e9fac6860fa0a102c98f39b037bfeb0afb956607e2",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-1-1.txt": "sha256:6be243a5c93ecad19532f55a393923bc62cbaee5dcaafe5b918df26e2f4f2cf6",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-1-100003.txt": "sha256:8e72d07e1059b4213e82b222913c7158de89eea7f53a44dcd285162c241f9a31",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-1-17.txt": "sha256:6e5827febed79de698b18f9854678d4c6be64ff9659bef4871ec07adf3595102",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-2-1.txt": "sha256:7c2e314625471a129febe22309ce3fe5e9d650c440388c0dedeee284f0edbac1",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-2-100003.txt": "sha256:f1b6473040840bd0566c07a4375b125dfefef4c7fbe1000009edffe020af8e9b",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-2-17.txt": "sha256:c01b21646c471f1d8f1c472b61624bff663948e1e3754a9ca5e7de392f863cad",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-4-1.txt": "sha256:2352698eec6f6fc10cbc7ee85feaa68cf877b36d86a81f8e5433daf89cc93bb3",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-4-100003.txt": "sha256:f82057b011608d01e0d280639a8b4760c7f264c6e6dfe8e9d58c04a73ea441e3",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-4-17.txt": "sha256:59a7cf90280859e6e7fa7996aef4ce485228e8717b07ad081a7397aa0fa9da14",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-8-1.txt": "sha256:1fa684b3497112e20c2a55b198cdfec32923130739366f5612c1c6e73b4bbe25",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-8-100003.txt": "sha256:4fae6778240524ec23d73111e3128b85813a0c89209aaaf2771afdd3ac6d38e5",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-8-17.txt": "sha256:654256ba6cd53ca031364700480104db8b79fa28b11195840060357d38ff11d4",
+    "docs/zh/docs/learning/results/2026-09-21/checks/sum-invalid.txt": "sha256:06b265d5f6b1ca9badd35fcdb10a29f0965619aeb2a167a02ab3c93c4993ae8b",
+    "docs/zh/docs/learning/results/2026-09-21/checks/summary.json": "sha256:bbf8dcc9163ecccef8f14e976baac48dfb317cd680d27ab58662f9d05a21f648",
+    "docs/zh/docs/learning/results/2026-09-21/checks/train-cpu.txt": "sha256:47e6e53b3b27c1f273d9ffb6f9011309e05d8d0370ebdbec394e53b0dd2ff452",
+    "docs/zh/docs/learning/results/2026-09-21/checks/train-cuda.txt": "sha256:cdcc1faad7c67e88905b569be90e72eae529cba11a9a61a1e909c0371d11d313",
+    "docs/zh/docs/learning/results/2026-09-21/checks/witness.txt": "sha256:d29ec3d225c0ded31dea2736772aed07c7c1c06dfbac3a2dccdeae15e36482fd",
+    "docs/zh/docs/learning/results/2026-09-21/environment.json": "sha256:0890bfdf634c3eb3ef48ce9fd37107424f12b3861afdb541b5415c87a8c74af2",
+    "docs/zh/docs/learning/results/2026-09-21/nsys-stats.txt": "sha256:6fdff4d6fe23cee6da6144c64e79fae1e4d622a2cf3e04991b1b11f8ba22d77a",
+    "docs/zh/docs/learning/results/2026-09-21/reference/HPCG-Benchmark_3.1_2026-09-21_13-08-17.txt": "sha256:2cf40eec548bc7a637e6e795cf80a8362b9f312263ce1f040faf29120d5ba0e8",
+    "docs/zh/docs/learning/results/2026-09-21/reference/hpcg-revision.txt": "sha256:38d984f1c1bf76e714fb63cd26d4d73337a8753c62e34b15d479e353d3d8f251",
+    "docs/zh/docs/learning/results/2026-09-21/reference/hpcg20260921T130816.txt": "sha256:f2e6614ad5aa8fd1dc77ccc64f2099b2fe2909b3c06d9dcd29e31f2056649c99",
+    "docs/zh/docs/learning/results/2026-09-21/reference/hpl/output.txt": "sha256:75a0bd54aaf416b00e27c495082b92649086fd1c833c4fa3a3155a4190484ffb",
+    "docs/zh/docs/learning/results/2026-09-21/reference/hpl-archive-sha256.txt": "sha256:012cc28ae8a5369e6a145c1c256a997ee791bd41cd31615b82577eaf536162f2",
+    "docs/zh/docs/learning/results/2026-09-21/reference/output.txt": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/zh/docs/learning/validation.md": "sha256:8f3378d40db43c0702342583299a33c449b19b6f86407ea51d4145c0cac8e8af",
+    "docs/zh/docs/sci-mlsys/intro.md": "sha256:e06541895f6471e1cdcc62c336e0222f19722337f25544fc8b209d1ac4427b13",
+    "docs/zh/docs/sci-mlsys/parallelism.md": "sha256:da7f727ff0ee73e29251e8a6c72cdc20cd164ddbf925c4fd2fab89b4657549bb",
+    "docs/zh/docs/sci-mlsys/quantization.md": "sha256:ac63461a9438498c45aab61afdfbd98a06292b955f36f5935a96541bc8d19d4e",
+    "docs/zh/docs/sci-mlsys/sparsity.md": "sha256:f64415d3456eb6f2770b79d4c5d9ace28c96fedd4ddd4f966c6fc6f6d6137fc4",
+    "env-spec.json": "sha256:fe2f163aab6716db9093b2eb108191aec496b37015c134ba9f34e5e591bd8f2b",
+    "examples/Makefile": "sha256:6056148870659f2f696480c2e57f2faf989568a55880be767dbe63871933aa67",
+    "examples/benchmark/HPL.dat": "sha256:ae8010da21998ba269242d02eeaf2847e590df25b78e459d1133951855741503",
+    "examples/benchmark/hpcg.dat": "sha256:0b2d5a7483407f77ba5a454ca72256838a51c1a160f97cdffd755968dfe4cc43",
+    "examples/cpu/acc.c": "sha256:d4ade072aa519b4c38fa06f35fbdbc9c8a3551295531f6afe82f9bbe77571040",
+    "examples/cpu/memory.c": "sha256:3a2163d694691744c8d936f6d60362b1bca568636bf4a14dc18746d482d0ddc3",
+    "examples/cpu/sum.c": "sha256:3be78202417b427d23819d5fdd5e9723264cd9345067c0d80b14773c5f83e874",
+    "examples/cuda/labs.cu": "sha256:708899d4a514848c2e84d90c0605fe547d454e88282889640c04b1b85519b7bb",
+    "examples/ml/precision.py": "sha256:83a7da2117b41acf8f87e1de23925f95de6ede093df4b6784f4673d9dcc073c8",
+    "examples/ml/quantize.py": "sha256:43974deeafb11e86b25a449da717e2cef25fafbba01bec2746dafa145cfe46b2",
+    "examples/ml/train.py": "sha256:f0ab82e96b737b7a6d0da094555b069c5aae336389dae72ad0e4d676d7b0dbbe",
+    "examples/ml/witness.py": "sha256:653aa2098f54482c6ef7c9c16eae33f04ceba56ff28630100d058d79b049d4b7",
+    "examples/mpi/hello.c": "sha256:4290e3ae56f826576b19d5c737026f46f59907c2bf8f35d12a3ebd7a7c2aeeef",
+    "examples/mpi/pingpong.py": "sha256:94c173ad6e4c1f6c5d244b2c4bc2b09646b8e990cb3ee86ff409ac6220275c33",
+    "examples/mpi/sum.py": "sha256:bd052d5566bce81aabbf895375d2355d91d33382b2e54061ab75bef1fa2b4bcc",
+    "examples/science/solve.py": "sha256:1b789273a9ec23ad883e99464e1b0135ff86679e45431cb74a37e995646f9518",
+    "scripts/archive-validation.py": "sha256:7ba64727d4de776051fe3a4cd3a5bf40ad9966def07fdbf23ca770f66dace4af",
+    "scripts/browser-check.py": "sha256:d84827ee19564e1755cb20d05b5472e0e6b89a8c09ff3ab51ecc3369a1a0395d",
+    "scripts/run-reference-benchmarks.sh": "sha256:759a027d552d3f206e31006841ae71ddc7335ae774e5d35741a0045313fe886a",
+    "scripts/validate.py": "sha256:c5d4de72e954cd3c3c119e2807e0ab00177f2331f53c225e616af6abaa767837"
+  },
+  "trace_path": ".aris/traces/experiment-audit/2026-09-21_run01/",
+  "agent_id": "/root/experiment_integrity",
+  "verdict_id": "/root/experiment_integrity/2026-09-21_run01",
+  "executor_model": "gpt-6",
+  "executor_family": "openai",
+  "reviewer_model": "gpt-6-astra",
+  "reviewer_model_source": "requested",
+  "reviewer_family": "openai",
+  "reviewer_reasoning": "ultra",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "generated_at": "2026-09-21T13:55:09Z",
+  "date": "2026-09-21",
+  "auditor": "fresh Codex reviewer /root/experiment_integrity",
+  "overall_verdict": "pass",
+  "integrity_status": "pass",
+  "checks": {
+    "gt_provenance": {
+      "check": "A",
+      "status": "pass",
+      "details": "Analytic/input-derived and independent CPU/FP64 references. Training targets precede model creation; same-model CPU forward reference is explicitly backend equivalence, not task truth.",
+      "evidence": [
+        "examples/ml/train.py:12",
+        "examples/ml/train.py:15",
+        "examples/cuda/labs.cu:83",
+        "examples/science/solve.py:8",
+        "scripts/run-reference-benchmarks.sh:10"
+      ]
+    },
+    "score_normalization": {
+      "check": "B",
+      "status": "pass",
+      "details": "No arbitrary prediction-statistic score inflation; reference/input norms, known repetition counts, raw errors and times. All eight reported medians match retained samples.",
+      "evidence": [
+        "examples/ml/precision.py:30",
+        "examples/science/solve.py:12",
+        "examples/ml/quantize.py:6",
+        "examples/cuda/labs.cu:70",
+        "docs/zh/docs/learning/results/2026-09-21/reference/hpl/output.txt:39"
+      ]
+    },
+    "result_existence": {
+      "check": "C",
+      "status": "pass",
+      "details": "40 unique records and 40 raw logs; actual exits match expected. All 18 run-start source hashes, all 21 archive hashes and browser script hash match current files.",
+      "evidence": [
+        "docs/zh/docs/learning/results/2026-09-21/checks/summary.json:4",
+        "docs/zh/docs/learning/results/2026-09-21/checks/summary.json:610",
+        "docs/zh/docs/learning/results/2026-09-21/environment.json:14",
+        "docs/zh/docs/learning/results/2026-09-21/browser-summary.json:3"
+      ]
+    },
+    "dead_code": {
+      "check": "D",
+      "status": "pass",
+      "details": "Claimed metric paths are called and produce retained output. acc.c and hello.c are hashed but not executed by the suite; no execution claim is inferred for them.",
+      "evidence": [
+        "examples/cuda/labs.cu:117",
+        "scripts/validate.py:49",
+        "scripts/validate.py:60",
+        "examples/Makefile:7"
+      ]
+    },
+    "scope": {
+      "check": "E",
+      "status": "pass",
+      "details": "One final teaching run, fixed seed 7 for randomized examples, one node/GPU, small inputs and short reference runs. Documentation explicitly limits claims.",
+      "evidence": [
+        "docs/zh/docs/learning/validation.md:42",
+        "docs/zh/docs/learning/validation.md:44",
+        "docs/zh/docs/learning/validation.md:46",
+        "examples/ml/train.py:9",
+        "examples/ml/precision.py:7"
+      ]
+    },
+    "evaluation_type": {
+      "check": "F",
+      "status": "pass",
+      "details": "Taxonomy is insufficient for analytic numerical teaching checks. Same-model forward equivalence is a narrowly labeled synthetic_proxy; all other types are explicitly described outside the five-class ML taxonomy.",
+      "evidence": [
+        "examples/ml/train.py:15",
+        "examples/cpu/sum.c:23",
+        "examples/science/solve.py:8",
+        "docs/zh/docs/benchmark/mlperf.md:25"
+      ]
+    }
+  },
+  "evaluation_types": [
+    {
+      "evaluation": "initial CPU/GPU model-forward equivalence",
+      "taxonomy_class": "synthetic_proxy",
+      "scope": "backend equivalence only; never task ground truth"
+    },
+    {
+      "evaluation": "integer, memory, MPI, CUDA arithmetic, solve, precision, quantization, witness",
+      "taxonomy_class": null,
+      "extended_class": "analytic_or_numerical_reference",
+      "reason": "Not dataset GT, model-generated task targets, self-supervised tasks, simulations, or human judgments"
+    },
+    {
+      "evaluation": "synthetic regression loss",
+      "taxonomy_class": null,
+      "extended_class": "synthetic_supervised_toy",
+      "reason": "Analytically manufactured labels independent of evaluated predictions"
+    },
+    {
+      "evaluation": "HPL/HPCG",
+      "taxonomy_class": null,
+      "extended_class": "official_generated_problem_validation",
+      "reason": "Generated numerical problems on real hardware with official numerical checks"
+    },
+    {
+      "evaluation": "sanitizers, compilation, GPU query, browser, profiler",
+      "taxonomy_class": null,
+      "extended_class": "execution_or_instrumentation_check"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "40 checks passed with specified return codes",
+      "impact": "supported"
+    },
+    {
+      "id": "C2",
+      "claim": "Numeric correctness for listed teaching configurations",
+      "impact": "supported"
+    },
+    {
+      "id": "C3",
+      "claim": "HPL/HPCG short reference runs numerically valid",
+      "impact": "supported_with_existing_qualifier"
+    },
+    {
+      "id": "C4",
+      "claim": "Representative browser checks pass",
+      "impact": "supported"
+    },
+    {
+      "id": "C5",
+      "claim": "Timing values apply to recorded inputs and environment",
+      "impact": "supported_with_existing_qualifier"
+    },
+    {
+      "id": "C6",
+      "claim": "Real-task quality, official benchmark scores, multi-GPU scaling, or universal performance",
+      "impact": "unsupported_and_not_claimed"
+    }
+  ],
+  "resolved_findings": [
+    {
+      "id": "R1",
+      "description": "MPI timer stopped before content check",
+      "evidence": [
+        "examples/mpi/pingpong.py:23"
+      ]
+    },
+    {
+      "id": "R2",
+      "description": "CUDA numerical gates reject nonfinite outputs",
+      "evidence": [
+        "examples/cuda/labs.cu:84",
+        "examples/cuda/labs.cu:106"
+      ]
+    },
+    {
+      "id": "R3",
+      "description": "Solver asserts finite residual <= 1e-10",
+      "evidence": [
+        "examples/science/solve.py:14"
+      ]
+    },
+    {
+      "id": "R4",
+      "description": "Run source binding, archive comparison and exact expected return codes",
+      "evidence": [
+        "scripts/validate.py:25",
+        "scripts/validate.py:32",
+        "scripts/validate.py:62",
+        "scripts/archive-validation.py:17"
+      ]
+    },
+    {
+      "id": "R5",
+      "description": "Browser timestamp/hash/scope retained; rendered SVG checked through CDP",
+      "evidence": [
+        "scripts/browser-check.py:27",
+        "scripts/browser-check.py:75"
+      ]
+    },
+    {
+      "id": "R6",
+      "description": "Invocation-checker transcript distinguished from second performance trial",
+      "evidence": [
+        ".aris/documented-invocation.md:28",
+        "docs/zh/docs/learning/validation.md:13"
+      ]
+    }
+  ],
+  "remaining_action_items": [],
+  "scope_limits": [
+    "Read-only source/artifact review; auditor launched no CPU/GPU benchmark or browser run.",
+    "One retained final full suite, fixed seed 7, no held-out real task.",
+    "HPL/HPCG and Nsight are separate earlier captures, not part of 40-case count.",
+    "HPL/HPCG are short teaching runs, not official scores.",
+    "acc.c and hello.c are not executed by this suite.",
+    "Browser screenshots and raw Nsight binary remain local build artifacts.",
+    "Artifact consistency is not signed execution attestation or independent cross-family assurance."
+  ],
+  "deterministic_checks": {
+    "started_utc": "2026-09-21T13:48:28.207585+00:00",
+    "finished_utc": "2026-09-21T13:49:15.003744+00:00",
+    "archived_utc": "2026-09-21T13:50:31.761832+00:00",
+    "hash_checks": [
+      {
+        "origin": "archive",
+        "file": "examples/Makefile",
+        "matches": true,
+        "actual": "6056148870659f2f696480c2e57f2faf989568a55880be767dbe63871933aa67",
+        "expected": "6056148870659f2f696480c2e57f2faf989568a55880be767dbe63871933aa67"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/benchmark/HPL.dat",
+        "matches": true,
+        "actual": "ae8010da21998ba269242d02eeaf2847e590df25b78e459d1133951855741503",
+        "expected": "ae8010da21998ba269242d02eeaf2847e590df25b78e459d1133951855741503"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/benchmark/hpcg.dat",
+        "matches": true,
+        "actual": "0b2d5a7483407f77ba5a454ca72256838a51c1a160f97cdffd755968dfe4cc43",
+        "expected": "0b2d5a7483407f77ba5a454ca72256838a51c1a160f97cdffd755968dfe4cc43"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/cpu/acc.c",
+        "matches": true,
+        "actual": "d4ade072aa519b4c38fa06f35fbdbc9c8a3551295531f6afe82f9bbe77571040",
+        "expected": "d4ade072aa519b4c38fa06f35fbdbc9c8a3551295531f6afe82f9bbe77571040"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/cpu/memory.c",
+        "matches": true,
+        "actual": "3a2163d694691744c8d936f6d60362b1bca568636bf4a14dc18746d482d0ddc3",
+        "expected": "3a2163d694691744c8d936f6d60362b1bca568636bf4a14dc18746d482d0ddc3"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/cpu/sum.c",
+        "matches": true,
+        "actual": "3be78202417b427d23819d5fdd5e9723264cd9345067c0d80b14773c5f83e874",
+        "expected": "3be78202417b427d23819d5fdd5e9723264cd9345067c0d80b14773c5f83e874"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/cuda/labs.cu",
+        "matches": true,
+        "actual": "708899d4a514848c2e84d90c0605fe547d454e88282889640c04b1b85519b7bb",
+        "expected": "708899d4a514848c2e84d90c0605fe547d454e88282889640c04b1b85519b7bb"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/ml/precision.py",
+        "matches": true,
+        "actual": "83a7da2117b41acf8f87e1de23925f95de6ede093df4b6784f4673d9dcc073c8",
+        "expected": "83a7da2117b41acf8f87e1de23925f95de6ede093df4b6784f4673d9dcc073c8"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/ml/quantize.py",
+        "matches": true,
+        "actual": "43974deeafb11e86b25a449da717e2cef25fafbba01bec2746dafa145cfe46b2",
+        "expected": "43974deeafb11e86b25a449da717e2cef25fafbba01bec2746dafa145cfe46b2"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/ml/train.py",
+        "matches": true,
+        "actual": "f0ab82e96b737b7a6d0da094555b069c5aae336389dae72ad0e4d676d7b0dbbe",
+        "expected": "f0ab82e96b737b7a6d0da094555b069c5aae336389dae72ad0e4d676d7b0dbbe"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/ml/witness.py",
+        "matches": true,
+        "actual": "653aa2098f54482c6ef7c9c16eae33f04ceba56ff28630100d058d79b049d4b7",
+        "expected": "653aa2098f54482c6ef7c9c16eae33f04ceba56ff28630100d058d79b049d4b7"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/mpi/hello.c",
+        "matches": true,
+        "actual": "4290e3ae56f826576b19d5c737026f46f59907c2bf8f35d12a3ebd7a7c2aeeef",
+        "expected": "4290e3ae56f826576b19d5c737026f46f59907c2bf8f35d12a3ebd7a7c2aeeef"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/mpi/pingpong.py",
+        "matches": true,
+        "actual": "94c173ad6e4c1f6c5d244b2c4bc2b09646b8e990cb3ee86ff409ac6220275c33",
+        "expected": "94c173ad6e4c1f6c5d244b2c4bc2b09646b8e990cb3ee86ff409ac6220275c33"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/mpi/sum.py",
+        "matches": true,
+        "actual": "bd052d5566bce81aabbf895375d2355d91d33382b2e54061ab75bef1fa2b4bcc",
+        "expected": "bd052d5566bce81aabbf895375d2355d91d33382b2e54061ab75bef1fa2b4bcc"
+      },
+      {
+        "origin": "archive",
+        "file": "examples/science/solve.py",
+        "matches": true,
+        "actual": "1b789273a9ec23ad883e99464e1b0135ff86679e45431cb74a37e995646f9518",
+        "expected": "1b789273a9ec23ad883e99464e1b0135ff86679e45431cb74a37e995646f9518"
+      },
+      {
+        "origin": "archive",
+        "file": "scripts/validate.py",
+        "matches": true,
+        "actual": "c5d4de72e954cd3c3c119e2807e0ab00177f2331f53c225e616af6abaa767837",
+        "expected": "c5d4de72e954cd3c3c119e2807e0ab00177f2331f53c225e616af6abaa767837"
+      },
+      {
+        "origin": "archive",
+        "file": "scripts/install-cuda.py",
+        "matches": true,
+        "actual": "9e401310d5697131d275af97da8847c0dbfd57eb7424d0370440ca8ebc4d6c18",
+        "expected": "9e401310d5697131d275af97da8847c0dbfd57eb7424d0370440ca8ebc4d6c18"
+      },
+      {
+        "origin": "archive",
+        "file": "scripts/run-reference-benchmarks.sh",
+        "matches": true,
+        "actual": "759a027d552d3f206e31006841ae71ddc7335ae774e5d35741a0045313fe886a",
+        "expected": "759a027d552d3f206e31006841ae71ddc7335ae774e5d35741a0045313fe886a"
+      },
+      {
+        "origin": "archive",
+        "file": "scripts/archive-validation.py",
+        "matches": true,
+        "actual": "7ba64727d4de776051fe3a4cd3a5bf40ad9966def07fdbf23ca770f66dace4af",
+        "expected": "7ba64727d4de776051fe3a4cd3a5bf40ad9966def07fdbf23ca770f66dace4af"
+      },
+      {
+        "origin": "archive",
+        "file": "env-spec.json",
+        "matches": true,
+        "actual": "fe2f163aab6716db9093b2eb108191aec496b37015c134ba9f34e5e591bd8f2b",
+        "expected": "fe2f163aab6716db9093b2eb108191aec496b37015c134ba9f34e5e591bd8f2b"
+      },
+      {
+        "origin": "archive",
+        "file": "requirements-study.txt",
+        "matches": true,
+        "actual": "d3a4a6016b84361de825fdbefb59075f2210a8d9f291d5728f6dc9b0835181e9",
+        "expected": "d3a4a6016b84361de825fdbefb59075f2210a8d9f291d5728f6dc9b0835181e9"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/Makefile",
+        "matches": true,
+        "actual": "6056148870659f2f696480c2e57f2faf989568a55880be767dbe63871933aa67",
+        "expected": "6056148870659f2f696480c2e57f2faf989568a55880be767dbe63871933aa67"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/benchmark/HPL.dat",
+        "matches": true,
+        "actual": "ae8010da21998ba269242d02eeaf2847e590df25b78e459d1133951855741503",
+        "expected": "ae8010da21998ba269242d02eeaf2847e590df25b78e459d1133951855741503"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/benchmark/hpcg.dat",
+        "matches": true,
+        "actual": "0b2d5a7483407f77ba5a454ca72256838a51c1a160f97cdffd755968dfe4cc43",
+        "expected": "0b2d5a7483407f77ba5a454ca72256838a51c1a160f97cdffd755968dfe4cc43"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/cpu/acc.c",
+        "matches": true,
+        "actual": "d4ade072aa519b4c38fa06f35fbdbc9c8a3551295531f6afe82f9bbe77571040",
+        "expected": "d4ade072aa519b4c38fa06f35fbdbc9c8a3551295531f6afe82f9bbe77571040"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/cpu/memory.c",
+        "matches": true,
+        "actual": "3a2163d694691744c8d936f6d60362b1bca568636bf4a14dc18746d482d0ddc3",
+        "expected": "3a2163d694691744c8d936f6d60362b1bca568636bf4a14dc18746d482d0ddc3"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/cpu/sum.c",
+        "matches": true,
+        "actual": "3be78202417b427d23819d5fdd5e9723264cd9345067c0d80b14773c5f83e874",
+        "expected": "3be78202417b427d23819d5fdd5e9723264cd9345067c0d80b14773c5f83e874"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/cuda/labs.cu",
+        "matches": true,
+        "actual": "708899d4a514848c2e84d90c0605fe547d454e88282889640c04b1b85519b7bb",
+        "expected": "708899d4a514848c2e84d90c0605fe547d454e88282889640c04b1b85519b7bb"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/ml/precision.py",
+        "matches": true,
+        "actual": "83a7da2117b41acf8f87e1de23925f95de6ede093df4b6784f4673d9dcc073c8",
+        "expected": "83a7da2117b41acf8f87e1de23925f95de6ede093df4b6784f4673d9dcc073c8"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/ml/quantize.py",
+        "matches": true,
+        "actual": "43974deeafb11e86b25a449da717e2cef25fafbba01bec2746dafa145cfe46b2",
+        "expected": "43974deeafb11e86b25a449da717e2cef25fafbba01bec2746dafa145cfe46b2"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/ml/train.py",
+        "matches": true,
+        "actual": "f0ab82e96b737b7a6d0da094555b069c5aae336389dae72ad0e4d676d7b0dbbe",
+        "expected": "f0ab82e96b737b7a6d0da094555b069c5aae336389dae72ad0e4d676d7b0dbbe"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/ml/witness.py",
+        "matches": true,
+        "actual": "653aa2098f54482c6ef7c9c16eae33f04ceba56ff28630100d058d79b049d4b7",
+        "expected": "653aa2098f54482c6ef7c9c16eae33f04ceba56ff28630100d058d79b049d4b7"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/mpi/hello.c",
+        "matches": true,
+        "actual": "4290e3ae56f826576b19d5c737026f46f59907c2bf8f35d12a3ebd7a7c2aeeef",
+        "expected": "4290e3ae56f826576b19d5c737026f46f59907c2bf8f35d12a3ebd7a7c2aeeef"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/mpi/pingpong.py",
+        "matches": true,
+        "actual": "94c173ad6e4c1f6c5d244b2c4bc2b09646b8e990cb3ee86ff409ac6220275c33",
+        "expected": "94c173ad6e4c1f6c5d244b2c4bc2b09646b8e990cb3ee86ff409ac6220275c33"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/mpi/sum.py",
+        "matches": true,
+        "actual": "bd052d5566bce81aabbf895375d2355d91d33382b2e54061ab75bef1fa2b4bcc",
+        "expected": "bd052d5566bce81aabbf895375d2355d91d33382b2e54061ab75bef1fa2b4bcc"
+      },
+      {
+        "origin": "run_start",
+        "file": "examples/science/solve.py",
+        "matches": true,
+        "actual": "1b789273a9ec23ad883e99464e1b0135ff86679e45431cb74a37e995646f9518",
+        "expected": "1b789273a9ec23ad883e99464e1b0135ff86679e45431cb74a37e995646f9518"
+      },
+      {
+        "origin": "run_start",
+        "file": "scripts/validate.py",
+        "matches": true,
+        "actual": "c5d4de72e954cd3c3c119e2807e0ab00177f2331f53c225e616af6abaa767837",
+        "expected": "c5d4de72e954cd3c3c119e2807e0ab00177f2331f53c225e616af6abaa767837"
+      },
+      {
+        "origin": "run_start",
+        "file": "env-spec.json",
+        "matches": true,
+        "actual": "fe2f163aab6716db9093b2eb108191aec496b37015c134ba9f34e5e591bd8f2b",
+        "expected": "fe2f163aab6716db9093b2eb108191aec496b37015c134ba9f34e5e591bd8f2b"
+      },
+      {
+        "origin": "run_start",
+        "file": "requirements-study.txt",
+        "matches": true,
+        "actual": "d3a4a6016b84361de825fdbefb59075f2210a8d9f291d5728f6dc9b0835181e9",
+        "expected": "d3a4a6016b84361de825fdbefb59075f2210a8d9f291d5728f6dc9b0835181e9"
+      }
+    ],
+    "record_count": 40,
+    "unique_record_names": 40,
+    "all_passed": true,
+    "all_pass_flags": true,
+    "all_returncodes_expected": true,
+    "nonzero": [
+      {
+        "name": "sum-invalid",
+        "command": [
+          "./build/sum",
+          "-1"
+        ],
+        "env": {},
+        "returncode": 2,
+        "expected_returncode": 2,
+        "passed": true
+      }
+    ],
+    "missing_logs": [],
+    "precision_median_checks": [
+      {
+        "device": "cpu",
+        "dtype": "torch.float32",
+        "sample_count": 20,
+        "reported_median": 0.5672074912581593,
+        "recomputed_median": 0.5672074912581593,
+        "matches": true,
+        "relative_l2_error": 2.8683846791659335e-7
+      },
+      {
+        "device": "cuda",
+        "dtype": "torch.float32",
+        "sample_count": 20,
+        "reported_median": 0.0247670104727149,
+        "recomputed_median": 0.0247670104727149,
+        "matches": true,
+        "relative_l2_error": 2.0729578795451754e-7
+      },
+      {
+        "device": "cuda",
+        "dtype": "torch.float16",
+        "sample_count": 20,
+        "reported_median": 0.021702522644773126,
+        "recomputed_median": 0.021702522644773126,
+        "matches": true,
+        "relative_l2_error": 0.0003598003845865439
+      }
+    ],
+    "cuda_median_checks": [
+      {
+        "n": 1,
+        "sample_count": 20,
+        "reported_median": 0.002376,
+        "recomputed_median": 0.002376,
+        "matches_at_printed_precision": true
+      },
+      {
+        "n": 255,
+        "sample_count": 20,
+        "reported_median": 0.002371,
+        "recomputed_median": 0.002371,
+        "matches_at_printed_precision": true
+      },
+      {
+        "n": 256,
+        "sample_count": 20,
+        "reported_median": 0.002264,
+        "recomputed_median": 0.0022635,
+        "matches_at_printed_precision": true
+      },
+      {
+        "n": 257,
+        "sample_count": 20,
+        "reported_median": 0.002252,
+        "recomputed_median": 0.0022525,
+        "matches_at_printed_precision": true
+      },
+      {
+        "n": 100003,
+        "sample_count": 20,
+        "reported_median": 0.002273,
+        "recomputed_median": 0.002273,
+        "matches_at_printed_precision": true
+      }
+    ],
+    "browser": {
+      "timestamp_utc": "2026-09-21T13:50:18.321441+00:00",
+      "script_sha256": "d84827ee19564e1755cb20d05b5472e0e6b89a8c09ff3ab51ecc3369a1a0395d",
+      "viewports": [
+        [
+          1440,
+          1000
+        ],
+        [
+          390,
+          844
+        ]
+      ],
+      "pages_per_viewport": 7,
+      "checks": [
+        "HTTP status",
+        "overflow",
+        "images",
+        "diagrams",
+        "formula",
+        "Chinese search",
+        "download",
+        "theme",
+        "mobile navigation"
+      ],
+      "failures": [],
+      "passed": true
+    },
+    "browser_hash_matches": true
+  }
+}

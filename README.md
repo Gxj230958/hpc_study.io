@@ -1,4 +1,28 @@
-# HPC Wiki
+# HPC Study
+
+面向初学者的中文 HPC 课程：从普通电脑出发，学习硬件、并行编程、GPU 编程、Benchmark、科学计算与机器学习系统。
+
+- [在线课程](https://gxj230958.github.io/hpc_study.io/)
+- [环境与实验说明](README-course.md)
+- [实际验证记录](https://gxj230958.github.io/hpc_study.io/learning/validation/)
+- [向 HPC Wiki 提交的课程补全 PR](https://github.com/hpcgame/hpc-wiki/pull/12)
+
+本仓库基于 [HPC Wiki](https://github.com/hpcgame/hpc-wiki)，保留原作者署名和 CC BY-NC-SA 4.0 许可。`main` 包含独立站，`docs/beginner-course` 是上游贡献分支。第三方网页渲染库的许可单独保存在 `docs/zh/docs/static/vendor/licenses/`。
+
+## 本地预览新站
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-study.txt
+mkdocs serve -f mkdocs.study.yml -a 127.0.0.1:8008
+```
+
+严格构建使用 `mkdocs build --strict -f mkdocs.study.yml`。主分支更新会触发 GitHub Pages 部署。实验验证与网站构建分开，CPU/GPU 依赖和命令见 [README-course.md](README-course.md)。
+
+下方保留上游项目介绍与原站构建说明。
+
+## HPC Wiki
 
 HPC 比赛，通常指的是高性能计算相关的比赛，主要形式包括以 `SCC`、`ISC`和`ASC`为代表的学生集群竞赛，和以 `PKU HPCGame`为代表的高性能计算挑战赛。比赛要求选手在规定时间、规定功耗或成本范围内解决高性能计算相关问题，并尽可能提高问题的解决效率。比赛对选手在并行程序设计、软硬件协同优化、计算机体系结构理解与运用、临场问题处理以及团队协作等诸多方面都有很高的要求。
 

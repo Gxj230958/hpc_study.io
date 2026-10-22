@@ -1,0 +1,45 @@
+[project]
+name = "hpc-study"
+version = "0.1.0"
+description = "Environment for the HPC Study course and single-GPU experiments"
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "numpy==2.2.6",
+    "scipy==1.15.3",
+    "mpi4py-mpich==3.1.5",
+]
+
+[project.optional-dependencies]
+cpu = ["torch==2.6.0"]
+gpu = ["torch==2.6.0"]
+
+[dependency-groups]
+docs = [
+    "mkdocs==1.6.1",
+    "mkdocs-material==9.6.14",
+    "mkdocs-minify-plugin==0.8.0",
+    "mkdocs-redirects==1.2.2",
+    "typer==0.16.0",
+]
+browser = ["playwright==1.51.0"]
+
+[tool.uv]
+package = false
+default-groups = ["docs"]
+conflicts = [[{ extra = "cpu" }, { extra = "gpu" }]]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", extra = "cpu" },
+    { index = "pytorch-cu124", extra = "gpu" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true

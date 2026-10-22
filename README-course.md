@@ -5,9 +5,8 @@
 ## 起步
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements-study.txt
+uv sync --locked
+source scripts/activate-study.sh
 make -C examples cpu
 ./build/sum 100003
 mpiexec -n 3 python examples/mpi/sum.py --n 10
@@ -16,14 +15,15 @@ mpiexec -n 3 python examples/mpi/sum.py --n 10
 GPU 路径需要 NVIDIA 驱动和 CUDA 12.4 兼容环境：
 
 ```bash
-python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
-python scripts/install-cuda.py --nsys
-export PATH="$PWD/.tools/cuda/bin:$PWD/.tools/nsys/nsight-systems/2023.4.4/target-linux-x64:$PATH"
+uv run python scripts/install-cuda.py --nsys
+source scripts/activate-study.sh
 python examples/ml/witness.py
 python scripts/validate.py --gpu
 ```
 
-CPU 全套验证也需要 PyTorch，安装命令为 `python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu`，随后运行 `python scripts/validate.py`。从 CPU 版切换到 GPU 版前，先用 `python -m pip uninstall -y torch` 移除 CPU 包。原始输出在 `build/validation/`。HPL/HPCG 短跑需要系统 MPICH、OpenBLAS 开发包，执行 `bash scripts/run-reference-benchmarks.sh`，输出在 `build/reference/`。
+`uv sync --locked` installs the Python 3.10 environment, scientific Python, bundled MPICH/mpi4py, CUDA 12.4 PyTorch, and documentation tools from `uv.lock`. The GPU build also runs CPU experiments. Run `python scripts/validate.py` for CPU checks or `python scripts/validate.py --gpu` for both. Activation sets CPU library threads to 10 for this machine; the validation suite uses smaller fixed thread counts for reproducibility. For MPI experiments, use `OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1` and at most 10 ranks to avoid oversubscription.
+
+Native experiments require GCC/G++, Make, and the CUDA compiler/sanitizer; uv manages Python packages, while `scripts/install-cuda.py` supplies the local CUDA tools. The existing NVIDIA driver supports the pinned CUDA runtime. Activation also disables forced TF32 so the FP32 correctness checks use full precision. Raw validation output is in `build/validation/`. HPL/HPCG additionally require system MPICH and OpenBLAS development packages (`apt-get install mpich libmpich-dev libopenblas-dev`); run `bash scripts/run-reference-benchmarks.sh`, with output in `build/reference/`.
 
 独立站使用 `mkdocs.study.yml`；上游配置为 `docs/zh/mkdocs.yml`。五章文档与学习路线位于 `docs/zh/docs/`。
 

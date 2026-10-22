@@ -12,10 +12,8 @@
 ## 本地预览新站
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements-study.txt
-mkdocs serve -f mkdocs.study.yml -a 127.0.0.1:8008
+uv sync --locked
+uv run mkdocs serve -f mkdocs.study.yml -a 127.0.0.1:8008
 ```
 
 严格构建使用 `mkdocs build --strict -f mkdocs.study.yml`。主分支更新会触发 GitHub Pages 部署。实验验证与网站构建分开，CPU/GPU 依赖和命令见 [README-course.md](README-course.md)。

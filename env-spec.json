@@ -6,7 +6,7 @@
     ["-r", "requirements-study.txt"]
   ],
   "expected_torch_cuda": "12.4",
-  "cpu_workers": 8,
+  "cpu_workers": 10,
   "gpu_count": 1,
   "env": {"OMP_NUM_THREADS": "4", "OPENBLAS_NUM_THREADS": "4"},
   "smoke": "python examples/ml/witness.py",

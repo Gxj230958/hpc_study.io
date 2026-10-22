@@ -3,6 +3,8 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 project_root="$PWD"
 export OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1
+# Keep system MPICH dependencies ahead of preloaded HPC-X/Open MPI libraries.
+export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 mkdir -p .tools build/reference
 test -x /usr/bin/mpicc
 test -x /usr/bin/mpiexec

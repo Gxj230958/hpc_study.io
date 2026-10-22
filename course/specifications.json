@@ -1,0 +1,56 @@
+{
+  "checked_date": "2026-10-22",
+  "units": "Decimal GB and TB/s. Manufacturer specifications, not measurements.",
+  "sources": {
+    "a100": "https://www.nvidia.com/en-us/data-center/a100/",
+    "h100": "https://www.nvidia.com/en-us/data-center/h100/",
+    "h200": "https://www.nvidia.com/en-us/data-center/h200/",
+    "ada": "https://docs.nvidia.com/cuda/ada-tuning-guide/",
+    "mig": "https://docs.nvidia.com/datacenter/tesla/mig-user-guide/supported-gpus.html"
+  },
+  "variants": [
+    {
+      "sku": "A100 80GB PCIe",
+      "architecture": "Ampere",
+      "memory_gb": 80,
+      "bandwidth_gbps": 1935,
+      "scalar_fp32_tflops": 19.5
+    },
+    {
+      "sku": "A100 80GB SXM",
+      "architecture": "Ampere",
+      "memory_gb": 80,
+      "bandwidth_gbps": 2039,
+      "scalar_fp32_tflops": 19.5
+    },
+    {
+      "sku": "H100 SXM",
+      "architecture": "Hopper",
+      "memory_gb": 80,
+      "bandwidth_gbps": 3350,
+      "scalar_fp32_tflops": 67
+    },
+    {
+      "sku": "H100 NVL (per GPU)",
+      "architecture": "Hopper",
+      "memory_gb": 94,
+      "bandwidth_gbps": 3900,
+      "scalar_fp32_tflops": 60
+    },
+    {
+      "sku": "H200 SXM",
+      "architecture": "Hopper",
+      "memory_gb": 141,
+      "bandwidth_gbps": 4800,
+      "scalar_fp32_tflops": 67
+    },
+    {
+      "sku": "H200 NVL",
+      "architecture": "Hopper",
+      "memory_gb": 141,
+      "bandwidth_gbps": 4800,
+      "scalar_fp32_tflops": 60
+    }
+  ],
+  "limitations": "Product pages may revise specifications. Other PCIe, SXM, memory and platform variants require their own product briefs. Do not transfer one row to a family name."
+}

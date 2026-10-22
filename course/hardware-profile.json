@@ -1,0 +1,26 @@
+{
+  "validation_host": {
+    "gpu_model": "NVIDIA GeForce RTX 4090",
+    "visible_gpu_count": 1,
+    "design_gpu_budget_gb": 24,
+    "cpu_equivalents": 10,
+    "memory_limit_gib": 100,
+    "driver": "570.124.06",
+    "cuda": "12.4",
+    "torch": "2.6.0+cu124"
+  },
+  "remote": {
+    "node_count": null,
+    "gpus_per_node": null,
+    "hostnames": null,
+    "network_speed_gbps": null,
+    "network_topology": null,
+    "interface_names": null,
+    "ssh_access": null,
+    "software_versions": null,
+    "scheduler": null,
+    "rendezvous_port": null,
+    "data_ports": null
+  },
+  "policy": "Remote configurations are not executed until hardware and access are verified. No cloud provisioning."
+}

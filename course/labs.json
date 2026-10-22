@@ -1,0 +1,687 @@
+{
+  "schema_version": 1,
+  "assessed_modules": [
+    "machine",
+    "cpu",
+    "mpi",
+    "cuda",
+    "measurement",
+    "science",
+    "distributed",
+    "datacenter"
+  ],
+  "labs": [
+    {
+      "id": "inventory",
+      "module": "machine",
+      "difficulty": "warm-up",
+      "duration_minutes": 10,
+      "hardware": "CPU; Linux; below 256 MiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "hardware/hardware-intro.md",
+      "anchor": "inventory",
+      "sources": [
+        "examples/cpu/memory.c"
+      ],
+      "commands": [
+        "lscpu",
+        "free -h",
+        "python -c \"import os; print('allowed_cpus', len(os.sched_getaffinity(0)))\"",
+        "python -c \"from pathlib import Path; p=Path('/sys/fs/cgroup/memory.max'); print('cgroup_memory_limit', p.read_text().strip() if p.exists() else 'inspect your cgroup version')\""
+      ],
+      "expected_returncodes": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Record the CPU model, allowed CPU set, and memory limit. Distinguish host totals from cgroup limits. Choose at most four threads for the first experiments.",
+      "expected_behavior": "The allowed CPU set describes placement, while a cgroup CPU quota may allow fewer CPU equivalents. Inspect /sys/fs/cgroup/cpu.max as well. Use the smaller allocation limit, not the host memory total. GPU memory is a separate pool.",
+      "troubleshooting": "Host memory and allowed CPU count can exceed your job's quota. Missing cgroup v2 files mean you must inspect the system's cgroup layout; do not infer unlimited resources.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "memory-patterns",
+      "module": "machine",
+      "difficulty": "core",
+      "duration_minutes": 20,
+      "hardware": "CPU; 128 MiB array",
+      "local_executable": true,
+      "answer": true,
+      "page": "hardware/hardware-intro.md",
+      "anchor": "memory-patterns",
+      "sources": [
+        "examples/cpu/memory.c"
+      ],
+      "commands": [
+        "make -C examples cpu",
+        "./build/memory"
+      ],
+      "expected_returncodes": [
+        0,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Read the nested loops, predict the visited element counts for strides 1, 8 and 64, then run the program three times. Record time per visited element and useful bandwidth, not just total elapsed time.",
+      "expected_behavior": "The program sums known 1.0 values and checks the result against 8 times the number of visits. Each larger stride performs fewer visits, so a shorter total time alone does not establish higher efficiency. Report the spread of repeated runs.",
+      "troubleshooting": "An allocation failure means the available limit is smaller than expected. Close other workloads or reduce n in a separate copy and disclose the changed size.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "cache-stride",
+      "module": "machine",
+      "difficulty": "stretch",
+      "duration_minutes": 30,
+      "hardware": "CPU; 128 MiB array",
+      "local_executable": true,
+      "answer": true,
+      "page": "hardware/hardware-intro.md",
+      "anchor": "cache-stride",
+      "sources": [
+        "examples/cpu/memory.c"
+      ],
+      "commands": [
+        "./build/memory"
+      ],
+      "expected_returncodes": [
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Explain why stride 8 can fetch a cache line but use only one double. Compute useful bytes as visits times 8. Compare with the stride-1 result and state what this experiment cannot establish.",
+      "expected_behavior": "For a 64-byte cache line and 8-byte doubles, stride 8 touches one value per line; stride 64 skips more lines. Prefetching, TLB behavior, reuse and clock variation affect the measured result. Useful GB/s is not measured DRAM traffic; hardware counters would be needed for that claim.",
+      "troubleshooting": "Unexpected ordering is possible. Confirm PASS and counts first, retain all runs, and avoid claiming a particular cache-line size from timing alone.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "serial-openmp",
+      "module": "cpu",
+      "difficulty": "warm-up",
+      "duration_minutes": 10,
+      "hardware": "CPU; GCC/OpenMP; below 1 MiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "parallel-programming/parallel-programming-intro.md",
+      "anchor": "serial-openmp",
+      "sources": [
+        "examples/cpu/sum.c"
+      ],
+      "commands": [
+        "make -C examples cpu",
+        "env OMP_NUM_THREADS=1 ./build/sum 100003",
+        "env OMP_NUM_THREADS=4 ./build/sum 100003"
+      ],
+      "expected_returncodes": [
+        0,
+        0,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Compute n(n-1)/2 independently in Python and compare both outputs. Inspect the reduction pragma and explain why simply sharing sum would be incorrect.",
+      "expected_behavior": "For n=100003 the exact result is 5000250003. The program uses a 64-bit unsigned sum; a 32-bit integer would overflow. One OpenMP thread supplies a useful baseline, though it still includes the OpenMP loop machinery.",
+      "troubleshooting": "A missing omp.h indicates GCC/OpenMP development support is absent. Build with the provided Makefile; do not remove -fopenmp to silence a linker error.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "thread-counts",
+      "module": "cpu",
+      "difficulty": "core",
+      "duration_minutes": 20,
+      "hardware": "CPU; at most 4 worker threads; 8 MiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "parallel-programming/parallel-programming-intro.md",
+      "anchor": "thread-counts",
+      "sources": [
+        "examples/cpu/sum.c"
+      ],
+      "commands": [
+        "env OMP_NUM_THREADS=1 ./build/sum 1000003",
+        "env OMP_NUM_THREADS=2 ./build/sum 1000003",
+        "env OMP_NUM_THREADS=4 ./build/sum 1000003"
+      ],
+      "expected_returncodes": [
+        0,
+        0,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Repeat each count five times. Compare median time, speedup T(1)/T(p), and efficiency speedup/p. Keep the input fixed and explain overhead at this small scale.",
+      "expected_behavior": "Every count must produce 500002500003. More threads can lose to startup, synchronization or memory bandwidth. A correct but slower run is useful evidence, not a failed correctness test.",
+      "troubleshooting": "Oversubscription occurs when runnable threads exceed available CPU capacity. Limit library threads as well and inspect quotas before increasing counts.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "race-repair",
+      "module": "cpu",
+      "difficulty": "stretch",
+      "duration_minutes": 30,
+      "hardware": "CPU; Python; two threads; below 32 MiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "parallel-programming/parallel-programming-intro.md",
+      "anchor": "race-repair",
+      "sources": [
+        "examples/cpu/race.py"
+      ],
+      "commands": [
+        "python examples/cpu/race.py",
+        "python examples/cpu/race.py --repair"
+      ],
+      "expected_returncodes": [
+        1,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "The first command intentionally exits 1. Predict its total before running it. Explain the two barriers, then examine the lock-protected repair and run it.",
+      "expected_behavior": "Both workers read the same old value before either stores its increment, so 1000 updates survive where 2000 are expected. The repair holds a lock across the read-modify-write. This is a defined Python logical race; running a C data race would invoke undefined behavior. OpenMP reduction is the preferred repair for the C sum.",
+      "troubleshooting": "Do not put a barrier inside a lock held by only one worker: the other worker could never reach it. The teaching example has fixed work and barrier timeouts.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "rank-partition",
+      "module": "mpi",
+      "difficulty": "warm-up",
+      "duration_minutes": 10,
+      "hardware": "CPU; bundled MPICH; 3 ranks; under 256 MiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "parallel-programming/mpi.md",
+      "anchor": "rank-partition",
+      "sources": [
+        "examples/mpi/sum.py"
+      ],
+      "commands": [
+        "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 mpiexec -n 3 python examples/mpi/sum.py --n 10",
+        "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 mpiexec -n 4 python examples/mpi/sum.py --n 2"
+      ],
+      "expected_returncodes": [
+        0,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Write down [nr/p, n(r+1)/p) with integer division for every rank. Verify the union is complete and the intervals do not overlap, including ranks with no elements.",
+      "expected_behavior": "For n=10 and p=3 the intervals are [0,3), [3,6), [6,10) and the total is 45. With n=2 and four ranks, some intervals are empty but all ranks still participate in the collective. Reduction checks the independent arithmetic-series formula.",
+      "troubleshooting": "If ranks all report size 1 or the job hangs, check which mpiexec and Python are selected. Mixing Open MPI and MPICH is unsupported; source scripts/activate-study.sh and inspect MPI.Get_library_version().",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "checked-pingpong",
+      "module": "mpi",
+      "difficulty": "core",
+      "duration_minutes": 20,
+      "hardware": "CPU; bundled MPICH; exactly 2 ranks; under 256 MiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "parallel-programming/mpi.md",
+      "anchor": "checked-pingpong",
+      "sources": [
+        "examples/mpi/pingpong.py"
+      ],
+      "commands": [
+        "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 mpiexec -n 2 python examples/mpi/pingpong.py"
+      ],
+      "expected_returncodes": [
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Run three message sizes with ten warm-ups and one hundred measured round trips. Inspect the rank-dependent send/receive ordering and payload checks. Report round-trip time and identify the placement.",
+      "expected_behavior": "The sender transmits a position-dependent byte pattern and the receiver verifies it, returns its complement, and the sender verifies the reply. Different iterations change the pattern. A local run measures same-host transport, often shared memory, and cannot establish Ethernet bandwidth.",
+      "troubleshooting": "Exactly two ranks are required. Remote launch needs resolved hostnames, SSH access, identical environments and permitted dynamic MPI ports. A two-sided blocking send/send sequence can deadlock for large messages.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "mpi-scaling",
+      "module": "mpi",
+      "difficulty": "stretch",
+      "duration_minutes": 30,
+      "hardware": "CPU; bundled MPICH; at most 4 ranks; under 512 MiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "parallel-programming/mpi.md",
+      "anchor": "mpi-scaling",
+      "sources": [
+        "examples/mpi/scaling.py"
+      ],
+      "commands": [
+        "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 mpiexec -n 1 python examples/mpi/scaling.py --mode strong",
+        "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 mpiexec -n 2 python examples/mpi/scaling.py --mode strong",
+        "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 mpiexec -n 4 python examples/mpi/scaling.py --mode strong",
+        "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 mpiexec -n 1 python examples/mpi/scaling.py --mode weak",
+        "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 mpiexec -n 2 python examples/mpi/scaling.py --mode weak",
+        "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 mpiexec -n 4 python examples/mpi/scaling.py --mode weak"
+      ],
+      "expected_returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Tabulate median maximum-rank times. Fixed total n is strong scaling; fixed n per rank is weak scaling. Explain why these Python integer loops are teaching workloads rather than network benchmarks.",
+      "expected_behavior": "Strong efficiency is T(1)/(p*T(p)). Weak efficiency is T(1)/T(p) with per-rank work held fixed. The independent exact sum checks every repetition. Startup is outside the timed region; collectives and load imbalance remain inside. Small jobs may show no speedup.",
+      "troubleshooting": "Use one numerical-library thread per rank. Four local ranks cannot reveal the cost of a second machine or a congested switch.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "gpu-dispatch",
+      "module": "cuda",
+      "difficulty": "warm-up",
+      "duration_minutes": 10,
+      "hardware": "One NVIDIA GPU; below 1 GiB device memory",
+      "local_executable": true,
+      "answer": true,
+      "page": "gpu/intro.md",
+      "anchor": "gpu-dispatch",
+      "sources": [
+        "examples/ml/witness.py"
+      ],
+      "commands": [
+        "python examples/ml/witness.py"
+      ],
+      "expected_returncodes": [
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Read the witness script, run it and record the device name, PyTorch CUDA version and visible device count. Identify the CPU reference used to verify the result.",
+      "expected_behavior": "CUDA availability alone is insufficient. The witness checks that tensors and matrix multiplication results live on CUDA, compares against a CPU result and synchronizes before reporting PASS. It does not benchmark a datacenter GPU.",
+      "troubleshooting": "If CUDA is unavailable, use the CPU path for other modules. Check driver visibility and install the gpu extra; the CPU extra deliberately cannot dispatch CUDA.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "requires_gpu": true
+    },
+    {
+      "id": "vector-boundaries",
+      "module": "cuda",
+      "difficulty": "core",
+      "duration_minutes": 20,
+      "hardware": "One CUDA GPU; CUDA toolkit; below 256 MiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "gpu/intro.md",
+      "anchor": "vector-boundaries",
+      "sources": [
+        "examples/cuda/labs.cu"
+      ],
+      "commands": [
+        "make -C examples cuda",
+        "./build/cuda_labs"
+      ],
+      "expected_returncodes": [
+        0,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Before viewing add(), write a kernel that computes i=blockIdx.x*blockDim.x+threadIdx.x and guards i<n. Compare it with the checked implementation. Explain the cases 1, 255, 256, 257 and 100003.",
+      "expected_behavior": "The ceiling division (n+255)/256 launches enough blocks; the guard prevents tail threads from reading or writing out of bounds. Every element is compared with an independent host sum. The same executable also checks reduction and matrix multiplication.",
+      "troubleshooting": "Missing nvcc is a toolkit issue even if PyTorch CUDA works. Source activation after installing local tools. For another GPU, use CUDA_ARCH appropriate to that GPU instead of copying sm_89 blindly.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "requires_gpu": true
+    },
+    {
+      "id": "tiled-matmul",
+      "module": "cuda",
+      "difficulty": "stretch",
+      "duration_minutes": 30,
+      "hardware": "One CUDA GPU; Compute Sanitizer; below 256 MiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "gpu/intro.md",
+      "anchor": "tiled-matmul",
+      "sources": [
+        "examples/cuda/labs.cu"
+      ],
+      "commands": [
+        "compute-sanitizer --error-exitcode 1 --tool memcheck ./build/cuda_labs",
+        "compute-sanitizer --error-exitcode 1 --tool synccheck ./build/cuda_labs",
+        "compute-sanitizer --error-exitcode 1 --tool racecheck ./build/cuda_labs"
+      ],
+      "expected_returncodes": [
+        0,
+        0,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Trace the two 16x16 shared-memory tiles and both barriers. Verify dimensions 1, 15, 16, 17 and 65, then run all three sanitizers. Explain why out-of-range tile entries must be zeroed.",
+      "expected_behavior": "All threads must reach both barriers, including threads whose output is outside the matrix. The first barrier completes tile loading; the second prevents overwriting a tile while others still use it. A double-precision host loop independently checks each result, and sanitizer success adds memory/synchronization evidence.",
+      "troubleshooting": "Use the sanitizer error exit flag so an error fails automation. A clean sanitizer run covers these inputs, not every possible shape. Check profiler/sanitizer permissions if instrumentation cannot attach.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "requires_gpu": true
+    },
+    {
+      "id": "repeated-timings",
+      "module": "measurement",
+      "difficulty": "warm-up",
+      "duration_minutes": 10,
+      "hardware": "CPU; 8 MiB; one worker",
+      "local_executable": true,
+      "answer": true,
+      "page": "performance-analysis/intro.md",
+      "anchor": "repeated-timings",
+      "sources": [
+        "examples/cpu/sum.c"
+      ],
+      "commands": [
+        "env OMP_NUM_THREADS=1 ./build/sum 1000003",
+        "env OMP_NUM_THREADS=1 ./build/sum 1000003",
+        "env OMP_NUM_THREADS=1 ./build/sum 1000003",
+        "env OMP_NUM_THREADS=1 ./build/sum 1000003",
+        "env OMP_NUM_THREADS=1 ./build/sum 1000003"
+      ],
+      "expected_returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Make a five-sample table, report the median and range, and state that allocation and initialization are outside the timed loop. Verify every sample's integer total before comparing time.",
+      "expected_behavior": "The sample median describes this workload under these conditions. It is not a peak FLOPS measurement. Report input size, compiler flags, threads, timer and placement alongside it; a fast wrong result is rejected.",
+      "troubleshooting": "Run make -C examples cpu if build/sum is missing. Tiny runs may approach timer resolution. Do not discard inconvenient samples without a recorded reason.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "profile-transfers",
+      "module": "measurement",
+      "difficulty": "core",
+      "duration_minutes": 20,
+      "hardware": "One CUDA GPU; Nsight Systems; under 100 MiB trace output",
+      "local_executable": true,
+      "answer": true,
+      "page": "performance-analysis/intro.md",
+      "anchor": "profile-transfers",
+      "sources": [
+        "examples/cuda/labs.cu"
+      ],
+      "commands": [
+        "nsys profile --force-overwrite true --trace=cuda --output=build/course-profile ./build/cuda_labs",
+        "nsys stats --report cuda_gpu_kern_sum,cuda_gpu_mem_time_sum build/course-profile.nsys-rep"
+      ],
+      "expected_returncodes": [
+        0,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Identify host-to-device copies, launches and device-to-host copies. Compare event-based resident-kernel time with the first transfer-and-kernel host interval. Verify PASS in the profiled program output.",
+      "expected_behavior": "The end-to-end interval includes copies and first launch effects; resident CUDA events measure a different boundary after warm-up. Profiling adds overhead, so retain unprofiled measurements too. A timeline reveals idle gaps; it does not by itself prove their cause.",
+      "troubleshooting": "On systems without profiler access, retain program timing output and mark the trace uncollected. Do not report missing hardware-counter data as zero.",
+      "cleanup": "Remove build/course-profile.nsys-rep and build/course-profile.sqlite after retaining your report.",
+      "requires_gpu": true
+    },
+    {
+      "id": "reference-benchmarks",
+      "module": "measurement",
+      "difficulty": "stretch",
+      "duration_minutes": 30,
+      "hardware": "CPU; native MPICH and OpenBLAS development tools; below 1 GiB; network for source download",
+      "local_executable": true,
+      "answer": true,
+      "page": "performance-analysis/intro.md",
+      "anchor": "reference-benchmarks",
+      "sources": [
+        "scripts/run-reference-benchmarks.sh",
+        "examples/benchmark/HPL.dat",
+        "examples/benchmark/hpcg.dat"
+      ],
+      "commands": [
+        "bash scripts/run-reference-benchmarks.sh"
+      ],
+      "expected_returncodes": [
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Inspect the small supplied inputs before running. Check HPL's residual and HPCG's verification report, record source revisions and explain why these short runs are not official submissions.",
+      "expected_behavior": "HPL factors a dense system and checks a scaled residual. HPCG exercises sparse operations and checks convergence/symmetry; its short runtime and small local problem fail official submission requirements even when the teaching correctness checks pass. Never promote these runs into leaderboard scores.",
+      "troubleshooting": "These native benchmarks use the system MPICH compiler and matching /usr/bin/mpiexec as an isolated toolchain. mpi4py labs use bundled MPICH. Do not combine a system launcher with bundled mpi4py or an Open MPI library with these native binaries.",
+      "cleanup": "Remove build/reference and .tools/hpl-2.3 / .tools/hpcg only when you no longer need source and raw results."
+    },
+    {
+      "id": "quantization-error",
+      "module": "science",
+      "difficulty": "warm-up",
+      "duration_minutes": 10,
+      "hardware": "CPU; NumPy; below 64 MiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "sci-mlsys/intro.md",
+      "anchor": "quantization-error",
+      "sources": [
+        "examples/ml/quantize.py"
+      ],
+      "commands": [
+        "python examples/ml/quantize.py"
+      ],
+      "expected_returncodes": [
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Predict the maximum rounding error for symmetric INT8 quantization. Run the example and compare restored floating-point weights with the originals. Calculate the storage ratio, including a scalar scale.",
+      "expected_behavior": "With scale=max(abs(w))/127, rounding produces error at most scale/2 for these bounded inputs, up to floating-point roundoff. INT8 weight storage is one quarter of FP32 before scale metadata. This is a numerical demonstration, not an accelerated INT8 kernel.",
+      "troubleshooting": "The bound assumes the scale is nonzero and values remain in the calibrated range. New outliers may clip; all-zero tensors need explicit scale handling in a general implementation.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "sparse-residual",
+      "module": "science",
+      "difficulty": "core",
+      "duration_minutes": 20,
+      "hardware": "CPU; SciPy; below 64 MiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "sci-mlsys/intro.md",
+      "anchor": "sparse-residual",
+      "sources": [
+        "examples/science/solve.py"
+      ],
+      "commands": [
+        "python examples/science/solve.py"
+      ],
+      "expected_returncodes": [
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Inspect the tridiagonal symmetric positive definite matrix. Explain why conjugate gradients is applicable, then compare its answer with a dense solve and the manufactured sine-vector solution.",
+      "expected_behavior": "The script checks solver status, relative residual ||Ax-b||/||b|| and agreement with an independent dense solver. A small residual alone does not bound forward error without considering conditioning. The manufactured solution supplies another independent reference.",
+      "troubleshooting": "Failure to converge may reflect an unsuitable matrix, tolerance or iteration budget. Do not accept info>0 as success or silently replace NaN residuals.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+    },
+    {
+      "id": "training-precision",
+      "module": "science",
+      "difficulty": "stretch",
+      "duration_minutes": 30,
+      "hardware": "CPU fallback or one CUDA GPU; below 1 GiB",
+      "local_executable": true,
+      "answer": true,
+      "page": "sci-mlsys/intro.md",
+      "anchor": "training-precision",
+      "sources": [
+        "examples/ml/train.py",
+        "examples/ml/precision.py"
+      ],
+      "commands": [
+        "python examples/ml/train.py --device cpu",
+        "python examples/ml/train.py --device cuda",
+        "python examples/ml/precision.py"
+      ],
+      "expected_returncodes": [
+        0,
+        0,
+        0
+      ],
+      "validation_status": "pending",
+      "task": "Verify loss decreases and the initial forward pass matches a CPU reference. Compare synchronized FP32/FP16 matrix timing and error against FP64. Record the CPU fallback separately if no GPU is visible.",
+      "expected_behavior": "The tiny regression is a correctness workload and may be slower on GPU because launch overhead dominates. FP16 permits more rounding error, checked against a declared tolerance. Disabling TF32 makes the FP32 comparison reproducible for this teaching case; it is not a universal production recommendation.",
+      "troubleshooting": "CUDA commands require the gpu extra. precision.py explicitly prints SKIP for CUDA without a device. CPU-only validation does not establish GPU speed or FP16 behavior.",
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "requires_gpu": true,
+      "fallback_commands": [
+        "python examples/ml/train.py --device cpu",
+        "python examples/ml/precision.py"
+      ]
+    },
+    {
+      "id": "one-process",
+      "difficulty": "warm-up",
+      "duration_minutes": 10,
+      "hardware": "One CUDA GPU; CPU/Gloo fallback; under 1 GiB",
+      "local_executable": true,
+      "requires_gpu": true,
+      "sources": [
+        "examples/distributed/collectives.py"
+      ],
+      "commands": [
+        "env OMP_NUM_THREADS=1 NCCL_IB_DISABLE=1 NCCL_SOCKET_IFNAME==lo torchrun --nnodes=1 --nproc-per-node=1 --rdzv-backend=c10d --rdzv-endpoint=127.0.0.1:29621 --rdzv-id=course-one --max-restarts=0 examples/distributed/collectives.py --backend nccl"
+      ],
+      "fallback_commands": [
+        "env OMP_NUM_THREADS=1 GLOO_SOCKET_IFNAME=lo torchrun --nnodes=1 --nproc-per-node=1 --rdzv-backend=c10d --rdzv-endpoint=127.0.0.1:29621 --rdzv-id=course-one-cpu --max-restarts=0 examples/distributed/collectives.py --backend gloo"
+      ],
+      "task": "Verify one-process collective initialization and explain why its sum is 1.",
+      "expected_behavior": "Every rank asserts the arithmetic-series result p(p+1)/2. With one rank, this is 1. NCCL dispatch is real, but no peer GPU or network communication is tested.",
+      "troubleshooting": "A busy rendezvous port prevents startup; choose a free local port consistently. CPU/Gloo verifies semantics but not CUDA dispatch.",
+      "module": "distributed",
+      "page": "clusters/platform-intro.md",
+      "anchor": "one-process",
+      "answer": true,
+      "validation_status": "pending",
+      "cleanup": "torchrun tears down workers on normal exit. On failure interrupt both launches and confirm owned workers exit. No allocation or scheduler job is created by these commands.",
+      "expected_returncodes": [
+        0
+      ]
+    },
+    {
+      "id": "multi-gpu",
+      "difficulty": "core",
+      "duration_minutes": 20,
+      "hardware": "Two CUDA GPUs on one node; CPU/Gloo two-process fallback",
+      "local_executable": false,
+      "requires_gpu": true,
+      "sources": [
+        "examples/distributed/collectives.py"
+      ],
+      "commands": [
+        "env OMP_NUM_THREADS=1 NCCL_IB_DISABLE=1 NCCL_SOCKET_IFNAME==lo torchrun --nnodes=1 --nproc-per-node=2 --rdzv-backend=c10d --rdzv-endpoint=127.0.0.1:29622 --rdzv-id=course-two-gpu --max-restarts=0 examples/distributed/collectives.py --backend nccl"
+      ],
+      "fallback_commands": [
+        "env OMP_NUM_THREADS=1 GLOO_SOCKET_IFNAME=lo torchrun --nnodes=1 --nproc-per-node=2 --rdzv-backend=c10d --rdzv-endpoint=127.0.0.1:29622 --rdzv-id=course-two-cpu --max-restarts=0 examples/distributed/collectives.py --backend gloo"
+      ],
+      "task": "On an allocated two-GPU node, assign one worker per visible GPU and verify both ranks receive 3. Otherwise run the two-process CPU fallback and label it explicitly.",
+      "expected_behavior": "Ranks contribute 1 and 2 and both receive 3. The NCCL path assigns LOCAL_RANK to a distinct CUDA device. The CPU fallback checks multi-process reduction but provides no evidence about GPU peer access, NVLink or NCCL bandwidth.",
+      "troubleshooting": "The program rejects more local NCCL workers than visible GPUs. Do not run two workers on the same GPU to imitate a two-GPU experiment. The current validation machine has one visible GPU.",
+      "module": "distributed",
+      "page": "clusters/platform-intro.md",
+      "anchor": "multi-gpu",
+      "answer": true,
+      "validation_status": "pending",
+      "cleanup": "torchrun tears down workers on normal exit. On failure interrupt both launches and confirm owned workers exit. No allocation or scheduler job is created by these commands.",
+      "expected_returncodes": [
+        0
+      ]
+    },
+    {
+      "id": "two-node-training",
+      "difficulty": "stretch",
+      "duration_minutes": 30,
+      "hardware": "Two allocated Linux nodes; one CUDA GPU per node; TCP interface and permitted ports",
+      "local_executable": false,
+      "requires_gpu": true,
+      "sources": [
+        "examples/distributed/collectives.py",
+        "course/hardware-profile.json"
+      ],
+      "commands": [
+        "env OMP_NUM_THREADS=1 NCCL_IB_DISABLE=1 NCCL_SOCKET_IFNAME==YOUR_INTERFACE GLOO_SOCKET_IFNAME=YOUR_INTERFACE torchrun --nnodes=2 --node-rank=0 --nproc-per-node=1 --rdzv-backend=c10d --rdzv-endpoint=NODE0_IP:29500 --rdzv-id=course-UNIQUE-ID --rdzv-conf=join_timeout=60,read_timeout=60 --max-restarts=0 examples/distributed/collectives.py --backend nccl --train",
+        "env OMP_NUM_THREADS=1 NCCL_IB_DISABLE=1 NCCL_SOCKET_IFNAME==YOUR_INTERFACE GLOO_SOCKET_IFNAME=YOUR_INTERFACE torchrun --nnodes=2 --node-rank=1 --nproc-per-node=1 --rdzv-backend=c10d --rdzv-endpoint=NODE0_IP:29500 --rdzv-id=course-UNIQUE-ID --rdzv-conf=join_timeout=60,read_timeout=60 --max-restarts=0 examples/distributed/collectives.py --backend nccl --train"
+      ],
+      "fallback_commands": [
+        "env OMP_NUM_THREADS=1 GLOO_SOCKET_IFNAME=lo torchrun --nnodes=1 --nproc-per-node=2 --rdzv-backend=c10d --rdzv-endpoint=127.0.0.1:29623 --rdzv-id=course-ddp-cpu --max-restarts=0 examples/distributed/collectives.py --backend gloo --train"
+      ],
+      "task": "Complete the remote preflight, replace placeholders and run one command on each node. Verify the AllReduce and five DDP updates against a global-batch reference. Without two allocated nodes, execute only the local CPU fallback.",
+      "expected_behavior": "Each rank uses a different eight-sample shard from a reproducible global batch. DDP's mean gradients match an independent CPU SGD update over the concatenated global batch within declared tolerances. The two-process local fallback cannot demonstrate remote rendezvous, Ethernet transport or network scaling.",
+      "troubleshooting": "Both nodes must share job ID, endpoint, software and code but use the intended host-specific interface. A rendezvous port alone is insufficient: NCCL/Gloo may need additional TCP data ports. Preserve both rank logs and stop both commands on failure.",
+      "module": "distributed",
+      "page": "clusters/platform-intro.md",
+      "anchor": "two-node-training",
+      "answer": true,
+      "validation_status": "pending",
+      "cleanup": "torchrun tears down workers on normal exit. On failure interrupt both launches and confirm owned workers exit. No allocation or scheduler job is created by these commands.",
+      "expected_returncodes": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "specifications",
+      "difficulty": "warm-up",
+      "duration_minutes": 10,
+      "hardware": "Read-only browser analysis; no datacenter GPU",
+      "local_executable": false,
+      "sources": [
+        "course/specifications.json"
+      ],
+      "commands": [],
+      "task": "Compare the sourced A100 80 GB PCIe/SXM, H100 SXM/NVL and H200 SXM/NVL rows. Record form factor, memory, bandwidth, precision mode and source date. Identify at least two values that cannot be compared without qualification.",
+      "expected_behavior": "A GPU family name is not a complete specification. A100 80 GB PCIe and SXM have different bandwidth; H100 NVL has 94 GB per GPU and 188 GB per pair, not 188 GB on each device. Sparse tensor peaks and dense scalar peaks describe different operations.",
+      "troubleshooting": "If a source is inaccessible, record that fact and retain the dated supplied row. Do not invent a current specification or silently substitute another SKU.",
+      "module": "datacenter",
+      "page": "datacenter/intro.md",
+      "anchor": "specifications",
+      "answer": true,
+      "validation_status": "analysis-not-hardware-execution",
+      "cleanup": "No hardware or cloud resource is created. Retain the worksheet with source dates; remove only your own temporary notes.",
+      "expected_returncodes": []
+    },
+    {
+      "id": "roofline-capacity",
+      "difficulty": "core",
+      "duration_minutes": 20,
+      "hardware": "Read-only analysis and optional CPU calculator; no A100/H100/H200",
+      "local_executable": false,
+      "sources": [
+        "examples/datacenter/bounds.py",
+        "course/specifications.json"
+      ],
+      "commands": [
+        "python examples/datacenter/bounds.py --bandwidth-gbps 3350 --peak-tflops 67 --capacity-gb 80"
+      ],
+      "analysis_only": true,
+      "task": "Calculate an FP32 vector-add roofline and a three-array capacity limit for H100 SXM using the sourced inputs. Repeat the calculation on paper in base units before checking the calculator.",
+      "expected_behavior": "One addition uses one FLOP and at least 12 bytes, so intensity is 1/12 FLOP/byte. At 3350 GB/s the bandwidth bound is about 0.279167 TFLOP/s, below the 67 TFLOP/s scalar FP32 peak. Reserving 20% of 80 decimal GB leaves at most 5,333,333,333 three-array elements. These are calculated limits, not measured performance or safe recommended allocations.",
+      "troubleshooting": "Keep GB versus GiB and dense versus sparse peaks explicit. Capacity bounds omit workspace and runtime allocations beyond the teaching reserve; never allocate the bound on the local GPU.",
+      "module": "datacenter",
+      "page": "datacenter/intro.md",
+      "anchor": "roofline-capacity",
+      "answer": true,
+      "validation_status": "analysis-not-hardware-execution",
+      "cleanup": "No hardware or cloud resource is created. Retain the worksheet with source dates; remove only your own temporary notes.",
+      "expected_returncodes": [
+        0
+      ]
+    },
+    {
+      "id": "porting-plan",
+      "difficulty": "stretch",
+      "duration_minutes": 30,
+      "hardware": "Read-only planning; no cloud account or datacenter GPU needed",
+      "local_executable": false,
+      "sources": [
+        "course/hardware-profile.json",
+        "course/specifications.json"
+      ],
+      "commands": [],
+      "task": "Write a one-page plan selecting a concrete SKU, precision, memory budget, topology, scheduler request, profiling method, correctness oracle and stop condition. Calculate cost from an explicitly hypothetical rate and include setup, retries, storage and transfer assumptions.",
+      "expected_behavior": "A complete plan separates prerequisites from observations, calculates job cost as instance-rate times billed hours plus storage/transfer, and uses a small correctness gate before scaling. It identifies whether a full GPU or a particular MIG profile is required. Unknown ports, scheduler, interconnect and remote versions remain unresolved until verified.",
+      "troubleshooting": "A vendor peak cannot predict billed time. MIG profiles cannot be treated as freely composable fractions or automatically aggregated memory. Cloud provisioning is outside this exercise and no cloud command should be executed.",
+      "module": "datacenter",
+      "page": "datacenter/intro.md",
+      "anchor": "porting-plan",
+      "answer": true,
+      "validation_status": "analysis-not-hardware-execution",
+      "cleanup": "No hardware or cloud resource is created. Retain the worksheet with source dates; remove only your own temporary notes.",
+      "expected_returncodes": []
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 """Small synthetic regression, for learning the training loop, not model quality."""
 import argparse
 import copy
+import time
 import torch
 
 p = argparse.ArgumentParser()
@@ -21,6 +22,9 @@ with torch.no_grad():
     torch.testing.assert_close(model(x).cpu(), expected, rtol=1e-4, atol=1e-5)
 opt = torch.optim.SGD(model.parameters(), lr=0.1)
 losses = []
+if args.device == "cuda":
+    torch.cuda.synchronize()
+start = time.perf_counter()
 for step in range(100):
     opt.zero_grad()
     prediction = model(x)
@@ -28,5 +32,8 @@ for step in range(100):
     loss.backward()
     opt.step()
     losses.append(loss.item())
+if args.device == "cuda":
+    torch.cuda.synchronize()
+elapsed = time.perf_counter() - start
 assert losses[-1] < losses[0] * 0.01
-print(f"device={args.device} initial_loss={losses[0]:.6f} final_loss={losses[-1]:.9f} PASS synthetic_regression")
+print(f"device={args.device} initial_loss={losses[0]:.6f} final_loss={losses[-1]:.9f} training_seconds={elapsed:.6f} PASS synthetic_regression")

@@ -1,0 +1,1755 @@
+[
+  {
+    "original": "benchmark/hpcg.md",
+    "english": "benchmark/hpcg.md",
+    "archive": "archive/zh/benchmark/hpcg.md",
+    "original_url": "/hpc_study.io/benchmark/hpcg/",
+    "english_url": "/hpc_study.io/benchmark/hpcg/",
+    "archive_url": "/hpc_study.io/archive/zh/benchmark/hpcg/",
+    "source_sha256": "b7b7b449fedf61dbe6bde287a05eb58b3ceb2d8cd7a112d3e7dc4d55f5995e08",
+    "anchors": [
+      {
+        "id": "hpcg",
+        "title": "HPCG：稀疏计算与通信的另一面"
+      },
+      {
+        "id": "_1",
+        "title": "稀疏矩阵有什么不同"
+      },
+      {
+        "id": "_2",
+        "title": "小规模运行"
+      },
+      {
+        "id": "hpl",
+        "title": "与 HPL 一起理解"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "benchmark/hpl.md",
+    "english": "benchmark/hpl.md",
+    "archive": "archive/zh/benchmark/hpl.md",
+    "original_url": "/hpc_study.io/benchmark/hpl/",
+    "english_url": "/hpc_study.io/benchmark/hpl/",
+    "archive_url": "/hpc_study.io/archive/zh/benchmark/hpl/",
+    "source_sha256": "185c2eb68a7db019678e83f657168942a98f2df38c94c34056dff62767ef8289",
+    "anchors": [
+      {
+        "id": "hpl",
+        "title": "HPL：稠密线性方程的计算能力"
+      },
+      {
+        "id": "_1",
+        "title": "计算量与内存量"
+      },
+      {
+        "id": "hpldat",
+        "title": "先认识 HPL.dat"
+      },
+      {
+        "id": "_2",
+        "title": "怎样读输出"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "benchmark/intro.md",
+    "english": "benchmark/intro.md",
+    "archive": "archive/zh/benchmark/intro.md",
+    "original_url": "/hpc_study.io/benchmark/intro/",
+    "english_url": "/hpc_study.io/benchmark/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/benchmark/intro/",
+    "source_sha256": "0a8a5491de3c75ffa25e2a9f2c57bed4aefab9d1ff232fe4f4906164ab23c5fa",
+    "anchors": [
+      {
+        "id": "benchmark",
+        "title": "Benchmark：先明确你在比较什么"
+      },
+      {
+        "id": "_1",
+        "title": "先正确，再计时"
+      },
+      {
+        "id": "_2",
+        "title": "一个简单的测量协议"
+      },
+      {
+        "id": "_3",
+        "title": "加速比与扩展性"
+      },
+      {
+        "id": "2",
+        "title": "综合实验（约 2 小时）"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "benchmark/mlperf.md",
+    "english": "benchmark/mlperf.md",
+    "archive": "archive/zh/benchmark/mlperf.md",
+    "original_url": "/hpc_study.io/benchmark/mlperf/",
+    "english_url": "/hpc_study.io/benchmark/mlperf/",
+    "archive_url": "/hpc_study.io/archive/zh/benchmark/mlperf/",
+    "source_sha256": "6a1b40f63161a39bb75e1f090cb58cdf98cab48d24a34657807a5a29956d5523",
+    "anchors": [
+      {
+        "id": "mlperf",
+        "title": "MLPerf：机器学习测试也有任务与规则"
+      },
+      {
+        "id": "_1",
+        "title": "训练与推理不同"
+      },
+      {
+        "id": "_2",
+        "title": "公平比较需要固定条件"
+      },
+      {
+        "id": "_3",
+        "title": "教学实验：先学测量方法"
+      },
+      {
+        "id": "_4",
+        "title": "综合阅读练习"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "communication/cost.md",
+    "english": "communication/cost.md",
+    "archive": "archive/zh/communication/cost.md",
+    "original_url": "/hpc_study.io/communication/cost/",
+    "english_url": "/hpc_study.io/communication/cost/",
+    "archive_url": "/hpc_study.io/archive/zh/communication/cost/",
+    "source_sha256": "d275ae6ee72379146a3b0f4aee382a2eb3cbded37ffe51cebb4eadfcf925e7a0",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "通信成本：测延迟，也测消息大小"
+      },
+      {
+        "id": "_2",
+        "title": "延迟加传输时间"
+      },
+      {
+        "id": "_3",
+        "title": "运行实验"
+      },
+      {
+        "id": "_4",
+        "title": "优化时问三个问题"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "communication/deadlock.md",
+    "english": "communication/deadlock.md",
+    "archive": "archive/zh/communication/deadlock.md",
+    "original_url": "/hpc_study.io/communication/deadlock/",
+    "english_url": "/hpc_study.io/communication/deadlock/",
+    "archive_url": "/hpc_study.io/archive/zh/communication/deadlock/",
+    "source_sha256": "0e128bc34e3f42846379bae4fb19684462e8df03338b9276eebe288338e80721",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "死锁：大家都在等别人"
+      },
+      {
+        "id": "_2",
+        "title": "看似对称，实际危险"
+      },
+      {
+        "id": "_3",
+        "title": "三种修复思路"
+      },
+      {
+        "id": "_4",
+        "title": "集合通信也会等待"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "communication/intro.md",
+    "english": "communication/intro.md",
+    "archive": "archive/zh/communication/intro.md",
+    "original_url": "/hpc_study.io/communication/intro/",
+    "english_url": "/hpc_study.io/communication/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/communication/intro/",
+    "source_sha256": "a65e2d582f0f2f9552c386efe62de478f3b9f0ae50d62874f461a2846b3f3359",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "通信：把局部工作连成整体"
+      },
+      {
+        "id": "_2",
+        "title": "先问需要交换什么"
+      },
+      {
+        "id": "_3",
+        "title": "点对点与集合通信"
+      },
+      {
+        "id": "_4",
+        "title": "第一次运行"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "communication/model.md",
+    "english": "communication/model.md",
+    "archive": "archive/zh/communication/model.md",
+    "original_url": "/hpc_study.io/communication/model/",
+    "english_url": "/hpc_study.io/communication/model/",
+    "archive_url": "/hpc_study.io/archive/zh/communication/model/",
+    "source_sha256": "d2d50b858dc0c81b7221b929368d591fb7a4cd4a333770d678d184f0d6c790c1",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "常见通信模式与完成语义"
+      },
+      {
+        "id": "_2",
+        "title": "阻塞不等于对方已经处理完"
+      },
+      {
+        "id": "_3",
+        "title": "小练习"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "competition/asc.md",
+    "english": "reference/competition/asc.md",
+    "archive": "archive/zh/competition/asc.md",
+    "original_url": "/hpc_study.io/competition/asc/",
+    "english_url": "/hpc_study.io/reference/competition/asc/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/asc/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "competition/competition-intro.md",
+    "english": "reference/competition/competition-intro.md",
+    "archive": "archive/zh/competition/competition-intro.md",
+    "original_url": "/hpc_study.io/competition/competition-intro/",
+    "english_url": "/hpc_study.io/reference/competition/competition-intro/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/competition-intro/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "competition/hpcgame.md",
+    "english": "reference/competition/hpcgame.md",
+    "archive": "archive/zh/competition/hpcgame.md",
+    "original_url": "/hpc_study.io/competition/hpcgame/",
+    "english_url": "/hpc_study.io/reference/competition/hpcgame/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/hpcgame/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "competition/isc.md",
+    "english": "reference/competition/isc.md",
+    "archive": "archive/zh/competition/isc.md",
+    "original_url": "/hpc_study.io/competition/isc/",
+    "english_url": "/hpc_study.io/reference/competition/isc/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/isc/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "competition/other.md",
+    "english": "reference/competition/other.md",
+    "archive": "archive/zh/competition/other.md",
+    "original_url": "/hpc_study.io/competition/other/",
+    "english_url": "/hpc_study.io/reference/competition/other/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/other/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "competition/sc.md",
+    "english": "reference/competition/sc.md",
+    "archive": "archive/zh/competition/sc.md",
+    "original_url": "/hpc_study.io/competition/sc/",
+    "english_url": "/hpc_study.io/reference/competition/sc/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/sc/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "contribute/before-contributing.md",
+    "english": "reference/contribute/before-contributing.md",
+    "archive": "archive/zh/contribute/before-contributing.md",
+    "original_url": "/hpc_study.io/contribute/before-contributing/",
+    "english_url": "/hpc_study.io/reference/contribute/before-contributing/",
+    "archive_url": "/hpc_study.io/archive/zh/contribute/before-contributing/",
+    "source_sha256": "bb53883f23b7edc7fb0676955b81c9f4e16ab52c232aaceb1fc3ce12cea6df0c",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "贡献之前"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "contribute/docs-organization.md",
+    "english": "reference/contribute/docs-organization.md",
+    "archive": "archive/zh/contribute/docs-organization.md",
+    "original_url": "/hpc_study.io/contribute/docs-organization/",
+    "english_url": "/hpc_study.io/reference/contribute/docs-organization/",
+    "archive_url": "/hpc_study.io/archive/zh/contribute/docs-organization/",
+    "source_sha256": "2666f7893756952c263698a0712a63771db2bf50b76a2c2484d55395b1bc23dc",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "文档组织方式"
+      },
+      {
+        "id": "_2",
+        "title": "部署方式"
+      },
+      {
+        "id": "_3",
+        "title": "文档组织方式"
+      },
+      {
+        "id": "_4",
+        "title": "举例说明"
+      },
+      {
+        "id": "_5",
+        "title": "如何增加一篇新文章"
+      },
+      {
+        "id": "_6",
+        "title": "如何修改一篇文章"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "contribute/docs-style.md",
+    "english": "reference/contribute/docs-style.md",
+    "archive": "archive/zh/contribute/docs-style.md",
+    "original_url": "/hpc_study.io/contribute/docs-style/",
+    "english_url": "/hpc_study.io/reference/contribute/docs-style/",
+    "archive_url": "/hpc_study.io/archive/zh/contribute/docs-style/",
+    "source_sha256": "c4293d28a7ae8885c3002d10c4d62f6816ece2dd809a3fbdc586c164545e66a8",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "文档风格规范"
+      },
+      {
+        "id": "_2",
+        "title": "目标受众"
+      },
+      {
+        "id": "_3",
+        "title": "行文结构"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "gpu/arch.md",
+    "english": "gpu/arch.md",
+    "archive": "archive/zh/gpu/arch.md",
+    "original_url": "/hpc_study.io/gpu/arch/",
+    "english_url": "/hpc_study.io/gpu/arch/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/arch/",
+    "source_sha256": "cbff2b9fdb6964e31d306a7c39eff956aeb6a92bbf4e183c3e6429e701102a3d",
+    "anchors": [
+      {
+        "id": "gpu",
+        "title": "GPU 架构：线程怎样组织起来"
+      },
+      {
+        "id": "cpu-gpu",
+        "title": "CPU 与 GPU 的分工"
+      },
+      {
+        "id": "threadblockgrid",
+        "title": "Thread、block、grid"
+      },
+      {
+        "id": "_1",
+        "title": "四种需要认识的存储"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "gpu/cuda-advanced.md",
+    "english": "gpu/cuda-advanced.md",
+    "archive": "archive/zh/gpu/cuda-advanced.md",
+    "original_url": "/hpc_study.io/gpu/cuda-advanced/",
+    "english_url": "/hpc_study.io/gpu/cuda-advanced/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/cuda-advanced/",
+    "source_sha256": "67c7bcebb5f7a342ecd209c43780188e7d3401f28443a07c4d6d90a6cd8ad814",
+    "anchors": [
+      {
+        "id": "cuda",
+        "title": "CUDA 优化：先少搬数据，再测量"
+      },
+      {
+        "id": "_1",
+        "title": "相邻线程读相邻数据"
+      },
+      {
+        "id": "_2",
+        "title": "分块矩阵乘法"
+      },
+      {
+        "id": "_3",
+        "title": "归约与流"
+      },
+      {
+        "id": "3",
+        "title": "综合实验（约 3 小时）"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "gpu/cuda.md",
+    "english": "gpu/cuda.md",
+    "archive": "archive/zh/gpu/cuda.md",
+    "original_url": "/hpc_study.io/gpu/cuda/",
+    "english_url": "/hpc_study.io/gpu/cuda/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/cuda/",
+    "source_sha256": "ec3a2ffe1e584cc0a7e950349c8052f98254c2032efd006e41505f307f19e244",
+    "anchors": [
+      {
+        "id": "cuda",
+        "title": "CUDA 编程入门"
+      },
+      {
+        "id": "_1",
+        "title": "新读者先做一个小实验"
+      },
+      {
+        "id": "overview",
+        "title": "Overview"
+      },
+      {
+        "id": "introduction",
+        "title": "Introduction"
+      },
+      {
+        "id": "why-gpu",
+        "title": "Why GPU?"
+      },
+      {
+        "id": "gpu",
+        "title": "为什么 GPU 会这样设计"
+      },
+      {
+        "id": "takeaway",
+        "title": "Takeaway"
+      },
+      {
+        "id": "part-1-correctness",
+        "title": "Part 1. Correctness"
+      },
+      {
+        "id": "step-0",
+        "title": "Step 0. 部署示例代码"
+      },
+      {
+        "id": "step-1-your-first-cuda-kernel",
+        "title": "Step 1. Your First CUDA Kernel"
+      },
+      {
+        "id": "step-2-memory-management",
+        "title": "Step 2. Memory Management"
+      },
+      {
+        "id": "step-3-threads-and-blocks",
+        "title": "Step 3. Threads and Blocks"
+      },
+      {
+        "id": "takeaway_1",
+        "title": "Takeaway"
+      },
+      {
+        "id": "part-2-performance",
+        "title": "Part 2. Performance"
+      },
+      {
+        "id": "0",
+        "title": "0. 算存比"
+      },
+      {
+        "id": "1-__restrict__",
+        "title": "1. __restrict__"
+      },
+      {
+        "id": "2-memory-coalescing",
+        "title": "2. Memory Coalescing"
+      },
+      {
+        "id": "3-shared-memory",
+        "title": "3. Shared Memory"
+      },
+      {
+        "id": "4-profiling-tools",
+        "title": "4. Profiling Tools"
+      },
+      {
+        "id": "takeaway_2",
+        "title": "Takeaway"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "gpu/hip.md",
+    "english": "reference/programming-models/hip.md",
+    "archive": "archive/zh/gpu/hip.md",
+    "original_url": "/hpc_study.io/gpu/hip/",
+    "english_url": "/hpc_study.io/reference/programming-models/hip/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/hip/",
+    "source_sha256": "512e6065d02131f6dbe27cb8b6956e1fad8e122c0946c65c37aaf7690ebd10ee",
+    "anchors": [
+      {
+        "id": "hip-cuda",
+        "title": "HIP：理解 CUDA 风格代码的迁移"
+      },
+      {
+        "id": "_1",
+        "title": "熟悉的结构"
+      },
+      {
+        "id": "api",
+        "title": "从 API 替换到真正可移植"
+      },
+      {
+        "id": "_2",
+        "title": "迁移清单练习"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "gpu/intro.md",
+    "english": "gpu/intro.md",
+    "archive": "archive/zh/gpu/intro.md",
+    "original_url": "/hpc_study.io/gpu/intro/",
+    "english_url": "/hpc_study.io/gpu/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/intro/",
+    "source_sha256": "492d8f8c47d3aa3f2994912b4e117c5fbb26493fa6a0f57eed10a0176b70e475",
+    "anchors": [
+      {
+        "id": "gpu",
+        "title": "GPU 编程：从一个数组开始"
+      },
+      {
+        "id": "_1",
+        "title": "主机与设备"
+      },
+      {
+        "id": "_2",
+        "title": "学习顺序"
+      },
+      {
+        "id": "_3",
+        "title": "检查环境"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "gpu/nccl.md",
+    "english": "gpu/nccl.md",
+    "archive": "archive/zh/gpu/nccl.md",
+    "original_url": "/hpc_study.io/gpu/nccl/",
+    "english_url": "/hpc_study.io/gpu/nccl/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/nccl/",
+    "source_sha256": "4838a5099c774700f595b6e450ec60aecce072c958d2337fac1f30b7db57e02d",
+    "anchors": [
+      {
+        "id": "nccl-gpu",
+        "title": "NCCL：多张 GPU 怎样合并数据"
+      },
+      {
+        "id": "allreduce",
+        "title": "以 AllReduce 为例"
+      },
+      {
+        "id": "pytorch",
+        "title": "PyTorch 中的最小多卡示例"
+      },
+      {
+        "id": "_1",
+        "title": "常见故障"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "gpu/nsys.md",
+    "english": "gpu/nsys.md",
+    "archive": "archive/zh/gpu/nsys.md",
+    "original_url": "/hpc_study.io/gpu/nsys/",
+    "english_url": "/hpc_study.io/gpu/nsys/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/nsys/",
+    "source_sha256": "5e65d4a528fc7b68bf98279539fb506d70b82195f4877c3d187e860c8166c600",
+    "anchors": [
+      {
+        "id": "nsight-systems",
+        "title": "Nsight Systems：在时间线上找等待"
+      },
+      {
+        "id": "_1",
+        "title": "先提出问题"
+      },
+      {
+        "id": "_2",
+        "title": "三种区域"
+      },
+      {
+        "id": "nsight-compute",
+        "title": "与 Nsight Compute 的区别"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "gpu/openacc.md",
+    "english": "reference/programming-models/openacc.md",
+    "archive": "archive/zh/gpu/openacc.md",
+    "original_url": "/hpc_study.io/gpu/openacc/",
+    "english_url": "/hpc_study.io/reference/programming-models/openacc/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/openacc/",
+    "source_sha256": "74791b7f0af9c854cd4999cecde27b1d13727d3b9f18cd2ced9b02a9b0121f68",
+    "anchors": [
+      {
+        "id": "openacc",
+        "title": "OpenACC：用指令描述加速"
+      },
+      {
+        "id": "cpu",
+        "title": "一个能直接编译的 CPU 示例"
+      },
+      {
+        "id": "pragma",
+        "title": "数据区域往往比一行 pragma 更重要"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "gpu/opencl.md",
+    "english": "reference/programming-models/opencl.md",
+    "archive": "archive/zh/gpu/opencl.md",
+    "original_url": "/hpc_study.io/gpu/opencl/",
+    "english_url": "/hpc_study.io/reference/programming-models/opencl/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/opencl/",
+    "source_sha256": "a4dadbd8afaa487919a439670c5339eb89b8647ee6e2026f286147884c934255",
+    "anchors": [
+      {
+        "id": "opencl",
+        "title": "OpenCL：平台、设备与命令队列"
+      },
+      {
+        "id": "_1",
+        "title": "主机负责安排工作"
+      },
+      {
+        "id": "_2",
+        "title": "环境练习"
+      },
+      {
+        "id": "_3",
+        "title": "迁移时检查什么"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "hardware/fpga-and-asics.md",
+    "english": "hardware/fpga-and-asics.md",
+    "archive": "archive/zh/hardware/fpga-and-asics.md",
+    "original_url": "/hpc_study.io/hardware/fpga-and-asics/",
+    "english_url": "/hpc_study.io/hardware/fpga-and-asics/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/fpga-and-asics/",
+    "source_sha256": "3087f6361b640ade147ff4cc4035bf7917ff9b67efda8621381a46d7b47c27fd",
+    "anchors": [
+      {
+        "id": "fpga-asic",
+        "title": "FPGA 与 ASIC：为特定工作设计硬件"
+      },
+      {
+        "id": "_1",
+        "title": "两种不同的“专用”"
+      },
+      {
+        "id": "_2",
+        "title": "一个流水线例子"
+      },
+      {
+        "id": "_3",
+        "title": "纸面实验与练习"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "hardware/gpu.md",
+    "english": "gpu/arch.md",
+    "archive": "archive/zh/hardware/gpu.md",
+    "original_url": "/hpc_study.io/hardware/gpu/",
+    "english_url": "/hpc_study.io/gpu/arch/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/gpu/",
+    "source_sha256": "54d3b2076deaca34b8b5ee4b5108dbc9d0bebf258fc0b0d85415c99dc1a20aec",
+    "anchors": [
+      {
+        "id": "gpu",
+        "title": "GPU"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "hardware/hardware-intro.md",
+    "english": "hardware/hardware-intro.md",
+    "archive": "archive/zh/hardware/hardware-intro.md",
+    "original_url": "/hpc_study.io/hardware/hardware-intro/",
+    "english_url": "/hpc_study.io/hardware/hardware-intro/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/hardware-intro/",
+    "source_sha256": "bf3c1346a58d7f44d7bd2b3eafb732c8652168c1d3d1e337c57fa9abee964c91",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "硬件：先认识一台计算机"
+      },
+      {
+        "id": "_2",
+        "title": "数据经过哪里"
+      },
+      {
+        "id": "_3",
+        "title": "三个不同的问题"
+      },
+      {
+        "id": "_4",
+        "title": "第一次观察"
+      },
+      {
+        "id": "2",
+        "title": "本章实验：画出自己的机器（约 2 小时）"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "hardware/interconnect.md",
+    "english": "hardware/interconnect.md",
+    "archive": "archive/zh/hardware/interconnect.md",
+    "original_url": "/hpc_study.io/hardware/interconnect/",
+    "english_url": "/hpc_study.io/hardware/interconnect/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/interconnect/",
+    "source_sha256": "d440aed7c6679470a8250ec2c42597de7edd105643f35775effa507e732ff185",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "互连：数据怎样到达另一块设备"
+      },
+      {
+        "id": "_2",
+        "title": "机器内部与机器之间"
+      },
+      {
+        "id": "_3",
+        "title": "先看拓扑"
+      },
+      {
+        "id": "_4",
+        "title": "用模型估算"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "hardware/memory.md",
+    "english": "hardware/memory.md",
+    "archive": "archive/zh/hardware/memory.md",
+    "original_url": "/hpc_study.io/hardware/memory/",
+    "english_url": "/hpc_study.io/hardware/memory/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/memory/",
+    "source_sha256": "661b0f823994f7069ffd86b74aa656d5071a1f98c04d818ce0350caf86032600",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "内存：容量够了，为什么还慢"
+      },
+      {
+        "id": "_2",
+        "title": "越近通常越快，也越小"
+      },
+      {
+        "id": "_3",
+        "title": "动手：改变步长"
+      },
+      {
+        "id": "_4",
+        "title": "用简单模型判断瓶颈"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "hardware/processor.md",
+    "english": "hardware/processor.md",
+    "archive": "archive/zh/hardware/processor.md",
+    "original_url": "/hpc_study.io/hardware/processor/",
+    "english_url": "/hpc_study.io/hardware/processor/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/processor/",
+    "source_sha256": "d02f662039d50e8af32763b92a5755cc4cce00bf5628580b5e677104ed2f4ba6",
+    "anchors": [
+      {
+        "id": "cpu",
+        "title": "CPU：核心、指令与向量化"
+      },
+      {
+        "id": "_1",
+        "title": "一条指令不一定处理一个数"
+      },
+      {
+        "id": "_2",
+        "title": "从循环开始"
+      },
+      {
+        "id": "_3",
+        "title": "观察线程数的影响"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "hardware/storage.md",
+    "english": "hardware/storage.md",
+    "archive": "archive/zh/hardware/storage.md",
+    "original_url": "/hpc_study.io/hardware/storage/",
+    "english_url": "/hpc_study.io/hardware/storage/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/storage/",
+    "source_sha256": "6f9833c56c1edff1a89712eed2416c8f2e494185a2177f2365fc39f88237804a",
+    "anchors": [
+      {
+        "id": "io",
+        "title": "存储与 I/O：让数据跟上计算"
+      },
+      {
+        "id": "_1",
+        "title": "不要把磁盘当作慢一点的内存"
+      },
+      {
+        "id": "_2",
+        "title": "一个小而安全的观察"
+      },
+      {
+        "id": "io_1",
+        "title": "科学计算和机器学习中的 I/O"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "hpc-intro/hpc-history.md",
+    "english": "foundations/hpc-history.md",
+    "archive": "archive/zh/hpc-intro/hpc-history.md",
+    "original_url": "/hpc_study.io/hpc-intro/hpc-history/",
+    "english_url": "/hpc_study.io/foundations/hpc-history/",
+    "archive_url": "/hpc_study.io/archive/zh/hpc-intro/hpc-history/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "hpc-intro/modern-hpc.md",
+    "english": "foundations/modern-hpc.md",
+    "archive": "archive/zh/hpc-intro/modern-hpc.md",
+    "original_url": "/hpc_study.io/hpc-intro/modern-hpc/",
+    "english_url": "/hpc_study.io/foundations/modern-hpc/",
+    "archive_url": "/hpc_study.io/archive/zh/hpc-intro/modern-hpc/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "hpc-intro/what-is-hpc.md",
+    "english": "foundations/what-is-hpc.md",
+    "archive": "archive/zh/hpc-intro/what-is-hpc.md",
+    "original_url": "/hpc_study.io/hpc-intro/what-is-hpc/",
+    "english_url": "/hpc_study.io/foundations/what-is-hpc/",
+    "archive_url": "/hpc_study.io/archive/zh/hpc-intro/what-is-hpc/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "index.md",
+    "english": "index.md",
+    "archive": "archive/zh/index.md",
+    "original_url": "/hpc_study.io/",
+    "english_url": "/hpc_study.io/",
+    "archive_url": "/hpc_study.io/archive/zh/",
+    "source_sha256": "9562577e20eddb8e2749c7beb386f976e69bad6cced3f58b92f512eba6fc239c",
+    "anchors": [
+      {
+        "id": "hpc-wiki",
+        "title": "HPC Wiki"
+      },
+      {
+        "id": "material-color-palette",
+        "title": "Material color palette 颜色主题"
+      },
+      {
+        "id": "color-scheme",
+        "title": "Color Scheme 配色方案"
+      },
+      {
+        "id": "primary-colors",
+        "title": "Primary colors 主色"
+      },
+      {
+        "id": "accent-colors",
+        "title": "Accent colors 辅助色"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "learning/glossary.md",
+    "english": "learning/glossary.md",
+    "archive": "archive/zh/learning/glossary.md",
+    "original_url": "/hpc_study.io/learning/glossary/",
+    "english_url": "/hpc_study.io/learning/glossary/",
+    "archive_url": "/hpc_study.io/archive/zh/learning/glossary/",
+    "source_sha256": "3c9c0bcb74562c8ff42d695fd9977bd2841e0cf7f4b4887734f0aedd29b15993",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "常用术语"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "learning/labs.md",
+    "english": "learning/labs.md",
+    "archive": "archive/zh/learning/labs.md",
+    "original_url": "/hpc_study.io/learning/labs/",
+    "english_url": "/hpc_study.io/learning/labs/",
+    "archive_url": "/hpc_study.io/archive/zh/learning/labs/",
+    "source_sha256": "c0007c27c3fa951130e54d1c7b1f2f1d5eb10a4b411fe93fa218612d0db0735d",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "实验索引"
+      },
+      {
+        "id": "_2",
+        "title": "推荐的五份实验报告"
+      },
+      {
+        "id": "_3",
+        "title": "验证边界"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "learning/path.md",
+    "english": "learning/path.md",
+    "archive": "archive/zh/learning/path.md",
+    "original_url": "/hpc_study.io/learning/path/",
+    "english_url": "/hpc_study.io/learning/path/",
+    "archive_url": "/hpc_study.io/archive/zh/learning/path/",
+    "source_sha256": "c7bbb0ac4c0d87180480894e2692e7bb064235ba53eb7d5d3d98c57306a103e9",
+    "anchors": [
+      {
+        "id": "hpc",
+        "title": "从这里开始：HPC 学习路线"
+      },
+      {
+        "id": "_1",
+        "title": "开始前需要什么"
+      },
+      {
+        "id": "_2",
+        "title": "五个阶段"
+      },
+      {
+        "id": "gpu",
+        "title": "没有 GPU 的路径"
+      },
+      {
+        "id": "_3",
+        "title": "学习时保留一份记录"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "learning/setup.md",
+    "english": "learning/setup.md",
+    "archive": "archive/zh/learning/setup.md",
+    "original_url": "/hpc_study.io/learning/setup/",
+    "english_url": "/hpc_study.io/learning/setup/",
+    "archive_url": "/hpc_study.io/archive/zh/learning/setup/",
+    "source_sha256": "0aeaa3c81c00a5156cd0db8ab140b0031f9f37b66834454839be100393e6b5bd",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "环境准备：先让小程序运行"
+      },
+      {
+        "id": "_2",
+        "title": "取得源码"
+      },
+      {
+        "id": "cpu-python",
+        "title": "CPU 与 Python"
+      },
+      {
+        "id": "nvidia-gpu",
+        "title": "NVIDIA GPU"
+      },
+      {
+        "id": "_3",
+        "title": "网站预览"
+      },
+      {
+        "id": "_4",
+        "title": "常见问题"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "learning/validation.md",
+    "english": "learning/validation.md",
+    "archive": "archive/zh/learning/validation.md",
+    "original_url": "/hpc_study.io/learning/validation/",
+    "english_url": "/hpc_study.io/learning/validation/",
+    "archive_url": "/hpc_study.io/archive/zh/learning/validation/",
+    "source_sha256": "8f3378d40db43c0702342583299a33c449b19b6f86407ea51d4145c0cac8e8af",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "课程验证记录"
+      },
+      {
+        "id": "_2",
+        "title": "本次环境"
+      },
+      {
+        "id": "_3",
+        "title": "已执行的检查"
+      },
+      {
+        "id": "_4",
+        "title": "原始记录"
+      },
+      {
+        "id": "_5",
+        "title": "这些结果不能说明什么"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "memory-model/cache.md",
+    "english": "memory-model/cache.md",
+    "archive": "archive/zh/memory-model/cache.md",
+    "original_url": "/hpc_study.io/memory-model/cache/",
+    "english_url": "/hpc_study.io/memory-model/cache/",
+    "archive_url": "/hpc_study.io/archive/zh/memory-model/cache/",
+    "source_sha256": "e11f24d4e72698a4da5c14f84ba72c51c0f2b96972c70d4ffb1d5380ecf89d85",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "缓存一致性与伪共享"
+      },
+      {
+        "id": "_2",
+        "title": "缓存一致性没有替你加锁"
+      },
+      {
+        "id": "_3",
+        "title": "怎样减少它"
+      },
+      {
+        "id": "_4",
+        "title": "一个纸面实验"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "memory-model/consistency.md",
+    "english": "memory-model/consistency.md",
+    "archive": "archive/zh/memory-model/consistency.md",
+    "original_url": "/hpc_study.io/memory-model/consistency/",
+    "english_url": "/hpc_study.io/memory-model/consistency/",
+    "archive_url": "/hpc_study.io/archive/zh/memory-model/consistency/",
+    "source_sha256": "0397e9743641e3a7cf91fb23113b033ed49b5f194c27595ec85f90541ae15f2c",
+    "anchors": [
+      {
+        "id": "happens-before",
+        "title": "一致性与 happens-before"
+      },
+      {
+        "id": "_1",
+        "title": "建立先后关系"
+      },
+      {
+        "id": "_2",
+        "title": "初学时选择简单规则"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "memory-model/intro.md",
+    "english": "memory-model/intro.md",
+    "archive": "archive/zh/memory-model/intro.md",
+    "original_url": "/hpc_study.io/memory-model/intro/",
+    "english_url": "/hpc_study.io/memory-model/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/memory-model/intro/",
+    "source_sha256": "caf11ae9190d760cdea85c876879d60ab2f6d036fbd03967b53b864d8cfd2b72",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "内存模型：谁能看到哪一次写入"
+      },
+      {
+        "id": "_2",
+        "title": "共享地址不代表自动同步"
+      },
+      {
+        "id": "_3",
+        "title": "先掌握三个词"
+      },
+      {
+        "id": "_4",
+        "title": "阅读一个安全结构"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "memory-model/numa.md",
+    "english": "memory-model/numa.md",
+    "archive": "archive/zh/memory-model/numa.md",
+    "original_url": "/hpc_study.io/memory-model/numa/",
+    "english_url": "/hpc_study.io/memory-model/numa/",
+    "archive_url": "/hpc_study.io/archive/zh/memory-model/numa/",
+    "source_sha256": "7d303743930a884b8bbefa1dc7da9cf8fa762be6d6e6ef6ab3de530432471a6d",
+    "anchors": [
+      {
+        "id": "numa-cpu",
+        "title": "NUMA：内存离哪个 CPU 更近"
+      },
+      {
+        "id": "_1",
+        "title": "分配和首次写入"
+      },
+      {
+        "id": "_2",
+        "title": "看清允许使用的资源"
+      },
+      {
+        "id": "_3",
+        "title": "常见误区"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "misc/faq.md",
+    "english": "reference/misc/faq.md",
+    "archive": "archive/zh/misc/faq.md",
+    "original_url": "/hpc_study.io/misc/faq/",
+    "english_url": "/hpc_study.io/reference/misc/faq/",
+    "archive_url": "/hpc_study.io/archive/zh/misc/faq/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "misc/git.md",
+    "english": "reference/misc/git.md",
+    "archive": "archive/zh/misc/git.md",
+    "original_url": "/hpc_study.io/misc/git/",
+    "english_url": "/hpc_study.io/reference/misc/git/",
+    "archive_url": "/hpc_study.io/archive/zh/misc/git/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "misc/shell.md",
+    "english": "reference/misc/shell.md",
+    "archive": "archive/zh/misc/shell.md",
+    "original_url": "/hpc_study.io/misc/shell/",
+    "english_url": "/hpc_study.io/reference/misc/shell/",
+    "archive_url": "/hpc_study.io/archive/zh/misc/shell/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "parallel-programming/mpi.md",
+    "english": "parallel-programming/mpi.md",
+    "archive": "archive/zh/parallel-programming/mpi.md",
+    "original_url": "/hpc_study.io/parallel-programming/mpi/",
+    "english_url": "/hpc_study.io/parallel-programming/mpi/",
+    "archive_url": "/hpc_study.io/archive/zh/parallel-programming/mpi/",
+    "source_sha256": "1ca4bb1cd7bc8825c80d8b5e759719fba89d7bf6b3f7f40a3bbd1edce93992c3",
+    "anchors": [
+      {
+        "id": "mpi",
+        "title": "MPI：用消息连接多个进程"
+      },
+      {
+        "id": "c",
+        "title": "一个最小 C 程序"
+      },
+      {
+        "id": "_1",
+        "title": "怎样理解输出"
+      },
+      {
+        "id": "_2",
+        "title": "真正的并行工作"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "parallel-programming/mpi4py.md",
+    "english": "parallel-programming/mpi4py.md",
+    "archive": "archive/zh/parallel-programming/mpi4py.md",
+    "original_url": "/hpc_study.io/parallel-programming/mpi4py/",
+    "english_url": "/hpc_study.io/parallel-programming/mpi4py/",
+    "archive_url": "/hpc_study.io/archive/zh/parallel-programming/mpi4py/",
+    "source_sha256": "738f5c8085247013ca560485287085ec7a1463d2a6474fadde8545fa93db65dd",
+    "anchors": [
+      {
+        "id": "mpi4py-python",
+        "title": "mpi4py：用 Python 练习消息传递"
+      },
+      {
+        "id": "_1",
+        "title": "从不均匀分块开始"
+      },
+      {
+        "id": "_2",
+        "title": "看懂核心代码"
+      },
+      {
+        "id": "_3",
+        "title": "小写与大写接口"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "parallel-programming/openmp.md",
+    "english": "parallel-programming/openmp.md",
+    "archive": "archive/zh/parallel-programming/openmp.md",
+    "original_url": "/hpc_study.io/parallel-programming/openmp/",
+    "english_url": "/hpc_study.io/parallel-programming/openmp/",
+    "archive_url": "/hpc_study.io/archive/zh/parallel-programming/openmp/",
+    "source_sha256": "dae1243527a0c3b7e4c1178d45e274b6f962fa6d4dfdab975317afe29dc8c175",
+    "anchors": [
+      {
+        "id": "openmp",
+        "title": "OpenMP：把第一个循环分给多个线程"
+      },
+      {
+        "id": "_1",
+        "title": "编译和运行"
+      },
+      {
+        "id": "_2",
+        "title": "最重要的一行"
+      },
+      {
+        "id": "_3",
+        "title": "从正确走向测量"
+      },
+      {
+        "id": "3",
+        "title": "本章综合实验（约 3 小时）"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "parallel-programming/parallel-programming-intro.md",
+    "english": "parallel-programming/parallel-programming-intro.md",
+    "archive": "archive/zh/parallel-programming/parallel-programming-intro.md",
+    "original_url": "/hpc_study.io/parallel-programming/parallel-programming-intro/",
+    "english_url": "/hpc_study.io/parallel-programming/parallel-programming-intro/",
+    "archive_url": "/hpc_study.io/archive/zh/parallel-programming/parallel-programming-intro/",
+    "source_sha256": "d136b5abcc224ee64a05f1761461ece60db63d56c8427727517920d218cc219b",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "并行编程导论"
+      },
+      {
+        "id": "_2",
+        "title": "先完成一个小目标"
+      },
+      {
+        "id": "_3",
+        "title": "并行编程的基本概念"
+      },
+      {
+        "id": "_4",
+        "title": "并行编程的一般方法"
+      },
+      {
+        "id": "_5",
+        "title": "学习路径"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "performance-analysis/intro.md",
+    "english": "performance-analysis/intro.md",
+    "archive": "archive/zh/performance-analysis/intro.md",
+    "original_url": "/hpc_study.io/performance-analysis/intro/",
+    "english_url": "/hpc_study.io/performance-analysis/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/performance-analysis/intro/",
+    "source_sha256": "3f5564644af6ac29b19b3dd0ba7790ab45625ae5915daab6bbe12872a576ea0d",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "性能分析简介"
+      },
+      {
+        "id": "_2",
+        "title": "入门实践入口"
+      },
+      {
+        "id": "_3",
+        "title": "获取信息"
+      },
+      {
+        "id": "_4",
+        "title": "火焰图"
+      },
+      {
+        "id": "_5",
+        "title": "时间线"
+      },
+      {
+        "id": "_6",
+        "title": "性能分析原理"
+      },
+      {
+        "id": "_7",
+        "title": "性能计数器"
+      },
+      {
+        "id": "_8",
+        "title": "采样"
+      },
+      {
+        "id": "_9",
+        "title": "并行编程框架"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "performance-analysis/tools.md",
+    "english": "performance-analysis/tools.md",
+    "archive": "archive/zh/performance-analysis/tools.md",
+    "original_url": "/hpc_study.io/performance-analysis/tools/",
+    "english_url": "/hpc_study.io/performance-analysis/tools/",
+    "archive_url": "/hpc_study.io/archive/zh/performance-analysis/tools/",
+    "source_sha256": "2649d18302e08a0595007b058789713fa38393de02769f12af90e095a1ce44d0",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "性能分析工具"
+      },
+      {
+        "id": "linux",
+        "title": "Linux"
+      },
+      {
+        "id": "perf",
+        "title": "perf"
+      },
+      {
+        "id": "intel-vtune",
+        "title": "Intel 平台：VTune"
+      },
+      {
+        "id": "amd-prof",
+        "title": "AMD 平台：μProf"
+      },
+      {
+        "id": "nvidia-nsight",
+        "title": "NVIDIA 平台：Nsight"
+      },
+      {
+        "id": "pop",
+        "title": "POP"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "platform/cloud.md",
+    "english": "clusters/cloud.md",
+    "archive": "archive/zh/platform/cloud.md",
+    "original_url": "/hpc_study.io/platform/cloud/",
+    "english_url": "/hpc_study.io/clusters/cloud/",
+    "archive_url": "/hpc_study.io/archive/zh/platform/cloud/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "platform/cluster.md",
+    "english": "clusters/cluster.md",
+    "archive": "archive/zh/platform/cluster.md",
+    "original_url": "/hpc_study.io/platform/cluster/",
+    "english_url": "/hpc_study.io/clusters/cluster/",
+    "archive_url": "/hpc_study.io/archive/zh/platform/cluster/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "platform/modules.md",
+    "english": "clusters/modules.md",
+    "archive": "archive/zh/platform/modules.md",
+    "original_url": "/hpc_study.io/platform/modules/",
+    "english_url": "/hpc_study.io/clusters/modules/",
+    "archive_url": "/hpc_study.io/archive/zh/platform/modules/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "platform/platform-intro.md",
+    "english": "clusters/platform-intro.md",
+    "archive": "archive/zh/platform/platform-intro.md",
+    "original_url": "/hpc_study.io/platform/platform-intro/",
+    "english_url": "/hpc_study.io/clusters/platform-intro/",
+    "archive_url": "/hpc_study.io/archive/zh/platform/platform-intro/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "platform/scheduling.md",
+    "english": "clusters/scheduling.md",
+    "archive": "archive/zh/platform/scheduling.md",
+    "original_url": "/hpc_study.io/platform/scheduling/",
+    "english_url": "/hpc_study.io/clusters/scheduling/",
+    "archive_url": "/hpc_study.io/archive/zh/platform/scheduling/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "power-management/intro.md",
+    "english": "reference/power-management/intro.md",
+    "archive": "archive/zh/power-management/intro.md",
+    "original_url": "/hpc_study.io/power-management/intro/",
+    "english_url": "/hpc_study.io/reference/power-management/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/power-management/intro/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "power-management/perception.md",
+    "english": "reference/power-management/perception.md",
+    "archive": "archive/zh/power-management/perception.md",
+    "original_url": "/hpc_study.io/power-management/perception/",
+    "english_url": "/hpc_study.io/reference/power-management/perception/",
+    "archive_url": "/hpc_study.io/archive/zh/power-management/perception/",
+    "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
+    "anchors": [],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "sci-mlsys/intro.md",
+    "english": "sci-mlsys/intro.md",
+    "archive": "archive/zh/sci-mlsys/intro.md",
+    "original_url": "/hpc_study.io/sci-mlsys/intro/",
+    "english_url": "/hpc_study.io/sci-mlsys/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/sci-mlsys/intro/",
+    "source_sha256": "e06541895f6471e1cdcc62c336e0222f19722337f25544fc8b209d1ac4427b13",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "科学计算与机器学习系统：从方程到训练"
+      },
+      {
+        "id": "_2",
+        "title": "从一个线性方程开始"
+      },
+      {
+        "id": "_3",
+        "title": "第一个数值实验"
+      },
+      {
+        "id": "_4",
+        "title": "再看训练循环"
+      },
+      {
+        "id": "3",
+        "title": "综合实验（约 3 小时）"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "sci-mlsys/parallelism.md",
+    "english": "sci-mlsys/parallelism.md",
+    "archive": "archive/zh/sci-mlsys/parallelism.md",
+    "original_url": "/hpc_study.io/sci-mlsys/parallelism/",
+    "english_url": "/hpc_study.io/sci-mlsys/parallelism/",
+    "archive_url": "/hpc_study.io/archive/zh/sci-mlsys/parallelism/",
+    "source_sha256": "da7f727ff0ee73e29251e8a6c72cdc20cd164ddbf925c4fd2fab89b4657549bb",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "并行策略：拆数据，还是拆模型"
+      },
+      {
+        "id": "_2",
+        "title": "数据并行"
+      },
+      {
+        "id": "_3",
+        "title": "模型并行"
+      },
+      {
+        "id": "_4",
+        "title": "单卡也能练习的概念"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "sci-mlsys/quantization.md",
+    "english": "sci-mlsys/quantization.md",
+    "archive": "archive/zh/sci-mlsys/quantization.md",
+    "original_url": "/hpc_study.io/sci-mlsys/quantization/",
+    "english_url": "/hpc_study.io/sci-mlsys/quantization/",
+    "archive_url": "/hpc_study.io/archive/zh/sci-mlsys/quantization/",
+    "source_sha256": "ac63461a9438498c45aab61afdfbd98a06292b955f36f5935a96541bc8d19d4e",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "精度与量化：用更少的位保存数"
+      },
+      {
+        "id": "fp32fp16-bf16",
+        "title": "FP32、FP16 与 BF16"
+      },
+      {
+        "id": "int8",
+        "title": "对称 INT8 量化"
+      },
+      {
+        "id": "_2",
+        "title": "校准与质量"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "sci-mlsys/sparsity.md",
+    "english": "sci-mlsys/sparsity.md",
+    "archive": "archive/zh/sci-mlsys/sparsity.md",
+    "original_url": "/hpc_study.io/sci-mlsys/sparsity/",
+    "english_url": "/hpc_study.io/sci-mlsys/sparsity/",
+    "archive_url": "/hpc_study.io/archive/zh/sci-mlsys/sparsity/",
+    "source_sha256": "f64415d3456eb6f2770b79d4c5d9ace28c96fedd4ddd4f966c6fc6f6d6137fc4",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "稀疏性：零很多，是否就能更快"
+      },
+      {
+        "id": "csr",
+        "title": "CSR 怎么存"
+      },
+      {
+        "id": "_2",
+        "title": "跑一个真实求解流程"
+      },
+      {
+        "id": "_3",
+        "title": "为什么零不会自动带来加速"
+      },
+      {
+        "id": "_4",
+        "title": "练习"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "static/vendor/README.md",
+    "english": "reference/licenses.md",
+    "archive": "archive/zh/static/vendor/README.md",
+    "original_url": "/hpc_study.io/static/vendor/",
+    "english_url": "/hpc_study.io/reference/licenses/",
+    "archive_url": "/hpc_study.io/archive/zh/static/vendor/",
+    "source_sha256": "1e3b5f94422523f8baacca81c7bf769a641684e20396e0a1f6773d559611f49a",
+    "anchors": [
+      {
+        "id": "browser-assets",
+        "title": "Browser assets"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "thread-process/intro.md",
+    "english": "thread-process/intro.md",
+    "archive": "archive/zh/thread-process/intro.md",
+    "original_url": "/hpc_study.io/thread-process/intro/",
+    "english_url": "/hpc_study.io/thread-process/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/thread-process/intro/",
+    "source_sha256": "8dd436a06a014460c621c36043a7b56d47080113f000745f0674b6bf059c43de",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "从顺序执行到并行执行"
+      },
+      {
+        "id": "_2",
+        "title": "并发与并行"
+      },
+      {
+        "id": "_3",
+        "title": "用什么承载任务"
+      },
+      {
+        "id": "_4",
+        "title": "先画任务图"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "thread-process/more.md",
+    "english": "thread-process/more.md",
+    "archive": "archive/zh/thread-process/more.md",
+    "original_url": "/hpc_study.io/thread-process/more/",
+    "english_url": "/hpc_study.io/thread-process/more/",
+    "archive_url": "/hpc_study.io/archive/zh/thread-process/more/",
+    "source_sha256": "e5da5fe7b3d17c1ddc6ea71c7ec1ad045040bdb8e5e925a33c8ff0b6c26d70c0",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "任务、线程池与混合并行"
+      },
+      {
+        "id": "_2",
+        "title": "任务不等于线程"
+      },
+      {
+        "id": "mpi-openmp",
+        "title": "MPI 加 OpenMP"
+      },
+      {
+        "id": "python",
+        "title": "Python 的补充说明"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "thread-process/process.md",
+    "english": "thread-process/process.md",
+    "archive": "archive/zh/thread-process/process.md",
+    "original_url": "/hpc_study.io/thread-process/process/",
+    "english_url": "/hpc_study.io/thread-process/process/",
+    "archive_url": "/hpc_study.io/archive/zh/thread-process/process/",
+    "source_sha256": "8ce6debeae0212d6e7ea5e63443a2742f304b59c41a28bd31f43b83c98bad08e",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "进程：独立工作，再交换结果"
+      },
+      {
+        "id": "_2",
+        "title": "同名变量不是同一份数据"
+      },
+      {
+        "id": "mpi",
+        "title": "不需要集群也能练 MPI"
+      },
+      {
+        "id": "_3",
+        "title": "出错时从哪里查"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  },
+  {
+    "original": "thread-process/thread.md",
+    "english": "thread-process/thread.md",
+    "archive": "archive/zh/thread-process/thread.md",
+    "original_url": "/hpc_study.io/thread-process/thread/",
+    "english_url": "/hpc_study.io/thread-process/thread/",
+    "archive_url": "/hpc_study.io/archive/zh/thread-process/thread/",
+    "source_sha256": "d22fa35d799c264c9da41cbaee49004a97dd23d993fb00fab7e4e3932df1f342",
+    "anchors": [
+      {
+        "id": "_1",
+        "title": "线程：共享数据也需要规则"
+      },
+      {
+        "id": "_2",
+        "title": "一次加法可能包含多步"
+      },
+      {
+        "id": "_3",
+        "title": "三种常见处理方式"
+      },
+      {
+        "id": "_4",
+        "title": "小实验"
+      }
+    ],
+    "anchor_policy": "compatibility anchor; consult archived original for context"
+  }
+]

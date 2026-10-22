@@ -1,26 +1,27 @@
 # HPC Study
 
-面向初学者的中文 HPC 课程：从普通电脑出发，学习硬件、并行编程、GPU 编程、Benchmark、科学计算与机器学习系统。
+An English HPC course covering CPU and memory behavior, MPI, CUDA, measurement, scientific computing, distributed training and datacenter GPU analysis.
 
-- [在线课程](https://gxj230958.github.io/hpc_study.io/)
-- [环境与实验说明](README-course.md)
-- [实际验证记录](https://gxj230958.github.io/hpc_study.io/learning/validation/)
-- [向 HPC Wiki 提交的课程补全 PR](https://github.com/hpcgame/hpc-wiki/pull/12)
+- [Course](https://gxj230958.github.io/hpc_study.io/)
+- [Environment and experiments](README-course.md)
+- [Validation](https://gxj230958.github.io/hpc_study.io/learning/validation/)
+- [Frozen Chinese archive](https://gxj230958.github.io/hpc_study.io/archive/zh/)
 
-本仓库基于 [HPC Wiki](https://github.com/hpcgame/hpc-wiki)，保留原作者署名和 CC BY-NC-SA 4.0 许可。`main` 包含独立站，`docs/beginner-course` 是上游贡献分支。第三方网页渲染库的许可单独保存在 `docs/zh/docs/static/vendor/licenses/`。
+Based on [HPC Wiki](https://github.com/hpcgame/hpc-wiki), preserving the HPC Wiki Team's attribution and CC BY-NC-SA 4.0 license. Third-party renderer notices remain in docs/zh/docs/static/vendor/licenses. Historical audit files retain their original dates and results.
 
-## 本地预览新站
+## Build and Preview
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements-study.txt
-mkdocs serve -f mkdocs.study.yml -a 127.0.0.1:8008
+uv sync --locked --only-group docs
+uv run --only-group docs python scripts/build-site.py
+uv run --only-group docs python scripts/serve-site.py --port 8008
 ```
 
-严格构建使用 `mkdocs build --strict -f mkdocs.study.yml`。主分支更新会触发 GitHub Pages 部署。实验验证与网站构建分开，CPU/GPU 依赖和命令见 [README-course.md](README-course.md)。
+Preview the combined site at http://127.0.0.1:8008/hpc_study.io/. English source lives in docs/en/docs; Chinese source remains unchanged in docs/zh/docs. Both configurations build strictly. The generated source bundle includes pyproject.toml, uv.lock and experiment scripts.
 
-下方保留上游项目介绍与原站构建说明。
+CPU/GPU experiments use separate mutually exclusive extras; see README-course.md. Publishing installs documentation dependencies only. Main-branch updates deploy through GitHub Pages.
+
+The upstream introduction below is retained as historical project attribution and documentation. Its original build commands describe the upstream site; use the commands above for this course.
 
 ## HPC Wiki
 

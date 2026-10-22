@@ -1,0 +1,1237 @@
+{
+  "timestamp_utc": "2026-10-22T07:25:46.037731+00:00",
+  "html_pages_scanned": 179,
+  "records": [
+    {
+      "url": "https://developer.download.nvidia.com/assets/cuda/files/reduction.pdf",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://developer.download.nvidia.cn/assets/cuda/files/reduction.pdf"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/cuda-refresher-cuda-programming-model/",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://developer.nvidia.com/blog/cuda-refresher-cuda-programming-model/"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/cuda-refresher-reviewing-the-origins-of-gpu-computing/",
+      "pages": [
+        "archive/zh/gpu/arch/index.html",
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://developer.nvidia.com/blog/cuda-refresher-reviewing-the-origins-of-gpu-computing/"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/even-easier-introduction-cuda",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://developer.nvidia.com/blog/even-easier-introduction-cuda"
+    },
+    {
+      "url": "https://developer.nvidia.com/blog/unified-memory-cuda-beginners/",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://developer.nvidia.com/blog/unified-memory-cuda-beginners/"
+    },
+    {
+      "url": "https://developer.nvidia.com/cublas",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://developer.nvidia.com/cublas"
+    },
+    {
+      "url": "https://developer.nvidia.com/nsight-compute",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://developer.nvidia.com/nsight-compute"
+    },
+    {
+      "url": "https://developer.nvidia.com/nsight-developer-tools",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://developer.nvidia.com/tools-tutorials"
+    },
+    {
+      "url": "https://developer.nvidia.com/nsight-systems",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://developer.nvidia.com/nsight-systems"
+    },
+    {
+      "url": "https://docs.amd.com/go/en-US/57368-uProf-user-guide",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.amd.com/r/vTiSuvUGfZjOtWvlKcKNTA/root"
+    },
+    {
+      "url": "https://docs.amd.com/r/en-US/57368-uProf-user-guide/Performance-Characterization-using-AMDuProfPcm",
+      "pages": [
+        "archive/zh/performance-analysis/intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.amd.com/r/en-US/57368-uProf-user-guide/Performance-Characterization-using-AMDuProfPcm"
+    },
+    {
+      "url": "https://docs.amd.com/r/en-US/ug1399-vitis-hls",
+      "pages": [
+        "archive/zh/hardware/fpga-and-asics/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.amd.com/r/en-US/ug1399-vitis-hls"
+    },
+    {
+      "url": "https://docs.astral.sh/uv/getting-started/installation/",
+      "pages": [
+        "learning/setup/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.astral.sh/uv/getting-started/installation/"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html",
+      "pages": [
+        "clusters/cloud/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html",
+      "pages": [
+        "clusters/cloud/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-instances.html"
+    },
+    {
+      "url": "https://docs.aws.amazon.com/cli/latest/reference/ec2/stop-instances.html",
+      "pages": [
+        "clusters/cloud/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.aws.amazon.com/cli/latest/reference/ec2/stop-instances.html"
+    },
+    {
+      "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+      "pages": [
+        "archive/zh/hardware/hardware-intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.kernel.org/admin-guide/cgroup-v2.html"
+    },
+    {
+      "url": "https://docs.kernel.org/admin-guide/mm/numa_memory_policy.html",
+      "pages": [
+        "archive/zh/memory-model/numa/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.kernel.org/admin-guide/mm/numa_memory_policy.html"
+    },
+    {
+      "url": "https://docs.kernel.org/admin-guide/perf/index.html",
+      "pages": [
+        "archive/zh/performance-analysis/intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.kernel.org/admin-guide/perf/index.html"
+    },
+    {
+      "url": "https://docs.kernel.org/core-api/cachetlb.html",
+      "pages": [
+        "archive/zh/hardware/memory/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.kernel.org/core-api/cachetlb.html"
+    },
+    {
+      "url": "https://docs.kernel.org/kernel-hacking/false-sharing.html",
+      "pages": [
+        "archive/zh/memory-model/cache/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.kernel.org/kernel-hacking/false-sharing.html"
+    },
+    {
+      "url": "https://docs.kernel.org/mm/page_cache.html",
+      "pages": [
+        "archive/zh/hardware/storage/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.kernel.org/mm/page_cache.html"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/ada-tuning-guide/",
+      "pages": [
+        "datacenter/architectures/index.html",
+        "gpu/arch/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/cuda/ada-tuning-guide/"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/ampere-tuning-guide/",
+      "pages": [
+        "datacenter/architectures/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/cuda/ampere-tuning-guide/"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/archive/12.4.1/cuda-c-best-practices-guide/index.html",
+      "pages": [
+        "archive/zh/gpu/cuda-advanced/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/cuda/archive/12.4.1/cuda-c-best-practices-guide/index.html"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/archive/12.4.1/cuda-c-programming-guide/index.html",
+      "pages": [
+        "archive/zh/gpu/arch/index.html",
+        "archive/zh/gpu/intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/cuda/archive/12.4.1/cuda-c-programming-guide/index.html"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/archive/12.4.1/cuda-installation-guide-linux/index.html",
+      "pages": [
+        "archive/zh/learning/setup/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/cuda/archive/12.4.1/cuda-installation-guide-linux/index.html"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/archive/12.4.1/hopper-tuning-guide/index.html",
+      "pages": [
+        "datacenter/architectures/index.html",
+        "datacenter/porting/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/cuda/archive/12.4.1/hopper-tuning-guide/index.html"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html"
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/cusparse/",
+      "pages": [
+        "archive/zh/sci-mlsys/sparsity/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/cuda/cusparse/"
+    },
+    {
+      "url": "https://docs.nvidia.com/datacenter/tesla/mig-user-guide/",
+      "pages": [
+        "datacenter/topology/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/datacenter/tesla/mig-user-guide/latest/"
+    },
+    {
+      "url": "https://docs.nvidia.com/datacenter/tesla/mig-user-guide/supported-gpus.html",
+      "pages": [
+        "datacenter/topology/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/datacenter/tesla/mig-user-guide/supported-gpus.html"
+    },
+    {
+      "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/",
+      "pages": [
+        "archive/zh/gpu/nccl/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/"
+    },
+    {
+      "url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/env.html",
+      "pages": [
+        "gpu/nccl/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/env.html"
+    },
+    {
+      "url": "https://docs.nvidia.com/deeplearning/tensorrt/latest/inference-library/work-quantized-types.html",
+      "pages": [
+        "archive/zh/sci-mlsys/quantization/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/deeplearning/tensorrt/latest/inference-library/work-with-quantized-types.html"
+    },
+    {
+      "url": "https://docs.nvidia.com/deploy/nvidia-smi/index.html",
+      "pages": [
+        "archive/zh/hardware/interconnect/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/deploy/nvidia-smi/index.html"
+    },
+    {
+      "url": "https://docs.nvidia.com/nsight-compute/",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/nsight-compute/"
+    },
+    {
+      "url": "https://docs.nvidia.com/nsight-systems/",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/nsight-systems/"
+    },
+    {
+      "url": "https://docs.nvidia.com/nsight-systems/UserGuide/index.html",
+      "pages": [
+        "archive/zh/gpu/nsys/index.html",
+        "archive/zh/performance-analysis/intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/nsight-systems/UserGuide/index.html"
+    },
+    {
+      "url": "https://docs.python.org/3/library/threading.html",
+      "pages": [
+        "archive/zh/thread-process/more/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.python.org/3/library/threading.html"
+    },
+    {
+      "url": "https://docs.scipy.org/doc/scipy/tutorial/linalg.html",
+      "pages": [
+        "archive/zh/sci-mlsys/intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.scipy.org/doc/scipy/tutorial/linalg.html"
+    },
+    {
+      "url": "https://docs.scipy.org/doc/scipy/tutorial/sparse.html",
+      "pages": [
+        "archive/zh/sci-mlsys/sparsity/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.scipy.org/doc/scipy/tutorial/sparse.html"
+    },
+    {
+      "url": "https://eel.is/c++draft/atomics.order",
+      "pages": [
+        "archive/zh/memory-model/consistency/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://eel.is/c++draft/atomics.order"
+    },
+    {
+      "url": "https://fabiensanglard.net/cuda/",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://fabiensanglard.net/cuda/"
+    },
+    {
+      "url": "https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html",
+      "pages": [
+        "archive/zh/hardware/processor/index.html"
+      ],
+      "status": "inaccessible-from-validation-host",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://gcc.gnu.org/onlinedocs/libgomp/OpenACC.html",
+      "pages": [
+        "archive/zh/gpu/openacc/index.html"
+      ],
+      "status": "inaccessible-from-validation-host",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://github.com/Gxj230958/hpc_study.io",
+      "pages": [
+        "404.html",
+        "archive/zh/404.html",
+        "archive/zh/benchmark/hpcg/index.html",
+        "archive/zh/benchmark/hpl/index.html",
+        "archive/zh/benchmark/intro/index.html",
+        "archive/zh/benchmark/mlperf/index.html",
+        "archive/zh/communication/cost/index.html",
+        "archive/zh/communication/deadlock/index.html",
+        "archive/zh/communication/intro/index.html",
+        "archive/zh/communication/model/index.html",
+        "archive/zh/competition/asc/index.html",
+        "archive/zh/competition/competition-intro/index.html",
+        "archive/zh/competition/hpcgame/index.html",
+        "archive/zh/competition/isc/index.html",
+        "archive/zh/competition/other/index.html",
+        "archive/zh/competition/sc/index.html",
+        "archive/zh/contribute/before-contributing/index.html",
+        "archive/zh/contribute/docs-organization/index.html",
+        "archive/zh/contribute/docs-style/index.html",
+        "archive/zh/gpu/arch/index.html",
+        "archive/zh/gpu/cuda-advanced/index.html",
+        "archive/zh/gpu/cuda/index.html",
+        "archive/zh/gpu/hip/index.html",
+        "archive/zh/gpu/intro/index.html",
+        "archive/zh/gpu/nccl/index.html",
+        "archive/zh/gpu/nsys/index.html",
+        "archive/zh/gpu/openacc/index.html",
+        "archive/zh/gpu/opencl/index.html",
+        "archive/zh/hardware/fpga-and-asics/index.html",
+        "archive/zh/hardware/gpu/index.html",
+        "archive/zh/hardware/hardware-intro/index.html",
+        "archive/zh/hardware/interconnect/index.html",
+        "archive/zh/hardware/memory/index.html",
+        "archive/zh/hardware/processor/index.html",
+        "archive/zh/hardware/storage/index.html",
+        "archive/zh/hpc-intro/hpc-history/index.html",
+        "archive/zh/hpc-intro/modern-hpc/index.html",
+        "archive/zh/hpc-intro/what-is-hpc/index.html",
+        "archive/zh/index.html",
+        "archive/zh/learning/glossary/index.html",
+        "archive/zh/learning/labs/index.html",
+        "archive/zh/learning/path/index.html",
+        "archive/zh/learning/setup/index.html",
+        "archive/zh/learning/validation/index.html",
+        "archive/zh/memory-model/cache/index.html",
+        "archive/zh/memory-model/consistency/index.html",
+        "archive/zh/memory-model/intro/index.html",
+        "archive/zh/memory-model/numa/index.html",
+        "archive/zh/misc/faq/index.html",
+        "archive/zh/misc/git/index.html",
+        "archive/zh/misc/shell/index.html",
+        "archive/zh/parallel-programming/mpi/index.html",
+        "archive/zh/parallel-programming/mpi4py/index.html",
+        "archive/zh/parallel-programming/openmp/index.html",
+        "archive/zh/parallel-programming/parallel-programming-intro/index.html",
+        "archive/zh/performance-analysis/intro/index.html",
+        "archive/zh/performance-analysis/tools/index.html",
+        "archive/zh/platform/cloud/index.html",
+        "archive/zh/platform/cluster/index.html",
+        "archive/zh/platform/modules/index.html",
+        "archive/zh/platform/platform-intro/index.html",
+        "archive/zh/platform/scheduling/index.html",
+        "archive/zh/power-management/intro/index.html",
+        "archive/zh/power-management/perception/index.html",
+        "archive/zh/sci-mlsys/intro/index.html",
+        "archive/zh/sci-mlsys/parallelism/index.html",
+        "archive/zh/sci-mlsys/quantization/index.html",
+        "archive/zh/sci-mlsys/sparsity/index.html",
+        "archive/zh/static/vendor/index.html",
+        "archive/zh/thread-process/intro/index.html",
+        "archive/zh/thread-process/more/index.html",
+        "archive/zh/thread-process/process/index.html",
+        "archive/zh/thread-process/thread/index.html",
+        "benchmark/hpcg/index.html",
+        "benchmark/hpl/index.html",
+        "benchmark/intro/index.html",
+        "benchmark/mlperf/index.html",
+        "clusters/cloud/index.html",
+        "clusters/cluster/index.html",
+        "clusters/distributed/index.html",
+        "clusters/modules/index.html",
+        "clusters/platform-intro/index.html",
+        "clusters/scheduling/index.html",
+        "communication/cost/index.html",
+        "communication/deadlock/index.html",
+        "communication/intro/index.html",
+        "communication/model/index.html",
+        "datacenter/architectures/index.html",
+        "datacenter/intro/index.html",
+        "datacenter/operations/index.html",
+        "datacenter/porting/index.html",
+        "datacenter/roofline/index.html",
+        "datacenter/topology/index.html",
+        "foundations/hpc-history/index.html",
+        "foundations/modern-hpc/index.html",
+        "foundations/what-is-hpc/index.html",
+        "gpu/arch/index.html",
+        "gpu/cuda-advanced/index.html",
+        "gpu/cuda/index.html",
+        "gpu/intro/index.html",
+        "gpu/nccl/index.html",
+        "gpu/nsys/index.html",
+        "hardware/fpga-and-asics/index.html",
+        "hardware/hardware-intro/index.html",
+        "hardware/interconnect/index.html",
+        "hardware/memory/index.html",
+        "hardware/processor/index.html",
+        "hardware/storage/index.html",
+        "index.html",
+        "learning/glossary/index.html",
+        "learning/labs/index.html",
+        "learning/path/index.html",
+        "learning/setup/index.html",
+        "learning/validation/index.html",
+        "memory-model/cache/index.html",
+        "memory-model/consistency/index.html",
+        "memory-model/intro/index.html",
+        "memory-model/numa/index.html",
+        "parallel-programming/mpi/index.html",
+        "parallel-programming/mpi4py/index.html",
+        "parallel-programming/openmp/index.html",
+        "parallel-programming/parallel-programming-intro/index.html",
+        "performance-analysis/intro/index.html",
+        "performance-analysis/tools/index.html",
+        "reference/competition/asc/index.html",
+        "reference/competition/competition-intro/index.html",
+        "reference/competition/hpcgame/index.html",
+        "reference/competition/isc/index.html",
+        "reference/competition/other/index.html",
+        "reference/competition/sc/index.html",
+        "reference/contribute/before-contributing/index.html",
+        "reference/contribute/docs-organization/index.html",
+        "reference/contribute/docs-style/index.html",
+        "reference/licenses/index.html",
+        "reference/misc/faq/index.html",
+        "reference/misc/git/index.html",
+        "reference/misc/shell/index.html",
+        "reference/power-management/intro/index.html",
+        "reference/power-management/perception/index.html",
+        "reference/programming-models/hip/index.html",
+        "reference/programming-models/openacc/index.html",
+        "reference/programming-models/opencl/index.html",
+        "reference/url-map/index.html",
+        "sci-mlsys/intro/index.html",
+        "sci-mlsys/parallelism/index.html",
+        "sci-mlsys/quantization/index.html",
+        "sci-mlsys/sparsity/index.html",
+        "thread-process/intro/index.html",
+        "thread-process/more/index.html",
+        "thread-process/process/index.html",
+        "thread-process/thread/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/Gxj230958/hpc_study.io"
+    },
+    {
+      "url": "https://github.com/KhronosGroup/OpenCL-SDK",
+      "pages": [
+        "archive/zh/gpu/opencl/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/KhronosGroup/OpenCL-SDK"
+    },
+    {
+      "url": "https://github.com/brendangregg/FlameGraph",
+      "pages": [
+        "archive/zh/performance-analysis/intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/brendangregg/FlameGraph"
+    },
+    {
+      "url": "https://github.com/hpcg-benchmark/hpcg",
+      "pages": [
+        "archive/zh/benchmark/hpcg/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/hpcg-benchmark/hpcg"
+    },
+    {
+      "url": "https://github.com/hpcgame",
+      "pages": [
+        "reference/competition/hpcgame/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/hpcgame"
+    },
+    {
+      "url": "https://github.com/hpcgame/hpc-wiki",
+      "pages": [
+        "index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/hpcgame/hpc-wiki"
+    },
+    {
+      "url": "https://github.com/intel/pcm",
+      "pages": [
+        "archive/zh/performance-analysis/intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/intel/pcm"
+    },
+    {
+      "url": "https://github.com/interestingLSY/CUDA-From-Correctness-To-Performance-Code",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/interestingLSY/CUDA-From-Correctness-To-Performance-Code"
+    },
+    {
+      "url": "https://github.com/interestingLSY/CUDA-From-Correctness-To-Performance-Code/blob/master/gemm_gpu_1thread.cu",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/interestingLSY/CUDA-From-Correctness-To-Performance-Code/blob/master/gemm_gpu_1thread.cu"
+    },
+    {
+      "url": "https://github.com/interestingLSY/CUDA-From-Correctness-To-Performance-Code/blob/master/gemm_gpu_mult_block.cu",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/interestingLSY/CUDA-From-Correctness-To-Performance-Code/blob/master/gemm_gpu_mult_block.cu"
+    },
+    {
+      "url": "https://github.com/interestingLSY/CUDA-From-Correctness-To-Performance-Code/blob/master/gemm_gpu_mult_thread.cu",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/interestingLSY/CUDA-From-Correctness-To-Performance-Code/blob/master/gemm_gpu_mult_thread.cu"
+    },
+    {
+      "url": "https://github.com/lcpu-club/hpc-wiki",
+      "pages": [
+        "archive/zh/contribute/docs-organization/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/hpcgame/hpc-wiki"
+    },
+    {
+      "url": "https://github.com/lcpu-club/hpc-wiki/issues/new",
+      "pages": [
+        "archive/zh/contribute/before-contributing/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fhpcgame%2Fhpc-wiki%2Fissues%2Fnew"
+    },
+    {
+      "url": "https://github.com/mathjax/MathJax-src",
+      "pages": [
+        "archive/zh/static/vendor/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/mathjax/MathJax-src"
+    },
+    {
+      "url": "https://github.com/mermaid-js/mermaid",
+      "pages": [
+        "archive/zh/static/vendor/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/mermaid-js/mermaid"
+    },
+    {
+      "url": "https://github.com/mlcommons/inference",
+      "pages": [
+        "archive/zh/benchmark/mlperf/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/mlcommons/inference"
+    },
+    {
+      "url": "https://github.com/mlcommons/training",
+      "pages": [
+        "archive/zh/benchmark/mlperf/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://github.com/mlcommons/training"
+    },
+    {
+      "url": "https://google.github.io/benchmark/user_guide.html",
+      "pages": [
+        "archive/zh/benchmark/intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://google.github.io/benchmark/user_guide.html"
+    },
+    {
+      "url": "https://hpcwiki.io/gpu/cuda/",
+      "pages": [
+        "archive/zh/contribute/docs-style/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://hpcwiki.io/gpu/cuda/"
+    },
+    {
+      "url": "https://isc-hpc.com/",
+      "pages": [
+        "reference/competition/isc/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://isc-hpc.com/"
+    },
+    {
+      "url": "https://mlcommons.org/benchmarks/",
+      "pages": [
+        "archive/zh/benchmark/mlperf/index.html",
+        "benchmark/mlperf/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://mlcommons.org/benchmarks/"
+    },
+    {
+      "url": "https://mpi4py.readthedocs.io/en/stable/tutorial.html",
+      "pages": [
+        "archive/zh/communication/model/index.html",
+        "archive/zh/parallel-programming/mpi4py/index.html",
+        "archive/zh/thread-process/process/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://mpi4py.readthedocs.io/en/stable/tutorial.html"
+    },
+    {
+      "url": "https://mvapich.cse.ohio-state.edu/benchmarks/",
+      "pages": [
+        "archive/zh/communication/cost/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://mvapich.cse.ohio-state.edu/benchmarks/"
+    },
+    {
+      "url": "https://penny-xu.github.io/blog/tiled-matrix-multiplication",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://penny-xu.github.io/blog/tiled-matrix-multiplication/"
+    },
+    {
+      "url": "https://perfwiki.github.io/main/",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://perfwiki.github.io/main/"
+    },
+    {
+      "url": "https://pop-coe.eu/",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://pop-coe.eu/"
+    },
+    {
+      "url": "https://pytorch.org/docs/stable/amp.html",
+      "pages": [
+        "archive/zh/sci-mlsys/quantization/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.pytorch.org/docs/stable/amp.html"
+    },
+    {
+      "url": "https://pytorch.org/docs/stable/distributed.html",
+      "pages": [
+        "archive/zh/gpu/nccl/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.pytorch.org/docs/stable/distributed.html"
+    },
+    {
+      "url": "https://pytorch.org/docs/stable/generated/torch.nn.parallel.DistributedDataParallel.html",
+      "pages": [
+        "archive/zh/sci-mlsys/parallelism/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.pytorch.org/docs/stable/generated/torch.nn.parallel.DistributedDataParallel.html"
+    },
+    {
+      "url": "https://pytorch.org/tutorials/beginner/basics/intro.html",
+      "pages": [
+        "archive/zh/sci-mlsys/intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html"
+    },
+    {
+      "url": "https://registry.khronos.org/OpenCL/",
+      "pages": [
+        "archive/zh/gpu/opencl/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://registry.khronos.org/OpenCL/"
+    },
+    {
+      "url": "https://rocm.docs.amd.com/projects/HIP/en/latest/",
+      "pages": [
+        "archive/zh/gpu/hip/index.html",
+        "reference/programming-models/hip/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://rocm.docs.amd.com/projects/HIP/en/latest/"
+    },
+    {
+      "url": "https://rocm.docs.amd.com/projects/HIPIFY/en/latest/",
+      "pages": [
+        "archive/zh/gpu/hip/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://rocm.docs.amd.com/projects/HIPIFY/en/latest/"
+    },
+    {
+      "url": "https://scorepci.pages.jsc.fz-juelich.de/scorep-pipelines/docs/scorep-6.0/html/index.html",
+      "pages": [
+        "archive/zh/performance-analysis/intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://gitlab.jsc.fz-juelich.de/users/sign_in"
+    },
+    {
+      "url": "https://squidfunk.github.io/mkdocs-material/",
+      "pages": [
+        "archive/zh/404.html",
+        "archive/zh/benchmark/hpcg/index.html",
+        "archive/zh/benchmark/hpl/index.html",
+        "archive/zh/benchmark/intro/index.html",
+        "archive/zh/benchmark/mlperf/index.html",
+        "archive/zh/communication/cost/index.html",
+        "archive/zh/communication/deadlock/index.html",
+        "archive/zh/communication/intro/index.html",
+        "archive/zh/communication/model/index.html",
+        "archive/zh/competition/asc/index.html",
+        "archive/zh/competition/competition-intro/index.html",
+        "archive/zh/competition/hpcgame/index.html",
+        "archive/zh/competition/isc/index.html",
+        "archive/zh/competition/other/index.html",
+        "archive/zh/competition/sc/index.html",
+        "archive/zh/contribute/before-contributing/index.html",
+        "archive/zh/contribute/docs-organization/index.html",
+        "archive/zh/contribute/docs-style/index.html",
+        "archive/zh/gpu/arch/index.html",
+        "archive/zh/gpu/cuda-advanced/index.html",
+        "archive/zh/gpu/cuda/index.html",
+        "archive/zh/gpu/hip/index.html",
+        "archive/zh/gpu/intro/index.html",
+        "archive/zh/gpu/nccl/index.html",
+        "archive/zh/gpu/nsys/index.html",
+        "archive/zh/gpu/openacc/index.html",
+        "archive/zh/gpu/opencl/index.html",
+        "archive/zh/hardware/fpga-and-asics/index.html",
+        "archive/zh/hardware/gpu/index.html",
+        "archive/zh/hardware/hardware-intro/index.html",
+        "archive/zh/hardware/interconnect/index.html",
+        "archive/zh/hardware/memory/index.html",
+        "archive/zh/hardware/processor/index.html",
+        "archive/zh/hardware/storage/index.html",
+        "archive/zh/hpc-intro/hpc-history/index.html",
+        "archive/zh/hpc-intro/modern-hpc/index.html",
+        "archive/zh/hpc-intro/what-is-hpc/index.html",
+        "archive/zh/index.html",
+        "archive/zh/learning/glossary/index.html",
+        "archive/zh/learning/labs/index.html",
+        "archive/zh/learning/path/index.html",
+        "archive/zh/learning/setup/index.html",
+        "archive/zh/learning/validation/index.html",
+        "archive/zh/memory-model/cache/index.html",
+        "archive/zh/memory-model/consistency/index.html",
+        "archive/zh/memory-model/intro/index.html",
+        "archive/zh/memory-model/numa/index.html",
+        "archive/zh/misc/faq/index.html",
+        "archive/zh/misc/git/index.html",
+        "archive/zh/misc/shell/index.html",
+        "archive/zh/parallel-programming/mpi/index.html",
+        "archive/zh/parallel-programming/mpi4py/index.html",
+        "archive/zh/parallel-programming/openmp/index.html",
+        "archive/zh/parallel-programming/parallel-programming-intro/index.html",
+        "archive/zh/performance-analysis/intro/index.html",
+        "archive/zh/performance-analysis/tools/index.html",
+        "archive/zh/platform/cloud/index.html",
+        "archive/zh/platform/cluster/index.html",
+        "archive/zh/platform/modules/index.html",
+        "archive/zh/platform/platform-intro/index.html",
+        "archive/zh/platform/scheduling/index.html",
+        "archive/zh/power-management/intro/index.html",
+        "archive/zh/power-management/perception/index.html",
+        "archive/zh/sci-mlsys/intro/index.html",
+        "archive/zh/sci-mlsys/parallelism/index.html",
+        "archive/zh/sci-mlsys/quantization/index.html",
+        "archive/zh/sci-mlsys/sparsity/index.html",
+        "archive/zh/static/vendor/index.html",
+        "archive/zh/thread-process/intro/index.html",
+        "archive/zh/thread-process/more/index.html",
+        "archive/zh/thread-process/process/index.html",
+        "archive/zh/thread-process/thread/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://squidfunk.github.io/mkdocs-material/"
+    },
+    {
+      "url": "https://wiki.csie.ncku.edu.tw/embedded/perf-tutorial",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://wiki.csie.ncku.edu.tw/embedded/perf-tutorial"
+    },
+    {
+      "url": "https://www.amd.com/en/developer/uprof.html",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.amd.com/en/developer/uprof.html"
+    },
+    {
+      "url": "https://www.asc-events.org/",
+      "pages": [
+        "reference/competition/asc/index.html"
+      ],
+      "status": "not-verified",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1C4411J7cR",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.bilibili.com/video/BV1C4411J7cR/"
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1Hb41177JB",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.bilibili.com/video/BV1Hb41177JB/"
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1YJ411h7aY",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.bilibili.com/video/BV1YJ411h7aY/"
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1ry4y1y7KZ",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.bilibili.com/video/BV1ry4y1y7KZ/"
+    },
+    {
+      "url": "https://www.cs.virginia.edu/stream/",
+      "pages": [
+        "archive/zh/hardware/memory/index.html"
+      ],
+      "status": "not-verified",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "url": "https://www.gnu.org/software/coreutils/manual/html_node/dd-invocation.html",
+      "pages": [
+        "archive/zh/hardware/storage/index.html"
+      ],
+      "status": "not-verified",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "url": "https://www.hpcg-benchmark.org/",
+      "pages": [
+        "archive/zh/benchmark/hpcg/index.html",
+        "benchmark/hpcg/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.hpcg-benchmark.org/"
+    },
+    {
+      "url": "https://www.intel.com/content/dam/develop/external/us/en/documents/vtune-profiler-cheat-sheet.pdf",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "inaccessible-from-validation-host",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.intel.com/content/www/us/en/developer/articles/tool/performance-counter-monitor.html",
+      "pages": [
+        "archive/zh/performance-analysis/intro/index.html"
+      ],
+      "status": "inaccessible-from-validation-host",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.intel.com/content/www/us/en/developer/tools/oneapi/vtune-profiler.html",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "inaccessible-from-validation-host",
+      "http_status": 403,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.khronos.org/opencl/",
+      "pages": [
+        "reference/programming-models/opencl/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.khronos.org/opencl/"
+    },
+    {
+      "url": "https://www.markdown.xyz/basic-syntax/",
+      "pages": [
+        "archive/zh/contribute/docs-organization/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.markdown.xyz/basic-syntax/"
+    },
+    {
+      "url": "https://www.mkdocs.org/",
+      "pages": [
+        "archive/zh/contribute/docs-organization/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.mkdocs.org/"
+    },
+    {
+      "url": "https://www.mpi-forum.org/docs/",
+      "pages": [
+        "archive/zh/communication/deadlock/index.html",
+        "archive/zh/communication/intro/index.html",
+        "archive/zh/hardware/interconnect/index.html",
+        "archive/zh/parallel-programming/mpi/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.mpi-forum.org/docs/"
+    },
+    {
+      "url": "https://www.mpich.org/documentation/",
+      "pages": [
+        "archive/zh/parallel-programming/mpi/index.html",
+        "archive/zh/thread-process/process/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.mpich.org/documentation/"
+    },
+    {
+      "url": "https://www.mpich.org/static/docs/latest/www1/mpiexec.html",
+      "pages": [
+        "parallel-programming/mpi4py/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.mpich.org/static/docs/latest/www1/mpiexec.html"
+    },
+    {
+      "url": "https://www.netlib.org/benchmark/hpl/",
+      "pages": [
+        "archive/zh/benchmark/hpl/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://netlib.org/benchmark/hpl/"
+    },
+    {
+      "url": "https://www.nvidia.com/en-us/data-center/a100/",
+      "pages": [
+        "datacenter/architectures/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.nvidia.com/en-us/data-center/a100/"
+    },
+    {
+      "url": "https://www.nvidia.com/en-us/data-center/h100/",
+      "pages": [
+        "datacenter/architectures/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.nvidia.com/en-us/data-center/h100/"
+    },
+    {
+      "url": "https://www.nvidia.com/en-us/data-center/h200/",
+      "pages": [
+        "datacenter/architectures/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.nvidia.com/en-us/data-center/h200/"
+    },
+    {
+      "url": "https://www.nvidia.com/en-us/data-center/tensor-cores",
+      "pages": [
+        "archive/zh/gpu/cuda/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.nvidia.com/en-us/data-center/tensor-cores/"
+    },
+    {
+      "url": "https://www.openacc.org/specification",
+      "pages": [
+        "archive/zh/gpu/openacc/index.html",
+        "reference/programming-models/openacc/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.openacc.org/specification"
+    },
+    {
+      "url": "https://www.openmp.org/resources/tutorials-articles/",
+      "pages": [
+        "archive/zh/thread-process/intro/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.openmp.org/resources/tutorials-articles/"
+    },
+    {
+      "url": "https://www.openmp.org/specifications/",
+      "pages": [
+        "archive/zh/memory-model/intro/index.html",
+        "archive/zh/parallel-programming/openmp/index.html",
+        "archive/zh/thread-process/more/index.html",
+        "archive/zh/thread-process/thread/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.openmp.org/specifications/"
+    },
+    {
+      "url": "https://www.studentclustercompetition.us/",
+      "pages": [
+        "reference/competition/sc/index.html"
+      ],
+      "status": "reachable",
+      "http_status": 200,
+      "final_url": "https://www.studentclustercompetition.us/"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PLDPdSvR_5-GgOV7MDtvP2pzL29RRrMUqn",
+      "pages": [
+        "archive/zh/performance-analysis/tools/index.html"
+      ],
+      "status": "not-verified",
+      "error": "<urlopen error timed out>"
+    }
+  ],
+  "counts": {
+    "reachable": 101,
+    "inaccessible-from-validation-host": 5,
+    "not-verified": 4
+  },
+  "limitations": "HEAD/GET reachability only; remote content and external heading anchors are not verified. A blocked request does not prove a broken page."
+}

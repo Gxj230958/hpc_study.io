@@ -9,16 +9,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@v6
         with:
-          python-version: '3.10'
-          cache: pip
-      - run: pip install -r requirements-study.txt
-      - run: pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
-      - run: python scripts/validate.py
-      - run: mkdocs build --strict -f docs/zh/mkdocs.yml -d ../../build/upstream-site
+          enable-cache: true
+      - run: uv sync --locked --extra cpu --group browser
+      - run: uv run --no-sync python scripts/check-labs.py --final
+      - run: uv run --no-sync python -m unittest discover -s tests
+      - run: uv run --no-sync python scripts/course.py --check
+      - run: uv run --no-sync python scripts/validate.py
+      - run: uv run --no-sync python scripts/run-labs.py --output build/labs-cpu
+      - run: uv run --no-sync python scripts/build-site.py
+      - run: uv run --no-sync playwright install --with-deps chromium
+      - name: Browser checks
+        run: |
+          uv run --no-sync python scripts/serve-site.py --port 8008 > build/preview-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          uv run --no-sync python scripts/browser-check.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: tutorial-validation
-          path: build/validation
+          path: |
+            build/validation
+            build/labs-cpu
+            build/browser-english

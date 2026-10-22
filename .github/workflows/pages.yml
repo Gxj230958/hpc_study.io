@@ -15,13 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@v6
         with:
-          python-version: '3.10'
-          cache: pip
-      - run: pip install -r requirements-study.txt
-      - run: mkdocs build --strict -f mkdocs.study.yml
-      - run: python scripts/check-site.py site
+          enable-cache: true
+      - run: uv sync --locked --only-group docs
+      - run: uv run --no-sync python scripts/check-labs.py --final
+      - run: uv run --no-sync python scripts/course.py --check
+      - run: uv run --no-sync python scripts/build-site.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

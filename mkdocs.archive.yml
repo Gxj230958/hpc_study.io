@@ -1,0 +1,40 @@
+INHERIT: docs/zh/mkdocs.yml
+site_name: HPC Study - Chinese Archive
+site_url: https://gxj230958.github.io/hpc_study.io/archive/zh/
+repo_name: Gxj230958/hpc_study.io
+repo_url: https://github.com/Gxj230958/hpc_study.io
+docs_dir: docs/zh/docs
+site_dir: site/archive/zh
+edit_uri: ''
+copyright: Frozen Chinese reference. HPC Wiki Team and contributors. CC BY-NC-SA 4.0.
+theme:
+  name: material
+  language: zh
+  font: false
+  logo: static/img/logo.png
+  palette:
+    primary: white
+    accent: teal
+plugins:
+  - search:
+      lang: zh
+  - redirects:
+      redirect_maps:
+        performance-analysis/nsys.md: gpu/nsys.md
+extra:
+  alternate:
+    - name: English
+      link: /hpc_study.io/
+      lang: en
+    - name: Chinese archive
+      link: /hpc_study.io/archive/zh/
+      lang: zh
+extra_css:
+  - static/css/study.css
+  - static/css/course.css
+hooks:
+  - scripts/shared-assets.py
+extra_javascript:
+  - static/vendor/mathjax/tex-mml-chtml.js
+  - static/vendor/mermaid.min.js
+  - static/js/study.js

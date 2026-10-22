@@ -13,4 +13,5 @@ relative_residual = np.linalg.norm(a @ x - b) / np.linalg.norm(b)
 assert info == 0
 assert np.isfinite(relative_residual) and relative_residual <= 1e-10
 np.testing.assert_allclose(x, dense, rtol=1e-7, atol=1e-8)
+np.testing.assert_allclose(x, expected, rtol=1e-7, atol=1e-8)
 print(f"n={n} nnz={a.nnz} relative_residual={relative_residual:.3e} PASS")

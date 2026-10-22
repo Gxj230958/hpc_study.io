@@ -1,30 +1,56 @@
-# HPC 入门课程与实验
+# HPC Course Environment and Experiments
 
-课程面向有基本编程经验、尚未接触 HPC 的读者，覆盖硬件、并行编程、GPU、Benchmark、科学计算与机器学习系统。
+Run commands from the repository root or the root of the extracted source bundle. uv is authoritative; requirements files remain historical compatibility inputs.
 
-## 起步
-
-```bash
-uv sync --locked
-source scripts/activate-study.sh
-make -C examples cpu
-./build/sum 100003
-mpiexec -n 3 python examples/mpi/sum.py --n 10
-```
-
-GPU 路径需要 NVIDIA 驱动和 CUDA 12.4 兼容环境：
+## GPU Environment
 
 ```bash
-uv run python scripts/install-cuda.py --nsys
+uv sync --locked --extra gpu
 source scripts/activate-study.sh
+make -C examples cpu cuda
 python examples/ml/witness.py
 python scripts/validate.py --gpu
 ```
 
-`uv sync --locked` installs the Python 3.10 environment, scientific Python, bundled MPICH/mpi4py, CUDA 12.4 PyTorch, and documentation tools from `uv.lock`. The GPU build also runs CPU experiments. Run `python scripts/validate.py` for CPU checks or `python scripts/validate.py --gpu` for both. Activation sets CPU library threads to 10 for this machine; the validation suite uses smaller fixed thread counts for reproducibility. For MPI experiments, use `OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1` and at most 10 ranks to avoid oversubscription.
+Python 3.10 and PyTorch 2.6.0+cu124 are pinned. A compatible NVIDIA driver is required. PyTorch's runtime does not include nvcc, Compute Sanitizer or Nsight Systems; python scripts/install-cuda.py --nsys installs the pinned local tools when needed. Source activation again after installation.
 
-Native experiments require GCC/G++, Make, and the CUDA compiler/sanitizer; uv manages Python packages, while `scripts/install-cuda.py` supplies the local CUDA tools. The existing NVIDIA driver supports the pinned CUDA runtime. Activation also disables forced TF32 so the FP32 correctness checks use full precision. Raw validation output is in `build/validation/`. HPL/HPCG additionally require system MPICH and OpenBLAS development packages (`apt-get install mpich libmpich-dev libopenblas-dev`); run `bash scripts/run-reference-benchmarks.sh`, with output in `build/reference/`.
+## CPU Environment
 
-独立站使用 `mkdocs.study.yml`；上游配置为 `docs/zh/mkdocs.yml`。五章文档与学习路线位于 `docs/zh/docs/`。
+```bash
+uv sync --locked --extra cpu
+source scripts/activate-study.sh
+python scripts/validate.py
+```
 
-实验限于教学正确性与测量方法，不是正式基准提交。多卡 NCCL、多节点网络和 AMD GPU 不属于单张 NVIDIA GPU 的验证范围。来源及原作者署名保留在各篇文章中，文档、代码与图像遵循仓库的 CC BY-NC-SA 4.0 许可。
+CPU and GPU extras conflict by design. Use plain python after activation; an unqualified uv run may resync away an optional extra. To use uv run, repeat --extra cpu or --extra gpu explicitly.
+
+MPI labs use the bundled MPICH launcher from .venv/bin. Use OMP_NUM_THREADS=1 and OPENBLAS_NUM_THREADS=1 per rank and keep ranks within the allocated CPU quota. The activation helper's ten-thread defaults preserve the original machine setup; override them on smaller allocations.
+
+Native HPL/HPCG builds additionally require system MPICH and OpenBLAS development packages (mpich, libmpich-dev, libopenblas-dev). Their script uses matching system compilers and /usr/bin/mpiexec in isolation; never mix that launcher with bundled mpi4py. Run bash scripts/run-reference-benchmarks.sh for small teaching workloads, not official scores.
+
+## Documentation and Browser Checks
+
+```bash
+uv sync --locked --only-group docs --group browser
+uv run --only-group docs --group browser playwright install chromium
+uv run --only-group docs python scripts/build-site.py
+uv run --only-group docs python scripts/serve-site.py --port 8008
+```
+
+In another shell run the browser check with the same documentation environment:
+
+```bash
+uv run --only-group docs --group browser python scripts/browser-check.py
+```
+
+A docs-only sync intentionally excludes experiment dependencies. Use a separate UV_PROJECT_ENVIRONMENT or checkout when preserving a GPU environment. Publishing uses only the docs group; CI uses the cpu extra plus docs/browser dependencies.
+
+## Experiment Inventory
+
+course/labs.json defines eight assessed modules with three levels each. scripts/check-labs.py validates metadata and closed answers; scripts/run-labs.py executes local commands with timeouts and source hashes. Its --gpu switch includes the CUDA path; --reference includes native benchmark source builds.
+
+One process on one GPU cannot test GPU-to-GPU communication. Two CPU/Gloo workers test distributed semantics but cannot measure NCCL performance. Two-node commands require the separately documented hardware profile and remain unexecuted without access. Datacenter specifications and roofline results are read-only analyses and calculated bounds, not measurements on A100/H100/H200.
+
+Generated data lives under build and tool downloads under .tools. Preserve logs before cleanup. No cloud provisioning is included and no AWS command is executed by the validation runner.
+
+Course material and examples retain CC BY-NC-SA 4.0 terms and original author credit. Bundled renderers keep separate licenses.

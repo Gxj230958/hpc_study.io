@@ -20,9 +20,16 @@ Read the witness script, run it and record the device name, PyTorch CUDA version
 python examples/ml/witness.py
 ```
 
+**Minimal excerpt:**
+
+```python
+actual = (a.cuda() @ b.cuda()).cpu()
+torch.testing.assert_close(actual, a @ b, rtol=1e-4, atol=1e-4)
+```
+
 **Source:** [examples/ml/witness.py](/hpc_study.io/downloads/source/examples/ml/witness.py). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** CUDA availability alone is insufficient. The witness checks that tensors and matrix multiplication results live on CUDA, compares against a CPU result and synchronizes before reporting PASS. It does not benchmark a datacenter GPU.
+**Expected behavior and correctness:** CUDA matrix multiplication must match an independent CPU result within the script's tolerance and report WITNESS PASS.
 
 **Troubleshooting:** If CUDA is unavailable, use the CPU path for other modules. Check driver visibility and install the gpu extra; the CPU extra deliberately cannot dispatch CUDA.
 
@@ -43,9 +50,16 @@ make -C examples cuda
 ./build/cuda_labs
 ```
 
+**Minimal excerpt:**
+
+```cuda
+int i = blockIdx.x * blockDim.x + threadIdx.x;
+if (i < n) c[i] = a[i] + b[i];
+```
+
 **Source:** [examples/cuda/labs.cu](/hpc_study.io/downloads/source/examples/cuda/labs.cu). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** The ceiling division (n+255)/256 launches enough blocks; the guard prevents tail threads from reading or writing out of bounds. Every element is compared with an independent host sum. The same executable also checks reduction and matrix multiplication.
+**Expected behavior and correctness:** All vector sizes and the executable's other numerical checks must pass against host references, including unaligned tails.
 
 **Troubleshooting:** Missing nvcc is a toolkit issue even if PyTorch CUDA works. Source activation after installing local tools. For another GPU, use CUDA_ARCH appropriate to that GPU instead of copying sm_89 blindly.
 
@@ -67,9 +81,17 @@ compute-sanitizer --error-exitcode 1 --tool synccheck ./build/cuda_labs
 compute-sanitizer --error-exitcode 1 --tool racecheck ./build/cuda_labs
 ```
 
+**Minimal excerpt:**
+
+```cuda
+__syncthreads();
+for (int j = 0; j < 16; ++j) sum += as[y][j] * bs[j][x];
+__syncthreads();
+```
+
 **Source:** [examples/cuda/labs.cu](/hpc_study.io/downloads/source/examples/cuda/labs.cu). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** All threads must reach both barriers, including threads whose output is outside the matrix. The first barrier completes tile loading; the second prevents overwriting a tile while others still use it. A double-precision host loop independently checks each result, and sanitizer success adds memory/synchronization evidence.
+**Expected behavior and correctness:** Every matrix result must match the host reference. All three sanitizers must exit successfully with no detected errors for the tested shapes.
 
 **Troubleshooting:** Use the sanitizer error exit flag so an error fails automation. A clean sanitizer run covers these inputs, not every possible shape. Check profiler/sanitizer permissions if instrumentation cannot attach.
 
@@ -82,4 +104,3 @@ compute-sanitizer --error-exitcode 1 --tool racecheck ./build/cuda_labs
 ## Next Steps
 
 Continue to [the next module](../performance-analysis/intro.md). Review [experiment status](../learning/validation.md) before reusing a performance claim.
-

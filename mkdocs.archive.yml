@@ -31,6 +31,9 @@ extra:
       lang: zh
 extra_css:
   - static/css/study.css
+  - static/css/course.css
+hooks:
+  - scripts/shared-assets.py
 extra_javascript:
   - static/vendor/mathjax/tex-mml-chtml.js
   - static/vendor/mermaid.min.js

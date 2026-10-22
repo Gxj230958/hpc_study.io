@@ -20,9 +20,17 @@ Predict the maximum rounding error for symmetric INT8 quantization. Run the exam
 python examples/ml/quantize.py
 ```
 
+**Minimal excerpt:**
+
+```python
+q = np.clip(np.rint(weights / scale), -127, 127).astype(np.int8)
+restored = q.astype(np.float32) * scale
+assert np.max(np.abs(weights - restored)) <= scale / 2 + 1e-6
+```
+
 **Source:** [examples/ml/quantize.py](/hpc_study.io/downloads/source/examples/ml/quantize.py). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** With scale=max(abs(w))/127, rounding produces error at most scale/2 for these bounded inputs, up to floating-point roundoff. INT8 weight storage is one quarter of FP32 before scale metadata. This is a numerical demonstration, not an accelerated INT8 kernel.
+**Expected behavior and correctness:** The restored tensor must satisfy the independently derived rounding-error bound; the script also reports original and quantized storage.
 
 **Troubleshooting:** The bound assumes the scale is nonzero and values remain in the calibrated range. New outliers may clip; all-zero tensors need explicit scale handling in a general implementation.
 
@@ -42,9 +50,16 @@ Inspect the tridiagonal symmetric positive definite matrix. Explain why conjugat
 python examples/science/solve.py
 ```
 
+**Minimal excerpt:**
+
+```python
+relative_residual = np.linalg.norm(a @ x - b) / np.linalg.norm(b)
+assert info == 0 and relative_residual <= 1e-10
+```
+
 **Source:** [examples/science/solve.py](/hpc_study.io/downloads/source/examples/science/solve.py). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** The script checks solver status, relative residual ||Ax-b||/||b|| and agreement with an independent dense solver. A small residual alone does not bound forward error without considering conditioning. The manufactured solution supplies another independent reference.
+**Expected behavior and correctness:** Require successful solver status, a finite residual below tolerance, and agreement with the dense and manufactured-solution references.
 
 **Troubleshooting:** Failure to converge may reflect an unsuitable matrix, tolerance or iteration budget. Do not accept info>0 as success or silently replace NaN residuals.
 
@@ -66,9 +81,18 @@ python examples/ml/train.py --device cuda
 python examples/ml/precision.py
 ```
 
+**Minimal excerpt:**
+
+```python
+opt.zero_grad()
+loss = torch.nn.functional.mse_loss(model(x), y)
+loss.backward()
+opt.step()
+```
+
 **Source:** [examples/ml/train.py](/hpc_study.io/downloads/source/examples/ml/train.py), [examples/ml/precision.py](/hpc_study.io/downloads/source/examples/ml/precision.py). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** The tiny regression is a correctness workload and may be slower on GPU because launch overhead dominates. FP16 permits more rounding error, checked against a declared tolerance. Disabling TF32 makes the FP32 comparison reproducible for this teaching case; it is not a universal production recommendation.
+**Expected behavior and correctness:** Require decreasing loss, agreement with the initial CPU reference, and finite matrix errors within each format's tolerance. CPU-only output must mark CUDA as skipped.
 
 **Troubleshooting:** CUDA commands require the gpu extra. precision.py explicitly prints SKIP for CUDA without a device. CPU-only validation does not establish GPU speed or FP16 behavior.
 
@@ -92,4 +116,3 @@ flowchart LR
 ## Next Steps
 
 Continue to [the next module](../clusters/platform-intro.md). Review [experiment status](../learning/validation.md) before reusing a performance claim.
-

@@ -1,0 +1,13 @@
+/* Keep the language menu within mobile viewports across system fonts. */
+@media (max-width: 600px) {
+  .md-header .md-select .md-select__inner {
+    left: auto;
+    right: 0;
+    max-width: calc(100vw - 4rem);
+    transform: translateY(.3rem);
+  }
+  .md-header .md-select:hover .md-select__inner,
+  .md-header .md-select:focus-within .md-select__inner {
+    transform: translateY(0);
+  }
+}

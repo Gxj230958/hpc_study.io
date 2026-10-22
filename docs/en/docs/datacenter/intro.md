@@ -12,9 +12,15 @@ These exercises are read-only analysis. The course does not have A100, H100 or H
 
 Compare the sourced A100 80 GB PCIe/SXM, H100 SXM/NVL and H200 SXM/NVL rows. Record form factor, memory, bandwidth, precision mode and source date. Identify at least two values that cannot be compared without qualification.
 
+**Minimal excerpt:**
+
+```text
+comparison_key = (SKU, package, memory_variant, precision, dense_or_sparse)
+```
+
 **Source:** [course/specifications.json](/hpc_study.io/downloads/source/course/specifications.json).
 
-**Expected behavior and correctness:** A GPU family name is not a complete specification. A100 80 GB PCIe and SXM have different bandwidth; H100 NVL has 94 GB per GPU and 188 GB per pair, not 188 GB on each device. Sparse tensor peaks and dense scalar peaks describe different operations.
+**Expected behavior and correctness:** Produce a comparison with exact SKUs, units, precision modes and dated source links. Identify ambiguous or incomparable entries.
 
 **Troubleshooting:** If a source is inaccessible, record that fact and retain the dated supplied row. Do not invent a current specification or silently substitute another SKU.
 
@@ -34,9 +40,17 @@ Calculate an FP32 vector-add roofline and a three-array capacity limit for H100 
 python examples/datacenter/bounds.py --bandwidth-gbps 3350 --peak-tflops 67 --capacity-gb 80
 ```
 
+**Minimal excerpt:**
+
+```python
+intensity = 1 / 12
+bound_tflops = min(67, 3350 * intensity / 1000)
+max_elements = int(80 * 1e9 * 0.8 / 12)
+```
+
 **Source:** [examples/datacenter/bounds.py](/hpc_study.io/downloads/source/examples/datacenter/bounds.py), [course/specifications.json](/hpc_study.io/downloads/source/course/specifications.json).
 
-**Expected behavior and correctness:** One addition uses one FLOP and at least 12 bytes, so intensity is 1/12 FLOP/byte. At 3350 GB/s the bandwidth bound is about 0.279167 TFLOP/s, below the 67 TFLOP/s scalar FP32 peak. Reserving 20% of 80 decimal GB leaves at most 5,333,333,333 three-array elements. These are calculated limits, not measured performance or safe recommended allocations.
+**Expected behavior and correctness:** The calculator reports CALCULATED bounds and checks units/capacity arithmetic. Compare with your separate base-unit calculation; allocate no large arrays.
 
 **Troubleshooting:** Keep GB versus GiB and dense versus sparse peaks explicit. Capacity bounds omit workspace and runtime allocations beyond the teaching reserve; never allocate the bound on the local GPU.
 
@@ -52,9 +66,15 @@ python examples/datacenter/bounds.py --bandwidth-gbps 3350 --peak-tflops 67 --ca
 
 Write a one-page plan selecting a concrete SKU, precision, memory budget, topology, scheduler request, profiling method, correctness oracle and stop condition. Calculate cost from an explicitly hypothetical rate and include setup, retries, storage and transfer assumptions.
 
+**Minimal excerpt:**
+
+```text
+estimated_cost = quoted_instance_rate * billed_hours + storage + transfer
+```
+
 **Source:** [course/hardware-profile.json](/hpc_study.io/downloads/source/course/hardware-profile.json), [course/specifications.json](/hpc_study.io/downloads/source/course/specifications.json).
 
-**Expected behavior and correctness:** A complete plan separates prerequisites from observations, calculates job cost as instance-rate times billed hours plus storage/transfer, and uses a small correctness gate before scaling. It identifies whether a full GPU or a particular MIG profile is required. Unknown ports, scheduler, interconnect and remote versions remain unresolved until verified.
+**Expected behavior and correctness:** Produce a concrete plan with a correctness gate, resource request, dated cost assumptions, cleanup and explicit unresolved fields.
 
 **Troubleshooting:** A vendor peak cannot predict billed time. MIG profiles cannot be treated as freely composable fractions or automatically aggregated memory. Cloud provisioning is outside this exercise and no cloud command should be executed.
 

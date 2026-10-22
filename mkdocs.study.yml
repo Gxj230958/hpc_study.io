@@ -71,12 +71,14 @@ extra:
       lang: zh
 extra_css:
   - static/css/study.css
+  - static/css/course.css
 extra_javascript:
   - static/vendor/mathjax/tex-mml-chtml.js
   - static/vendor/mermaid.min.js
   - static/js/study.js
 hooks:
   - scripts/study-hooks.py
+  - scripts/shared-assets.py
 nav:
   - Start Here:
       - HPC Study: index.md

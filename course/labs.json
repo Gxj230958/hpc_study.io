@@ -36,14 +36,20 @@
         0,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Record the CPU model, allowed CPU set, and memory limit. Distinguish host totals from cgroup limits. Choose at most four threads for the first experiments.",
       "expected_behavior": "The allowed CPU set describes placement, while a cgroup CPU quota may allow fewer CPU equivalents. Inspect /sys/fs/cgroup/cpu.max as well. Use the smaller allocation limit, not the host memory total. GPU memory is a separate pool.",
       "troubleshooting": "Host memory and allowed CPU count can exceed your job's quota. Missing cgroup v2 files mean you must inspect the system's cgroup layout; do not infer unlimited resources.",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "inventory",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "memory-patterns",
+      "repetitions": 3,
       "module": "machine",
       "difficulty": "core",
       "duration_minutes": 20,
@@ -63,11 +69,16 @@
         0,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Read the nested loops, predict the visited element counts for strides 1, 8 and 64, then run the program three times. Record time per visited element and useful bandwidth, not just total elapsed time.",
       "expected_behavior": "The program sums known 1.0 values and checks the result against 8 times the number of visits. Each larger stride performs fewer visits, so a shorter total time alone does not establish higher efficiency. Report the spread of repeated runs.",
       "troubleshooting": "An allocation failure means the available limit is smaller than expected. Close other workloads or reduce n in a separate copy and disclose the changed size.",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "memory-patterns",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "cache-stride",
@@ -88,11 +99,16 @@
       "expected_returncodes": [
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Explain why stride 8 can fetch a cache line but use only one double. Compute useful bytes as visits times 8. Compare with the stride-1 result and state what this experiment cannot establish.",
       "expected_behavior": "For a 64-byte cache line and 8-byte doubles, stride 8 touches one value per line; stride 64 skips more lines. Prefetching, TLB behavior, reuse and clock variation affect the measured result. Useful GB/s is not measured DRAM traffic; hardware counters would be needed for that claim.",
       "troubleshooting": "Unexpected ordering is possible. Confirm PASS and counts first, retain all runs, and avoid claiming a particular cache-line size from timing alone.",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "cache-stride",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "serial-openmp",
@@ -117,14 +133,20 @@
         0,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Compute n(n-1)/2 independently in Python and compare both outputs. Inspect the reduction pragma and explain why simply sharing sum would be incorrect.",
       "expected_behavior": "For n=100003 the exact result is 5000250003. The program uses a 64-bit unsigned sum; a 32-bit integer would overflow. One OpenMP thread supplies a useful baseline, though it still includes the OpenMP loop machinery.",
       "troubleshooting": "A missing omp.h indicates GCC/OpenMP development support is absent. Build with the provided Makefile; do not remove -fopenmp to silence a linker error.",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "serial-openmp",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "thread-counts",
+      "repetitions": 5,
       "module": "cpu",
       "difficulty": "core",
       "duration_minutes": 20,
@@ -146,11 +168,16 @@
         0,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Repeat each count five times. Compare median time, speedup T(1)/T(p), and efficiency speedup/p. Keep the input fixed and explain overhead at this small scale.",
       "expected_behavior": "Every count must produce 500002500003. More threads can lose to startup, synchronization or memory bandwidth. A correct but slower run is useful evidence, not a failed correctness test.",
       "troubleshooting": "Oversubscription occurs when runnable threads exceed available CPU capacity. Limit library threads as well and inspect quotas before increasing counts.",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "thread-counts",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "race-repair",
@@ -173,11 +200,16 @@
         1,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "The first command intentionally exits 1. Predict its total before running it. Explain the two barriers, then examine the lock-protected repair and run it.",
       "expected_behavior": "Both workers read the same old value before either stores its increment, so 1000 updates survive where 2000 are expected. The repair holds a lock across the read-modify-write. This is a defined Python logical race; running a C data race would invoke undefined behavior. OpenMP reduction is the preferred repair for the C sum.",
       "troubleshooting": "Do not put a barrier inside a lock held by only one worker: the other worker could never reach it. The teaching example has fixed work and barrier timeouts.",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "race-repair",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "rank-partition",
@@ -200,11 +232,16 @@
         0,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Write down [nr/p, n(r+1)/p) with integer division for every rank. Verify the union is complete and the intervals do not overlap, including ranks with no elements.",
       "expected_behavior": "For n=10 and p=3 the intervals are [0,3), [3,6), [6,10) and the total is 45. With n=2 and four ranks, some intervals are empty but all ranks still participate in the collective. Reduction checks the independent arithmetic-series formula.",
       "troubleshooting": "If ranks all report size 1 or the job hangs, check which mpiexec and Python are selected. Mixing Open MPI and MPICH is unsupported; source scripts/activate-study.sh and inspect MPI.Get_library_version().",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "rank-partition",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "checked-pingpong",
@@ -225,11 +262,16 @@
       "expected_returncodes": [
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Run three message sizes with ten warm-ups and one hundred measured round trips. Inspect the rank-dependent send/receive ordering and payload checks. Report round-trip time and identify the placement.",
       "expected_behavior": "The sender transmits a position-dependent byte pattern and the receiver verifies it, returns its complement, and the sender verifies the reply. Different iterations change the pattern. A local run measures same-host transport, often shared memory, and cannot establish Ethernet bandwidth.",
       "troubleshooting": "Exactly two ranks are required. Remote launch needs resolved hostnames, SSH access, identical environments and permitted dynamic MPI ports. A two-sided blocking send/send sequence can deadlock for large messages.",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "checked-pingpong",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "mpi-scaling",
@@ -260,11 +302,16 @@
         0,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Tabulate median maximum-rank times. Fixed total n is strong scaling; fixed n per rank is weak scaling. Explain why these Python integer loops are teaching workloads rather than network benchmarks.",
       "expected_behavior": "Strong efficiency is T(1)/(p*T(p)). Weak efficiency is T(1)/T(p) with per-rank work held fixed. The independent exact sum checks every repetition. Startup is outside the timed region; collectives and load imbalance remain inside. Small jobs may show no speedup.",
       "troubleshooting": "Use one numerical-library thread per rank. Four local ranks cannot reveal the cost of a second machine or a congested switch.",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "mpi-scaling",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "gpu-dispatch",
@@ -285,12 +332,17 @@
       "expected_returncodes": [
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Read the witness script, run it and record the device name, PyTorch CUDA version and visible device count. Identify the CPU reference used to verify the result.",
       "expected_behavior": "CUDA availability alone is insufficient. The witness checks that tensors and matrix multiplication results live on CUDA, compares against a CPU result and synchronizes before reporting PASS. It does not benchmark a datacenter GPU.",
       "troubleshooting": "If CUDA is unavailable, use the CPU path for other modules. Check driver visibility and install the gpu extra; the CPU extra deliberately cannot dispatch CUDA.",
       "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
-      "requires_gpu": true
+      "requires_gpu": true,
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "gpu-dispatch",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "vector-boundaries",
@@ -313,12 +365,17 @@
         0,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Before viewing add(), write a kernel that computes i=blockIdx.x*blockDim.x+threadIdx.x and guards i<n. Compare it with the checked implementation. Explain the cases 1, 255, 256, 257 and 100003.",
       "expected_behavior": "The ceiling division (n+255)/256 launches enough blocks; the guard prevents tail threads from reading or writing out of bounds. Every element is compared with an independent host sum. The same executable also checks reduction and matrix multiplication.",
       "troubleshooting": "Missing nvcc is a toolkit issue even if PyTorch CUDA works. Source activation after installing local tools. For another GPU, use CUDA_ARCH appropriate to that GPU instead of copying sm_89 blindly.",
       "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
-      "requires_gpu": true
+      "requires_gpu": true,
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "vector-boundaries",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "tiled-matmul",
@@ -343,12 +400,17 @@
         0,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Trace the two 16x16 shared-memory tiles and both barriers. Verify dimensions 1, 15, 16, 17 and 65, then run all three sanitizers. Explain why out-of-range tile entries must be zeroed.",
       "expected_behavior": "All threads must reach both barriers, including threads whose output is outside the matrix. The first barrier completes tile loading; the second prevents overwriting a tile while others still use it. A double-precision host loop independently checks each result, and sanitizer success adds memory/synchronization evidence.",
       "troubleshooting": "Use the sanitizer error exit flag so an error fails automation. A clean sanitizer run covers these inputs, not every possible shape. Check profiler/sanitizer permissions if instrumentation cannot attach.",
       "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
-      "requires_gpu": true
+      "requires_gpu": true,
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "tiled-matmul",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "repeated-timings",
@@ -377,11 +439,16 @@
         0,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Make a five-sample table, report the median and range, and state that allocation and initialization are outside the timed loop. Verify every sample's integer total before comparing time.",
       "expected_behavior": "The sample median describes this workload under these conditions. It is not a peak FLOPS measurement. Report input size, compiler flags, threads, timer and placement alongside it; a fast wrong result is rejected.",
       "troubleshooting": "Run make -C examples cpu if build/sum is missing. Tiny runs may approach timer resolution. Do not discard inconvenient samples without a recorded reason.",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "repeated-timings",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "profile-transfers",
@@ -398,18 +465,23 @@
       ],
       "commands": [
         "nsys profile --force-overwrite true --trace=cuda --output=build/course-profile ./build/cuda_labs",
-        "nsys stats --report cuda_gpu_kern_sum,cuda_gpu_mem_time_sum build/course-profile.nsys-rep"
+        "nsys stats --force-export=true --report cuda_gpu_kern_sum,cuda_gpu_mem_time_sum build/course-profile.nsys-rep"
       ],
       "expected_returncodes": [
         0,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Identify host-to-device copies, launches and device-to-host copies. Compare event-based resident-kernel time with the first transfer-and-kernel host interval. Verify PASS in the profiled program output.",
       "expected_behavior": "The end-to-end interval includes copies and first launch effects; resident CUDA events measure a different boundary after warm-up. Profiling adds overhead, so retain unprofiled measurements too. A timeline reveals idle gaps; it does not by itself prove their cause.",
       "troubleshooting": "On systems without profiler access, retain program timing output and mark the trace uncollected. Do not report missing hardware-counter data as zero.",
       "cleanup": "Remove build/course-profile.nsys-rep and build/course-profile.sqlite after retaining your report.",
-      "requires_gpu": true
+      "requires_gpu": true,
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "profile-transfers",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "reference-benchmarks",
@@ -432,11 +504,16 @@
       "expected_returncodes": [
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Inspect the small supplied inputs before running. Check HPL's residual and HPCG's verification report, record source revisions and explain why these short runs are not official submissions.",
       "expected_behavior": "HPL factors a dense system and checks a scaled residual. HPCG exercises sparse operations and checks convergence/symmetry; its short runtime and small local problem fail official submission requirements even when the teaching correctness checks pass. Never promote these runs into leaderboard scores.",
       "troubleshooting": "These native benchmarks use the system MPICH compiler and matching /usr/bin/mpiexec as an isolated toolchain. mpi4py labs use bundled MPICH. Do not combine a system launcher with bundled mpi4py or an Open MPI library with these native binaries.",
-      "cleanup": "Remove build/reference and .tools/hpl-2.3 / .tools/hpcg only when you no longer need source and raw results."
+      "cleanup": "Remove build/reference and .tools/hpl-2.3 / .tools/hpcg only when you no longer need source and raw results.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "reference-benchmarks",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "quantization-error",
@@ -457,11 +534,16 @@
       "expected_returncodes": [
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Predict the maximum rounding error for symmetric INT8 quantization. Run the example and compare restored floating-point weights with the originals. Calculate the storage ratio, including a scalar scale.",
       "expected_behavior": "With scale=max(abs(w))/127, rounding produces error at most scale/2 for these bounded inputs, up to floating-point roundoff. INT8 weight storage is one quarter of FP32 before scale metadata. This is a numerical demonstration, not an accelerated INT8 kernel.",
       "troubleshooting": "The bound assumes the scale is nonzero and values remain in the calibrated range. New outliers may clip; all-zero tensors need explicit scale handling in a general implementation.",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "quantization-error",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "sparse-residual",
@@ -482,11 +564,16 @@
       "expected_returncodes": [
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Inspect the tridiagonal symmetric positive definite matrix. Explain why conjugate gradients is applicable, then compare its answer with a dense solve and the manufactured sine-vector solution.",
       "expected_behavior": "The script checks solver status, relative residual ||Ax-b||/||b|| and agreement with an independent dense solver. A small residual alone does not bound forward error without considering conditioning. The manufactured solution supplies another independent reference.",
       "troubleshooting": "Failure to converge may reflect an unsuitable matrix, tolerance or iteration budget. Do not accept info>0 as success or silently replace NaN residuals.",
-      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/."
+      "cleanup": "Programs release memory on exit. Keep your measurements; make clean is unnecessary. Generated executables are confined to build/.",
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "sparse-residual",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "training-precision",
@@ -512,7 +599,7 @@
         0,
         0
       ],
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "task": "Verify loss decreases and the initial forward pass matches a CPU reference. Compare synchronized FP32/FP16 matrix timing and error against FP64. Record the CPU fallback separately if no GPU is visible.",
       "expected_behavior": "The tiny regression is a correctness workload and may be slower on GPU because launch overhead dominates. FP16 permits more rounding error, checked against a declared tolerance. Disabling TF32 makes the FP32 comparison reproducible for this teaching case; it is not a universal production recommendation.",
       "troubleshooting": "CUDA commands require the gpu extra. precision.py explicitly prints SKIP for CUDA without a device. CPU-only validation does not establish GPU speed or FP16 behavior.",
@@ -521,7 +608,12 @@
       "fallback_commands": [
         "python examples/ml/train.py --device cpu",
         "python examples/ml/precision.py"
-      ]
+      ],
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "training-precision",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "one-process",
@@ -546,11 +638,16 @@
       "page": "clusters/platform-intro.md",
       "anchor": "one-process",
       "answer": true,
-      "validation_status": "pending",
+      "validation_status": "passed-local-primary",
       "cleanup": "torchrun tears down workers on normal exit. On failure interrupt both launches and confirm owned workers exit. No allocation or scheduler job is created by these commands.",
       "expected_returncodes": [
         0
-      ]
+      ],
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "one-process",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "multi-gpu",
@@ -575,11 +672,16 @@
       "page": "clusters/platform-intro.md",
       "anchor": "multi-gpu",
       "answer": true,
-      "validation_status": "pending",
+      "validation_status": "not-executed-primary; fallback-passed",
       "cleanup": "torchrun tears down workers on normal exit. On failure interrupt both launches and confirm owned workers exit. No allocation or scheduler job is created by these commands.",
       "expected_returncodes": [
         0
-      ]
+      ],
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "multi-gpu",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "two-node-training",
@@ -606,12 +708,17 @@
       "page": "clusters/platform-intro.md",
       "anchor": "two-node-training",
       "answer": true,
-      "validation_status": "pending",
+      "validation_status": "not-executed-primary; fallback-passed",
       "cleanup": "torchrun tears down workers on normal exit. On failure interrupt both launches and confirm owned workers exit. No allocation or scheduler job is created by these commands.",
       "expected_returncodes": [
         0,
         0
-      ]
+      ],
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "two-node-training",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "specifications",
@@ -632,7 +739,12 @@
       "answer": true,
       "validation_status": "analysis-not-hardware-execution",
       "cleanup": "No hardware or cloud resource is created. Retain the worksheet with source dates; remove only your own temporary notes.",
-      "expected_returncodes": []
+      "expected_returncodes": [],
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "specifications",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "roofline-capacity",
@@ -659,7 +771,12 @@
       "cleanup": "No hardware or cloud resource is created. Retain the worksheet with source dates; remove only your own temporary notes.",
       "expected_returncodes": [
         0
-      ]
+      ],
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "roofline-capacity",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     },
     {
       "id": "porting-plan",
@@ -681,7 +798,12 @@
       "answer": true,
       "validation_status": "analysis-not-hardware-execution",
       "cleanup": "No hardware or cloud resource is created. Retain the worksheet with source dates; remove only your own temporary notes.",
-      "expected_returncodes": []
+      "expected_returncodes": [],
+      "validation_evidence": {
+        "report": "audits/2026-10-22-validation.json",
+        "lab_id": "porting-plan",
+        "executed_utc": "2026-10-22T07:08:18.345609+00:00"
+      }
     }
   ]
 }

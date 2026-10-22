@@ -24,9 +24,17 @@ env OMP_NUM_THREADS=1 ./build/sum 1000003
 env OMP_NUM_THREADS=1 ./build/sum 1000003
 ```
 
+**Minimal excerpt:**
+
+```c
+double start = omp_get_wtime();
+/* Checked sum loop runs here. */
+double elapsed = omp_get_wtime() - start;
+```
+
 **Source:** [examples/cpu/sum.c](/hpc_study.io/downloads/source/examples/cpu/sum.c). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** The sample median describes this workload under these conditions. It is not a peak FLOPS measurement. Report input size, compiler flags, threads, timer and placement alongside it; a fast wrong result is rejected.
+**Expected behavior and correctness:** All five timed runs must produce the exact checked sum. Report the sample median and range with the timing boundary.
 
 **Troubleshooting:** Run make -C examples cpu if build/sum is missing. Tiny runs may approach timer resolution. Do not discard inconvenient samples without a recorded reason.
 
@@ -44,12 +52,21 @@ Identify host-to-device copies, launches and device-to-host copies. Compare even
 
 ```bash
 nsys profile --force-overwrite true --trace=cuda --output=build/course-profile ./build/cuda_labs
-nsys stats --report cuda_gpu_kern_sum,cuda_gpu_mem_time_sum build/course-profile.nsys-rep
+nsys stats --force-export=true --report cuda_gpu_kern_sum,cuda_gpu_mem_time_sum build/course-profile.nsys-rep
+```
+
+**Minimal excerpt:**
+
+```cuda
+CUDA(cudaEventRecord(begin));
+add<<<blocks, 256>>>(da, db, dc, n);
+CUDA(cudaEventRecord(end));
+CUDA(cudaEventSynchronize(end));
 ```
 
 **Source:** [examples/cuda/labs.cu](/hpc_study.io/downloads/source/examples/cuda/labs.cu). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** The end-to-end interval includes copies and first launch effects; resident CUDA events measure a different boundary after warm-up. Profiling adds overhead, so retain unprofiled measurements too. A timeline reveals idle gaps; it does not by itself prove their cause.
+**Expected behavior and correctness:** The application must still pass its numerical checks. A trace and both kernel/copy summaries should be produced; compare their timing boundaries.
 
 **Troubleshooting:** On systems without profiler access, retain program timing output and mark the trace uncollected. Do not report missing hardware-counter data as zero.
 
@@ -69,9 +86,16 @@ Inspect the small supplied inputs before running. Check HPL's residual and HPCG'
 bash scripts/run-reference-benchmarks.sh
 ```
 
+**Minimal excerpt:**
+
+```text
+HPL: require the supplied residual checks to pass.
+HPCG: require numerical checks; label the short run as non-submission.
+```
+
 **Source:** [scripts/run-reference-benchmarks.sh](/hpc_study.io/downloads/source/scripts/run-reference-benchmarks.sh), [examples/benchmark/HPL.dat](/hpc_study.io/downloads/source/examples/benchmark/HPL.dat), [examples/benchmark/hpcg.dat](/hpc_study.io/downloads/source/examples/benchmark/hpcg.dat). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** HPL factors a dense system and checks a scaled residual. HPCG exercises sparse operations and checks convergence/symmetry; its short runtime and small local problem fail official submission requirements even when the teaching correctness checks pass. Never promote these runs into leaderboard scores.
+**Expected behavior and correctness:** The script checks HPL residual success and HPCG numerical validity. Both remain short teaching runs that do not satisfy official submission requirements.
 
 **Troubleshooting:** These native benchmarks use the system MPICH compiler and matching /usr/bin/mpiexec as an isolated toolchain. mpi4py labs use bundled MPICH. Do not combine a system launcher with bundled mpi4py or an Open MPI library with these native binaries.
 
@@ -92,4 +116,3 @@ Use consistent units and precision. This is a calculated upper bound, not a meas
 ## Next Steps
 
 Continue to [the next module](../sci-mlsys/intro.md). Review [experiment status](../learning/validation.md) before reusing a performance claim.
-

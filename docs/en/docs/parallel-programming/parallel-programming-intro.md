@@ -22,9 +22,15 @@ env OMP_NUM_THREADS=1 ./build/sum 100003
 env OMP_NUM_THREADS=4 ./build/sum 100003
 ```
 
+**Minimal excerpt:**
+
+```c
+uint64_t expected = (uint64_t)n * (n - 1) / 2;
+```
+
 **Source:** [examples/cpu/sum.c](/hpc_study.io/downloads/source/examples/cpu/sum.c). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** For n=100003 the exact result is 5000250003. The program uses a 64-bit unsigned sum; a 32-bit integer would overflow. One OpenMP thread supplies a useful baseline, though it still includes the OpenMP loop machinery.
+**Expected behavior and correctness:** Serial and threaded totals must equal the independent arithmetic-series formula n(n-1)/2 in 64-bit arithmetic.
 
 **Troubleshooting:** A missing omp.h indicates GCC/OpenMP development support is absent. Build with the provided Makefile; do not remove -fopenmp to silence a linker error.
 
@@ -46,9 +52,16 @@ env OMP_NUM_THREADS=2 ./build/sum 1000003
 env OMP_NUM_THREADS=4 ./build/sum 1000003
 ```
 
+**Minimal excerpt:**
+
+```c
+#pragma omp parallel for reduction(+:sum) schedule(static)
+for (long i = 0; i < n; ++i) sum += a[i];
+```
+
 **Source:** [examples/cpu/sum.c](/hpc_study.io/downloads/source/examples/cpu/sum.c). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** Every count must produce 500002500003. More threads can lose to startup, synchronization or memory bandwidth. A correct but slower run is useful evidence, not a failed correctness test.
+**Expected behavior and correctness:** Every thread count must produce the same exact total. Repeat timings need not show monotonic speedup.
 
 **Troubleshooting:** Oversubscription occurs when runnable threads exceed available CPU capacity. Limit library threads as well and inspect quotas before increasing counts.
 
@@ -69,9 +82,18 @@ python examples/cpu/race.py
 python examples/cpu/race.py --repair
 ```
 
+**Minimal excerpt:**
+
+```python
+previous = total
+barrier.wait()
+total = previous + 1
+barrier.wait()
+```
+
 **Source:** [examples/cpu/race.py](/hpc_study.io/downloads/source/examples/cpu/race.py). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** Both workers read the same old value before either stores its increment, so 1000 updates survive where 2000 are expected. The repair holds a lock across the read-modify-write. This is a defined Python logical race; running a C data race would invoke undefined behavior. OpenMP reduction is the preferred repair for the C sum.
+**Expected behavior and correctness:** The unprotected demonstration intentionally exits 1 with LOST UPDATE. The repaired run must exit 0 with the independently expected 2000 updates.
 
 **Troubleshooting:** Do not put a barrier inside a lock held by only one worker: the other worker could never reach it. The teaching example has fixed work and barrier timeouts.
 
@@ -84,4 +106,3 @@ python examples/cpu/race.py --repair
 ## Next Steps
 
 Continue to [the next module](mpi.md). Review [experiment status](../learning/validation.md) before reusing a performance claim.
-

@@ -23,9 +23,16 @@ python -c "import os; print('allowed_cpus', len(os.sched_getaffinity(0)))"
 python -c "from pathlib import Path; p=Path('/sys/fs/cgroup/memory.max'); print('cgroup_memory_limit', p.read_text().strip() if p.exists() else 'inspect your cgroup version')"
 ```
 
+**Minimal excerpt:**
+
+```python
+import os
+allowed_cpus = len(os.sched_getaffinity(0))
+```
+
 **Source:** [examples/cpu/memory.c](/hpc_study.io/downloads/source/examples/cpu/memory.c). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** The allowed CPU set describes placement, while a cgroup CPU quota may allow fewer CPU equivalents. Inspect /sys/fs/cgroup/cpu.max as well. Use the smaller allocation limit, not the host memory total. GPU memory is a separate pool.
+**Expected behavior and correctness:** Produces CPU, memory and allocation metadata. Compare independent OS/cgroup views before choosing a worker count.
 
 **Troubleshooting:** Host memory and allowed CPU count can exceed your job's quota. Missing cgroup v2 files mean you must inspect the system's cgroup layout; do not infer unlimited resources.
 
@@ -46,9 +53,16 @@ make -C examples cpu
 ./build/memory
 ```
 
+**Minimal excerpt:**
+
+```c
+size_t visits = 8 * ((n + stride - 1) / stride);
+if (sum != (double)visits) return 1;
+```
+
 **Source:** [examples/cpu/memory.c](/hpc_study.io/downloads/source/examples/cpu/memory.c). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** The program sums known 1.0 values and checks the result against 8 times the number of visits. Each larger stride performs fewer visits, so a shorter total time alone does not establish higher efficiency. Report the spread of repeated runs.
+**Expected behavior and correctness:** Three stride rows report PASS and per-visit timing. The sum is checked against the independently calculated visit count.
 
 **Troubleshooting:** An allocation failure means the available limit is smaller than expected. Close other workloads or reduce n in a separate copy and disclose the changed size.
 
@@ -68,9 +82,15 @@ Explain why stride 8 can fetch a cache line but use only one double. Compute use
 ./build/memory
 ```
 
+**Minimal excerpt:**
+
+```c
+for (size_t i = 0; i < n; i += stride) sum += a[i];
+```
+
 **Source:** [examples/cpu/memory.c](/hpc_study.io/downloads/source/examples/cpu/memory.c). Read the bounded inputs and independent checks in the source before editing a working copy.
 
-**Expected behavior and correctness:** For a 64-byte cache line and 8-byte doubles, stride 8 touches one value per line; stride 64 skips more lines. Prefetching, TLB behavior, reuse and clock variation affect the measured result. Useful GB/s is not measured DRAM traffic; hardware counters would be needed for that claim.
+**Expected behavior and correctness:** The executable must pass its visit-count check. Timing order can vary; distinguish useful bytes from physical traffic in your explanation.
 
 **Troubleshooting:** Unexpected ordering is possible. Confirm PASS and counts first, retain all runs, and avoid claiming a particular cache-line size from timing alone.
 
@@ -95,4 +115,3 @@ Cache hits can avoid slower transfers. The arrows describe movement, not equal b
 ## Next Steps
 
 Continue to [the next module](../parallel-programming/parallel-programming-intro.md). Review [experiment status](../learning/validation.md) before reusing a performance claim.
-

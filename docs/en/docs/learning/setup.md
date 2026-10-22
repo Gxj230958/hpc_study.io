@@ -68,4 +68,12 @@ Native HPL/HPCG builds are an isolated system-MPICH toolchain requiring mpich, l
 
 If imports fail, verify the active Python and selected extra. If CUDA is unavailable, inspect nvidia-smi before reinstalling PyTorch. If MPI hangs, check launcher/library consistency before changing network settings. A profiler permission failure means data was not collected; it is not a zero-duration result.
 
+On a preconfigured container, LD_LIBRARY_PATH may include another Python installation's torch/lib. An undefined Python symbol while importing the CPU wheel can be caused by that unrelated shared library. Confirm the path, then test only the affected CPU command with the inherited path removed:
+
+```bash
+env -u LD_LIBRARY_PATH python examples/ml/train.py --device cpu
+```
+
+Do not remove site-required driver or MPI paths globally. The dated CPU-extra validation used this per-command isolation because this host preloads a Python 3.12 PyTorch library directory.
+
 Generated executables and logs live in build; downloaded toolchains live in .tools. Retain evidence before removing those directories. uv sync --locked recreates an environment using the chosen extras. Next, run [the inventory experiment](../hardware/hardware-intro.md).

@@ -24,11 +24,19 @@ python scripts/validate.py
 
 CPU and GPU extras conflict by design. Use plain python after activation; an unqualified uv run may resync away an optional extra. To use uv run, repeat --extra cpu or --extra gpu explicitly.
 
+If a container preloads an unrelated torch/lib through LD_LIBRARY_PATH, the CPU
+wheel can fail with an undefined Python symbol. Confirm that conflict and test
+the affected CPU command with env -u LD_LIBRARY_PATH; do not erase site-required
+driver/MPI paths globally. See the setup troubleshooting page.
+
 MPI labs use the bundled MPICH launcher from .venv/bin. Use OMP_NUM_THREADS=1 and OPENBLAS_NUM_THREADS=1 per rank and keep ranks within the allocated CPU quota. The activation helper's ten-thread defaults preserve the original machine setup; override them on smaller allocations.
 
 Native HPL/HPCG builds additionally require system MPICH and OpenBLAS development packages (mpich, libmpich-dev, libopenblas-dev). Their script uses matching system compilers and /usr/bin/mpiexec in isolation; never mix that launcher with bundled mpi4py. Run bash scripts/run-reference-benchmarks.sh for small teaching workloads, not official scores.
 
 ## Documentation and Browser Checks
+
+These build/browser commands require the full Git checkout. The downloadable
+example bundle contains experiment sources and runners, not the documentation tree.
 
 ```bash
 uv sync --locked --only-group docs --group browser

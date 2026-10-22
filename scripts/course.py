@@ -39,6 +39,9 @@ def inventory():
     return [{"original": p.relative_to(ZH).as_posix(),
              "english": destination(p.relative_to(ZH).as_posix()),
              "archive": "archive/zh/" + p.relative_to(ZH).as_posix(),
+             "original_url": "/hpc_study.io/" + url(p.relative_to(ZH).as_posix()),
+             "english_url": "/hpc_study.io/" + url(destination(p.relative_to(ZH).as_posix())),
+             "archive_url": "/hpc_study.io/archive/zh/" + url(p.relative_to(ZH).as_posix()),
              "source_sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
              "anchors": headings(p.read_text()),
              "anchor_policy": "compatibility anchor; consult archived original for context"}
@@ -53,7 +56,8 @@ def redirects():
 
 
 def url(path):
-    return path[:-3] + "/" if not path.endswith("index.md") else path[:-8]
+    name = path.rsplit("/", 1)[-1]
+    return path[:-len(name)] if name in ("index.md", "README.md") else path[:-3] + "/"
 
 
 if __name__ == "__main__":

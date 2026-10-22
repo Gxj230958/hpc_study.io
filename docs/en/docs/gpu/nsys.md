@@ -6,7 +6,7 @@ Nsight Systems records activity over time: CPU work, CUDA API calls, memory copi
 
 ```bash
 nsys profile --force-overwrite true --trace=cuda --output=build/course-profile ./build/cuda_labs
-nsys stats --report cuda_gpu_kern_sum,cuda_gpu_mem_time_sum build/course-profile.nsys-rep
+nsys stats --force-export=true --report cuda_gpu_kern_sum,cuda_gpu_mem_time_sum build/course-profile.nsys-rep
 ```
 
 These commands overwrite only the named course trace. The program's independent correctness checks still run. Save its output together with the trace and tool version.

@@ -1,5 +1,6 @@
 """Assets, compatibility anchors and downloadable runnable sources."""
 import html
+import json
 import os
 from pathlib import Path
 import sys
@@ -26,6 +27,18 @@ def on_files(files, config, **kwargs):
 
 
 def on_page_markdown(markdown, page, **kwargs):
+    if page.file.src_uri == "reference/url-map.md":
+        table = "| Original source | English destination | Frozen original |\n| --- | --- | --- |\n"
+        for record in inventory():
+            table += f'| {record["original"]} | [{record["english"]}]({record["english_url"]}) | [archive]({record["archive_url"]}) |\n'
+        markdown = markdown.replace("<!-- URL_MAP -->", table)
+    if page.file.src_uri == "learning/labs.md":
+        labs = json.loads((ROOT / "course/labs.json").read_text())["labs"]
+        table = "| Experiment | Level | Minutes | Hardware | Local primary | Answer | Validation |\n| --- | --- | ---: | --- | --- | --- | --- |\n"
+        for lab in labs:
+            target = "/hpc_study.io/" + url(lab["page"]) + "#" + lab["anchor"]
+            table += f'| [{lab["id"]}]({target}) | {lab["difficulty"]} | {lab["duration_minutes"]} | {lab["hardware"]} | {"yes" if lab["local_executable"] else "no"} | closed | {lab["validation_status"]} |\n'
+        markdown = markdown.replace("<!-- LAB_INVENTORY -->", table)
     records = [r for r in inventory() if r["english"] == page.file.src_uri]
     if records:
         existing = {h["id"] for h in headings(markdown)}
@@ -52,8 +65,8 @@ def on_post_build(config, **kwargs):
                if p.is_file() and "__pycache__" not in p.parts]
     sources += [ROOT / name for name in ("pyproject.toml", "uv.lock", ".python-version",
                 "env-spec.json", "LICENSE", "README-course.md", "requirements-study.txt")]
-    sources += [p for p in (ROOT / "scripts").glob("*") if p.is_file()
-                and p.suffix in (".sh", ".py")]
+    sources += [ROOT / "scripts" / name for name in ("activate-study.sh", "install-cuda.py",
+                "validate.py", "run-reference-benchmarks.sh", "run-labs.py")]
     sources += list((ROOT / "course").glob("*.json"))
     with zipfile.ZipFile(dest / "hpc-study-examples.zip", "w", zipfile.ZIP_DEFLATED) as archive:
         for source in sorted(sources):
@@ -67,3 +80,6 @@ def on_post_build(config, **kwargs):
     report = ROOT / "audits/2026-10-22-validation.json"
     if report.exists():
         shutil.copyfile(report, dest / "validation.json")
+    external = ROOT / "audits/2026-10-22-external-links.json"
+    if external.exists():
+        shutil.copyfile(external, dest / "external-links.json")

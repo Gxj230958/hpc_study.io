@@ -3,6 +3,9 @@
     "original": "benchmark/hpcg.md",
     "english": "benchmark/hpcg.md",
     "archive": "archive/zh/benchmark/hpcg.md",
+    "original_url": "/hpc_study.io/benchmark/hpcg/",
+    "english_url": "/hpc_study.io/benchmark/hpcg/",
+    "archive_url": "/hpc_study.io/archive/zh/benchmark/hpcg/",
     "source_sha256": "b7b7b449fedf61dbe6bde287a05eb58b3ceb2d8cd7a112d3e7dc4d55f5995e08",
     "anchors": [
       {
@@ -28,6 +31,9 @@
     "original": "benchmark/hpl.md",
     "english": "benchmark/hpl.md",
     "archive": "archive/zh/benchmark/hpl.md",
+    "original_url": "/hpc_study.io/benchmark/hpl/",
+    "english_url": "/hpc_study.io/benchmark/hpl/",
+    "archive_url": "/hpc_study.io/archive/zh/benchmark/hpl/",
     "source_sha256": "185c2eb68a7db019678e83f657168942a98f2df38c94c34056dff62767ef8289",
     "anchors": [
       {
@@ -53,6 +59,9 @@
     "original": "benchmark/intro.md",
     "english": "benchmark/intro.md",
     "archive": "archive/zh/benchmark/intro.md",
+    "original_url": "/hpc_study.io/benchmark/intro/",
+    "english_url": "/hpc_study.io/benchmark/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/benchmark/intro/",
     "source_sha256": "0a8a5491de3c75ffa25e2a9f2c57bed4aefab9d1ff232fe4f4906164ab23c5fa",
     "anchors": [
       {
@@ -82,6 +91,9 @@
     "original": "benchmark/mlperf.md",
     "english": "benchmark/mlperf.md",
     "archive": "archive/zh/benchmark/mlperf.md",
+    "original_url": "/hpc_study.io/benchmark/mlperf/",
+    "english_url": "/hpc_study.io/benchmark/mlperf/",
+    "archive_url": "/hpc_study.io/archive/zh/benchmark/mlperf/",
     "source_sha256": "6a1b40f63161a39bb75e1f090cb58cdf98cab48d24a34657807a5a29956d5523",
     "anchors": [
       {
@@ -111,6 +123,9 @@
     "original": "communication/cost.md",
     "english": "communication/cost.md",
     "archive": "archive/zh/communication/cost.md",
+    "original_url": "/hpc_study.io/communication/cost/",
+    "english_url": "/hpc_study.io/communication/cost/",
+    "archive_url": "/hpc_study.io/archive/zh/communication/cost/",
     "source_sha256": "d275ae6ee72379146a3b0f4aee382a2eb3cbded37ffe51cebb4eadfcf925e7a0",
     "anchors": [
       {
@@ -136,6 +151,9 @@
     "original": "communication/deadlock.md",
     "english": "communication/deadlock.md",
     "archive": "archive/zh/communication/deadlock.md",
+    "original_url": "/hpc_study.io/communication/deadlock/",
+    "english_url": "/hpc_study.io/communication/deadlock/",
+    "archive_url": "/hpc_study.io/archive/zh/communication/deadlock/",
     "source_sha256": "0e128bc34e3f42846379bae4fb19684462e8df03338b9276eebe288338e80721",
     "anchors": [
       {
@@ -161,6 +179,9 @@
     "original": "communication/intro.md",
     "english": "communication/intro.md",
     "archive": "archive/zh/communication/intro.md",
+    "original_url": "/hpc_study.io/communication/intro/",
+    "english_url": "/hpc_study.io/communication/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/communication/intro/",
     "source_sha256": "a65e2d582f0f2f9552c386efe62de478f3b9f0ae50d62874f461a2846b3f3359",
     "anchors": [
       {
@@ -186,6 +207,9 @@
     "original": "communication/model.md",
     "english": "communication/model.md",
     "archive": "archive/zh/communication/model.md",
+    "original_url": "/hpc_study.io/communication/model/",
+    "english_url": "/hpc_study.io/communication/model/",
+    "archive_url": "/hpc_study.io/archive/zh/communication/model/",
     "source_sha256": "d2d50b858dc0c81b7221b929368d591fb7a4cd4a333770d678d184f0d6c790c1",
     "anchors": [
       {
@@ -207,6 +231,9 @@
     "original": "competition/asc.md",
     "english": "reference/competition/asc.md",
     "archive": "archive/zh/competition/asc.md",
+    "original_url": "/hpc_study.io/competition/asc/",
+    "english_url": "/hpc_study.io/reference/competition/asc/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/asc/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -215,6 +242,9 @@
     "original": "competition/competition-intro.md",
     "english": "reference/competition/competition-intro.md",
     "archive": "archive/zh/competition/competition-intro.md",
+    "original_url": "/hpc_study.io/competition/competition-intro/",
+    "english_url": "/hpc_study.io/reference/competition/competition-intro/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/competition-intro/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -223,6 +253,9 @@
     "original": "competition/hpcgame.md",
     "english": "reference/competition/hpcgame.md",
     "archive": "archive/zh/competition/hpcgame.md",
+    "original_url": "/hpc_study.io/competition/hpcgame/",
+    "english_url": "/hpc_study.io/reference/competition/hpcgame/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/hpcgame/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -231,6 +264,9 @@
     "original": "competition/isc.md",
     "english": "reference/competition/isc.md",
     "archive": "archive/zh/competition/isc.md",
+    "original_url": "/hpc_study.io/competition/isc/",
+    "english_url": "/hpc_study.io/reference/competition/isc/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/isc/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -239,6 +275,9 @@
     "original": "competition/other.md",
     "english": "reference/competition/other.md",
     "archive": "archive/zh/competition/other.md",
+    "original_url": "/hpc_study.io/competition/other/",
+    "english_url": "/hpc_study.io/reference/competition/other/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/other/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -247,6 +286,9 @@
     "original": "competition/sc.md",
     "english": "reference/competition/sc.md",
     "archive": "archive/zh/competition/sc.md",
+    "original_url": "/hpc_study.io/competition/sc/",
+    "english_url": "/hpc_study.io/reference/competition/sc/",
+    "archive_url": "/hpc_study.io/archive/zh/competition/sc/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -255,6 +297,9 @@
     "original": "contribute/before-contributing.md",
     "english": "reference/contribute/before-contributing.md",
     "archive": "archive/zh/contribute/before-contributing.md",
+    "original_url": "/hpc_study.io/contribute/before-contributing/",
+    "english_url": "/hpc_study.io/reference/contribute/before-contributing/",
+    "archive_url": "/hpc_study.io/archive/zh/contribute/before-contributing/",
     "source_sha256": "bb53883f23b7edc7fb0676955b81c9f4e16ab52c232aaceb1fc3ce12cea6df0c",
     "anchors": [
       {
@@ -268,6 +313,9 @@
     "original": "contribute/docs-organization.md",
     "english": "reference/contribute/docs-organization.md",
     "archive": "archive/zh/contribute/docs-organization.md",
+    "original_url": "/hpc_study.io/contribute/docs-organization/",
+    "english_url": "/hpc_study.io/reference/contribute/docs-organization/",
+    "archive_url": "/hpc_study.io/archive/zh/contribute/docs-organization/",
     "source_sha256": "2666f7893756952c263698a0712a63771db2bf50b76a2c2484d55395b1bc23dc",
     "anchors": [
       {
@@ -301,6 +349,9 @@
     "original": "contribute/docs-style.md",
     "english": "reference/contribute/docs-style.md",
     "archive": "archive/zh/contribute/docs-style.md",
+    "original_url": "/hpc_study.io/contribute/docs-style/",
+    "english_url": "/hpc_study.io/reference/contribute/docs-style/",
+    "archive_url": "/hpc_study.io/archive/zh/contribute/docs-style/",
     "source_sha256": "c4293d28a7ae8885c3002d10c4d62f6816ece2dd809a3fbdc586c164545e66a8",
     "anchors": [
       {
@@ -322,6 +373,9 @@
     "original": "gpu/arch.md",
     "english": "gpu/arch.md",
     "archive": "archive/zh/gpu/arch.md",
+    "original_url": "/hpc_study.io/gpu/arch/",
+    "english_url": "/hpc_study.io/gpu/arch/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/arch/",
     "source_sha256": "cbff2b9fdb6964e31d306a7c39eff956aeb6a92bbf4e183c3e6429e701102a3d",
     "anchors": [
       {
@@ -347,6 +401,9 @@
     "original": "gpu/cuda-advanced.md",
     "english": "gpu/cuda-advanced.md",
     "archive": "archive/zh/gpu/cuda-advanced.md",
+    "original_url": "/hpc_study.io/gpu/cuda-advanced/",
+    "english_url": "/hpc_study.io/gpu/cuda-advanced/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/cuda-advanced/",
     "source_sha256": "67c7bcebb5f7a342ecd209c43780188e7d3401f28443a07c4d6d90a6cd8ad814",
     "anchors": [
       {
@@ -376,6 +433,9 @@
     "original": "gpu/cuda.md",
     "english": "gpu/cuda.md",
     "archive": "archive/zh/gpu/cuda.md",
+    "original_url": "/hpc_study.io/gpu/cuda/",
+    "english_url": "/hpc_study.io/gpu/cuda/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/cuda/",
     "source_sha256": "ec3a2ffe1e584cc0a7e950349c8052f98254c2032efd006e41505f307f19e244",
     "anchors": [
       {
@@ -465,6 +525,9 @@
     "original": "gpu/hip.md",
     "english": "reference/programming-models/hip.md",
     "archive": "archive/zh/gpu/hip.md",
+    "original_url": "/hpc_study.io/gpu/hip/",
+    "english_url": "/hpc_study.io/reference/programming-models/hip/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/hip/",
     "source_sha256": "512e6065d02131f6dbe27cb8b6956e1fad8e122c0946c65c37aaf7690ebd10ee",
     "anchors": [
       {
@@ -490,6 +553,9 @@
     "original": "gpu/intro.md",
     "english": "gpu/intro.md",
     "archive": "archive/zh/gpu/intro.md",
+    "original_url": "/hpc_study.io/gpu/intro/",
+    "english_url": "/hpc_study.io/gpu/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/intro/",
     "source_sha256": "492d8f8c47d3aa3f2994912b4e117c5fbb26493fa6a0f57eed10a0176b70e475",
     "anchors": [
       {
@@ -515,6 +581,9 @@
     "original": "gpu/nccl.md",
     "english": "gpu/nccl.md",
     "archive": "archive/zh/gpu/nccl.md",
+    "original_url": "/hpc_study.io/gpu/nccl/",
+    "english_url": "/hpc_study.io/gpu/nccl/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/nccl/",
     "source_sha256": "4838a5099c774700f595b6e450ec60aecce072c958d2337fac1f30b7db57e02d",
     "anchors": [
       {
@@ -540,6 +609,9 @@
     "original": "gpu/nsys.md",
     "english": "gpu/nsys.md",
     "archive": "archive/zh/gpu/nsys.md",
+    "original_url": "/hpc_study.io/gpu/nsys/",
+    "english_url": "/hpc_study.io/gpu/nsys/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/nsys/",
     "source_sha256": "5e65d4a528fc7b68bf98279539fb506d70b82195f4877c3d187e860c8166c600",
     "anchors": [
       {
@@ -565,6 +637,9 @@
     "original": "gpu/openacc.md",
     "english": "reference/programming-models/openacc.md",
     "archive": "archive/zh/gpu/openacc.md",
+    "original_url": "/hpc_study.io/gpu/openacc/",
+    "english_url": "/hpc_study.io/reference/programming-models/openacc/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/openacc/",
     "source_sha256": "74791b7f0af9c854cd4999cecde27b1d13727d3b9f18cd2ced9b02a9b0121f68",
     "anchors": [
       {
@@ -586,6 +661,9 @@
     "original": "gpu/opencl.md",
     "english": "reference/programming-models/opencl.md",
     "archive": "archive/zh/gpu/opencl.md",
+    "original_url": "/hpc_study.io/gpu/opencl/",
+    "english_url": "/hpc_study.io/reference/programming-models/opencl/",
+    "archive_url": "/hpc_study.io/archive/zh/gpu/opencl/",
     "source_sha256": "a4dadbd8afaa487919a439670c5339eb89b8647ee6e2026f286147884c934255",
     "anchors": [
       {
@@ -611,6 +689,9 @@
     "original": "hardware/fpga-and-asics.md",
     "english": "hardware/fpga-and-asics.md",
     "archive": "archive/zh/hardware/fpga-and-asics.md",
+    "original_url": "/hpc_study.io/hardware/fpga-and-asics/",
+    "english_url": "/hpc_study.io/hardware/fpga-and-asics/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/fpga-and-asics/",
     "source_sha256": "3087f6361b640ade147ff4cc4035bf7917ff9b67efda8621381a46d7b47c27fd",
     "anchors": [
       {
@@ -636,6 +717,9 @@
     "original": "hardware/gpu.md",
     "english": "gpu/arch.md",
     "archive": "archive/zh/hardware/gpu.md",
+    "original_url": "/hpc_study.io/hardware/gpu/",
+    "english_url": "/hpc_study.io/gpu/arch/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/gpu/",
     "source_sha256": "54d3b2076deaca34b8b5ee4b5108dbc9d0bebf258fc0b0d85415c99dc1a20aec",
     "anchors": [
       {
@@ -649,6 +733,9 @@
     "original": "hardware/hardware-intro.md",
     "english": "hardware/hardware-intro.md",
     "archive": "archive/zh/hardware/hardware-intro.md",
+    "original_url": "/hpc_study.io/hardware/hardware-intro/",
+    "english_url": "/hpc_study.io/hardware/hardware-intro/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/hardware-intro/",
     "source_sha256": "bf3c1346a58d7f44d7bd2b3eafb732c8652168c1d3d1e337c57fa9abee964c91",
     "anchors": [
       {
@@ -678,6 +765,9 @@
     "original": "hardware/interconnect.md",
     "english": "hardware/interconnect.md",
     "archive": "archive/zh/hardware/interconnect.md",
+    "original_url": "/hpc_study.io/hardware/interconnect/",
+    "english_url": "/hpc_study.io/hardware/interconnect/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/interconnect/",
     "source_sha256": "d440aed7c6679470a8250ec2c42597de7edd105643f35775effa507e732ff185",
     "anchors": [
       {
@@ -703,6 +793,9 @@
     "original": "hardware/memory.md",
     "english": "hardware/memory.md",
     "archive": "archive/zh/hardware/memory.md",
+    "original_url": "/hpc_study.io/hardware/memory/",
+    "english_url": "/hpc_study.io/hardware/memory/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/memory/",
     "source_sha256": "661b0f823994f7069ffd86b74aa656d5071a1f98c04d818ce0350caf86032600",
     "anchors": [
       {
@@ -728,6 +821,9 @@
     "original": "hardware/processor.md",
     "english": "hardware/processor.md",
     "archive": "archive/zh/hardware/processor.md",
+    "original_url": "/hpc_study.io/hardware/processor/",
+    "english_url": "/hpc_study.io/hardware/processor/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/processor/",
     "source_sha256": "d02f662039d50e8af32763b92a5755cc4cce00bf5628580b5e677104ed2f4ba6",
     "anchors": [
       {
@@ -753,6 +849,9 @@
     "original": "hardware/storage.md",
     "english": "hardware/storage.md",
     "archive": "archive/zh/hardware/storage.md",
+    "original_url": "/hpc_study.io/hardware/storage/",
+    "english_url": "/hpc_study.io/hardware/storage/",
+    "archive_url": "/hpc_study.io/archive/zh/hardware/storage/",
     "source_sha256": "6f9833c56c1edff1a89712eed2416c8f2e494185a2177f2365fc39f88237804a",
     "anchors": [
       {
@@ -778,6 +877,9 @@
     "original": "hpc-intro/hpc-history.md",
     "english": "foundations/hpc-history.md",
     "archive": "archive/zh/hpc-intro/hpc-history.md",
+    "original_url": "/hpc_study.io/hpc-intro/hpc-history/",
+    "english_url": "/hpc_study.io/foundations/hpc-history/",
+    "archive_url": "/hpc_study.io/archive/zh/hpc-intro/hpc-history/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -786,6 +888,9 @@
     "original": "hpc-intro/modern-hpc.md",
     "english": "foundations/modern-hpc.md",
     "archive": "archive/zh/hpc-intro/modern-hpc.md",
+    "original_url": "/hpc_study.io/hpc-intro/modern-hpc/",
+    "english_url": "/hpc_study.io/foundations/modern-hpc/",
+    "archive_url": "/hpc_study.io/archive/zh/hpc-intro/modern-hpc/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -794,6 +899,9 @@
     "original": "hpc-intro/what-is-hpc.md",
     "english": "foundations/what-is-hpc.md",
     "archive": "archive/zh/hpc-intro/what-is-hpc.md",
+    "original_url": "/hpc_study.io/hpc-intro/what-is-hpc/",
+    "english_url": "/hpc_study.io/foundations/what-is-hpc/",
+    "archive_url": "/hpc_study.io/archive/zh/hpc-intro/what-is-hpc/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -802,6 +910,9 @@
     "original": "index.md",
     "english": "index.md",
     "archive": "archive/zh/index.md",
+    "original_url": "/hpc_study.io/",
+    "english_url": "/hpc_study.io/",
+    "archive_url": "/hpc_study.io/archive/zh/",
     "source_sha256": "9562577e20eddb8e2749c7beb386f976e69bad6cced3f58b92f512eba6fc239c",
     "anchors": [
       {
@@ -831,6 +942,9 @@
     "original": "learning/glossary.md",
     "english": "learning/glossary.md",
     "archive": "archive/zh/learning/glossary.md",
+    "original_url": "/hpc_study.io/learning/glossary/",
+    "english_url": "/hpc_study.io/learning/glossary/",
+    "archive_url": "/hpc_study.io/archive/zh/learning/glossary/",
     "source_sha256": "3c9c0bcb74562c8ff42d695fd9977bd2841e0cf7f4b4887734f0aedd29b15993",
     "anchors": [
       {
@@ -844,6 +958,9 @@
     "original": "learning/labs.md",
     "english": "learning/labs.md",
     "archive": "archive/zh/learning/labs.md",
+    "original_url": "/hpc_study.io/learning/labs/",
+    "english_url": "/hpc_study.io/learning/labs/",
+    "archive_url": "/hpc_study.io/archive/zh/learning/labs/",
     "source_sha256": "c0007c27c3fa951130e54d1c7b1f2f1d5eb10a4b411fe93fa218612d0db0735d",
     "anchors": [
       {
@@ -865,6 +982,9 @@
     "original": "learning/path.md",
     "english": "learning/path.md",
     "archive": "archive/zh/learning/path.md",
+    "original_url": "/hpc_study.io/learning/path/",
+    "english_url": "/hpc_study.io/learning/path/",
+    "archive_url": "/hpc_study.io/archive/zh/learning/path/",
     "source_sha256": "c7bbb0ac4c0d87180480894e2692e7bb064235ba53eb7d5d3d98c57306a103e9",
     "anchors": [
       {
@@ -894,6 +1014,9 @@
     "original": "learning/setup.md",
     "english": "learning/setup.md",
     "archive": "archive/zh/learning/setup.md",
+    "original_url": "/hpc_study.io/learning/setup/",
+    "english_url": "/hpc_study.io/learning/setup/",
+    "archive_url": "/hpc_study.io/archive/zh/learning/setup/",
     "source_sha256": "0aeaa3c81c00a5156cd0db8ab140b0031f9f37b66834454839be100393e6b5bd",
     "anchors": [
       {
@@ -927,6 +1050,9 @@
     "original": "learning/validation.md",
     "english": "learning/validation.md",
     "archive": "archive/zh/learning/validation.md",
+    "original_url": "/hpc_study.io/learning/validation/",
+    "english_url": "/hpc_study.io/learning/validation/",
+    "archive_url": "/hpc_study.io/archive/zh/learning/validation/",
     "source_sha256": "8f3378d40db43c0702342583299a33c449b19b6f86407ea51d4145c0cac8e8af",
     "anchors": [
       {
@@ -956,6 +1082,9 @@
     "original": "memory-model/cache.md",
     "english": "memory-model/cache.md",
     "archive": "archive/zh/memory-model/cache.md",
+    "original_url": "/hpc_study.io/memory-model/cache/",
+    "english_url": "/hpc_study.io/memory-model/cache/",
+    "archive_url": "/hpc_study.io/archive/zh/memory-model/cache/",
     "source_sha256": "e11f24d4e72698a4da5c14f84ba72c51c0f2b96972c70d4ffb1d5380ecf89d85",
     "anchors": [
       {
@@ -981,6 +1110,9 @@
     "original": "memory-model/consistency.md",
     "english": "memory-model/consistency.md",
     "archive": "archive/zh/memory-model/consistency.md",
+    "original_url": "/hpc_study.io/memory-model/consistency/",
+    "english_url": "/hpc_study.io/memory-model/consistency/",
+    "archive_url": "/hpc_study.io/archive/zh/memory-model/consistency/",
     "source_sha256": "0397e9743641e3a7cf91fb23113b033ed49b5f194c27595ec85f90541ae15f2c",
     "anchors": [
       {
@@ -1002,6 +1134,9 @@
     "original": "memory-model/intro.md",
     "english": "memory-model/intro.md",
     "archive": "archive/zh/memory-model/intro.md",
+    "original_url": "/hpc_study.io/memory-model/intro/",
+    "english_url": "/hpc_study.io/memory-model/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/memory-model/intro/",
     "source_sha256": "caf11ae9190d760cdea85c876879d60ab2f6d036fbd03967b53b864d8cfd2b72",
     "anchors": [
       {
@@ -1027,6 +1162,9 @@
     "original": "memory-model/numa.md",
     "english": "memory-model/numa.md",
     "archive": "archive/zh/memory-model/numa.md",
+    "original_url": "/hpc_study.io/memory-model/numa/",
+    "english_url": "/hpc_study.io/memory-model/numa/",
+    "archive_url": "/hpc_study.io/archive/zh/memory-model/numa/",
     "source_sha256": "7d303743930a884b8bbefa1dc7da9cf8fa762be6d6e6ef6ab3de530432471a6d",
     "anchors": [
       {
@@ -1052,6 +1190,9 @@
     "original": "misc/faq.md",
     "english": "reference/misc/faq.md",
     "archive": "archive/zh/misc/faq.md",
+    "original_url": "/hpc_study.io/misc/faq/",
+    "english_url": "/hpc_study.io/reference/misc/faq/",
+    "archive_url": "/hpc_study.io/archive/zh/misc/faq/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -1060,6 +1201,9 @@
     "original": "misc/git.md",
     "english": "reference/misc/git.md",
     "archive": "archive/zh/misc/git.md",
+    "original_url": "/hpc_study.io/misc/git/",
+    "english_url": "/hpc_study.io/reference/misc/git/",
+    "archive_url": "/hpc_study.io/archive/zh/misc/git/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -1068,6 +1212,9 @@
     "original": "misc/shell.md",
     "english": "reference/misc/shell.md",
     "archive": "archive/zh/misc/shell.md",
+    "original_url": "/hpc_study.io/misc/shell/",
+    "english_url": "/hpc_study.io/reference/misc/shell/",
+    "archive_url": "/hpc_study.io/archive/zh/misc/shell/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -1076,6 +1223,9 @@
     "original": "parallel-programming/mpi.md",
     "english": "parallel-programming/mpi.md",
     "archive": "archive/zh/parallel-programming/mpi.md",
+    "original_url": "/hpc_study.io/parallel-programming/mpi/",
+    "english_url": "/hpc_study.io/parallel-programming/mpi/",
+    "archive_url": "/hpc_study.io/archive/zh/parallel-programming/mpi/",
     "source_sha256": "1ca4bb1cd7bc8825c80d8b5e759719fba89d7bf6b3f7f40a3bbd1edce93992c3",
     "anchors": [
       {
@@ -1101,6 +1251,9 @@
     "original": "parallel-programming/mpi4py.md",
     "english": "parallel-programming/mpi4py.md",
     "archive": "archive/zh/parallel-programming/mpi4py.md",
+    "original_url": "/hpc_study.io/parallel-programming/mpi4py/",
+    "english_url": "/hpc_study.io/parallel-programming/mpi4py/",
+    "archive_url": "/hpc_study.io/archive/zh/parallel-programming/mpi4py/",
     "source_sha256": "738f5c8085247013ca560485287085ec7a1463d2a6474fadde8545fa93db65dd",
     "anchors": [
       {
@@ -1126,6 +1279,9 @@
     "original": "parallel-programming/openmp.md",
     "english": "parallel-programming/openmp.md",
     "archive": "archive/zh/parallel-programming/openmp.md",
+    "original_url": "/hpc_study.io/parallel-programming/openmp/",
+    "english_url": "/hpc_study.io/parallel-programming/openmp/",
+    "archive_url": "/hpc_study.io/archive/zh/parallel-programming/openmp/",
     "source_sha256": "dae1243527a0c3b7e4c1178d45e274b6f962fa6d4dfdab975317afe29dc8c175",
     "anchors": [
       {
@@ -1155,6 +1311,9 @@
     "original": "parallel-programming/parallel-programming-intro.md",
     "english": "parallel-programming/parallel-programming-intro.md",
     "archive": "archive/zh/parallel-programming/parallel-programming-intro.md",
+    "original_url": "/hpc_study.io/parallel-programming/parallel-programming-intro/",
+    "english_url": "/hpc_study.io/parallel-programming/parallel-programming-intro/",
+    "archive_url": "/hpc_study.io/archive/zh/parallel-programming/parallel-programming-intro/",
     "source_sha256": "d136b5abcc224ee64a05f1761461ece60db63d56c8427727517920d218cc219b",
     "anchors": [
       {
@@ -1184,6 +1343,9 @@
     "original": "performance-analysis/intro.md",
     "english": "performance-analysis/intro.md",
     "archive": "archive/zh/performance-analysis/intro.md",
+    "original_url": "/hpc_study.io/performance-analysis/intro/",
+    "english_url": "/hpc_study.io/performance-analysis/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/performance-analysis/intro/",
     "source_sha256": "3f5564644af6ac29b19b3dd0ba7790ab45625ae5915daab6bbe12872a576ea0d",
     "anchors": [
       {
@@ -1229,6 +1391,9 @@
     "original": "performance-analysis/tools.md",
     "english": "performance-analysis/tools.md",
     "archive": "archive/zh/performance-analysis/tools.md",
+    "original_url": "/hpc_study.io/performance-analysis/tools/",
+    "english_url": "/hpc_study.io/performance-analysis/tools/",
+    "archive_url": "/hpc_study.io/archive/zh/performance-analysis/tools/",
     "source_sha256": "2649d18302e08a0595007b058789713fa38393de02769f12af90e095a1ce44d0",
     "anchors": [
       {
@@ -1266,6 +1431,9 @@
     "original": "platform/cloud.md",
     "english": "clusters/cloud.md",
     "archive": "archive/zh/platform/cloud.md",
+    "original_url": "/hpc_study.io/platform/cloud/",
+    "english_url": "/hpc_study.io/clusters/cloud/",
+    "archive_url": "/hpc_study.io/archive/zh/platform/cloud/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -1274,6 +1442,9 @@
     "original": "platform/cluster.md",
     "english": "clusters/cluster.md",
     "archive": "archive/zh/platform/cluster.md",
+    "original_url": "/hpc_study.io/platform/cluster/",
+    "english_url": "/hpc_study.io/clusters/cluster/",
+    "archive_url": "/hpc_study.io/archive/zh/platform/cluster/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -1282,6 +1453,9 @@
     "original": "platform/modules.md",
     "english": "clusters/modules.md",
     "archive": "archive/zh/platform/modules.md",
+    "original_url": "/hpc_study.io/platform/modules/",
+    "english_url": "/hpc_study.io/clusters/modules/",
+    "archive_url": "/hpc_study.io/archive/zh/platform/modules/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -1290,6 +1464,9 @@
     "original": "platform/platform-intro.md",
     "english": "clusters/platform-intro.md",
     "archive": "archive/zh/platform/platform-intro.md",
+    "original_url": "/hpc_study.io/platform/platform-intro/",
+    "english_url": "/hpc_study.io/clusters/platform-intro/",
+    "archive_url": "/hpc_study.io/archive/zh/platform/platform-intro/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -1298,6 +1475,9 @@
     "original": "platform/scheduling.md",
     "english": "clusters/scheduling.md",
     "archive": "archive/zh/platform/scheduling.md",
+    "original_url": "/hpc_study.io/platform/scheduling/",
+    "english_url": "/hpc_study.io/clusters/scheduling/",
+    "archive_url": "/hpc_study.io/archive/zh/platform/scheduling/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -1306,6 +1486,9 @@
     "original": "power-management/intro.md",
     "english": "reference/power-management/intro.md",
     "archive": "archive/zh/power-management/intro.md",
+    "original_url": "/hpc_study.io/power-management/intro/",
+    "english_url": "/hpc_study.io/reference/power-management/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/power-management/intro/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -1314,6 +1497,9 @@
     "original": "power-management/perception.md",
     "english": "reference/power-management/perception.md",
     "archive": "archive/zh/power-management/perception.md",
+    "original_url": "/hpc_study.io/power-management/perception/",
+    "english_url": "/hpc_study.io/reference/power-management/perception/",
+    "archive_url": "/hpc_study.io/archive/zh/power-management/perception/",
     "source_sha256": "337e547a950fc8a98592f10d964c1e79a304961790a8da0ce449a1f000cefabb",
     "anchors": [],
     "anchor_policy": "compatibility anchor; consult archived original for context"
@@ -1322,6 +1508,9 @@
     "original": "sci-mlsys/intro.md",
     "english": "sci-mlsys/intro.md",
     "archive": "archive/zh/sci-mlsys/intro.md",
+    "original_url": "/hpc_study.io/sci-mlsys/intro/",
+    "english_url": "/hpc_study.io/sci-mlsys/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/sci-mlsys/intro/",
     "source_sha256": "e06541895f6471e1cdcc62c336e0222f19722337f25544fc8b209d1ac4427b13",
     "anchors": [
       {
@@ -1351,6 +1540,9 @@
     "original": "sci-mlsys/parallelism.md",
     "english": "sci-mlsys/parallelism.md",
     "archive": "archive/zh/sci-mlsys/parallelism.md",
+    "original_url": "/hpc_study.io/sci-mlsys/parallelism/",
+    "english_url": "/hpc_study.io/sci-mlsys/parallelism/",
+    "archive_url": "/hpc_study.io/archive/zh/sci-mlsys/parallelism/",
     "source_sha256": "da7f727ff0ee73e29251e8a6c72cdc20cd164ddbf925c4fd2fab89b4657549bb",
     "anchors": [
       {
@@ -1376,6 +1568,9 @@
     "original": "sci-mlsys/quantization.md",
     "english": "sci-mlsys/quantization.md",
     "archive": "archive/zh/sci-mlsys/quantization.md",
+    "original_url": "/hpc_study.io/sci-mlsys/quantization/",
+    "english_url": "/hpc_study.io/sci-mlsys/quantization/",
+    "archive_url": "/hpc_study.io/archive/zh/sci-mlsys/quantization/",
     "source_sha256": "ac63461a9438498c45aab61afdfbd98a06292b955f36f5935a96541bc8d19d4e",
     "anchors": [
       {
@@ -1401,6 +1596,9 @@
     "original": "sci-mlsys/sparsity.md",
     "english": "sci-mlsys/sparsity.md",
     "archive": "archive/zh/sci-mlsys/sparsity.md",
+    "original_url": "/hpc_study.io/sci-mlsys/sparsity/",
+    "english_url": "/hpc_study.io/sci-mlsys/sparsity/",
+    "archive_url": "/hpc_study.io/archive/zh/sci-mlsys/sparsity/",
     "source_sha256": "f64415d3456eb6f2770b79d4c5d9ace28c96fedd4ddd4f966c6fc6f6d6137fc4",
     "anchors": [
       {
@@ -1430,6 +1628,9 @@
     "original": "static/vendor/README.md",
     "english": "reference/licenses.md",
     "archive": "archive/zh/static/vendor/README.md",
+    "original_url": "/hpc_study.io/static/vendor/",
+    "english_url": "/hpc_study.io/reference/licenses/",
+    "archive_url": "/hpc_study.io/archive/zh/static/vendor/",
     "source_sha256": "1e3b5f94422523f8baacca81c7bf769a641684e20396e0a1f6773d559611f49a",
     "anchors": [
       {
@@ -1443,6 +1644,9 @@
     "original": "thread-process/intro.md",
     "english": "thread-process/intro.md",
     "archive": "archive/zh/thread-process/intro.md",
+    "original_url": "/hpc_study.io/thread-process/intro/",
+    "english_url": "/hpc_study.io/thread-process/intro/",
+    "archive_url": "/hpc_study.io/archive/zh/thread-process/intro/",
     "source_sha256": "8dd436a06a014460c621c36043a7b56d47080113f000745f0674b6bf059c43de",
     "anchors": [
       {
@@ -1468,6 +1672,9 @@
     "original": "thread-process/more.md",
     "english": "thread-process/more.md",
     "archive": "archive/zh/thread-process/more.md",
+    "original_url": "/hpc_study.io/thread-process/more/",
+    "english_url": "/hpc_study.io/thread-process/more/",
+    "archive_url": "/hpc_study.io/archive/zh/thread-process/more/",
     "source_sha256": "e5da5fe7b3d17c1ddc6ea71c7ec1ad045040bdb8e5e925a33c8ff0b6c26d70c0",
     "anchors": [
       {
@@ -1493,6 +1700,9 @@
     "original": "thread-process/process.md",
     "english": "thread-process/process.md",
     "archive": "archive/zh/thread-process/process.md",
+    "original_url": "/hpc_study.io/thread-process/process/",
+    "english_url": "/hpc_study.io/thread-process/process/",
+    "archive_url": "/hpc_study.io/archive/zh/thread-process/process/",
     "source_sha256": "8ce6debeae0212d6e7ea5e63443a2742f304b59c41a28bd31f43b83c98bad08e",
     "anchors": [
       {
@@ -1518,6 +1728,9 @@
     "original": "thread-process/thread.md",
     "english": "thread-process/thread.md",
     "archive": "archive/zh/thread-process/thread.md",
+    "original_url": "/hpc_study.io/thread-process/thread/",
+    "english_url": "/hpc_study.io/thread-process/thread/",
+    "archive_url": "/hpc_study.io/archive/zh/thread-process/thread/",
     "source_sha256": "d22fa35d799c264c9da41cbaee49004a97dd23d993fb00fab7e4e3932df1f342",
     "anchors": [
       {
